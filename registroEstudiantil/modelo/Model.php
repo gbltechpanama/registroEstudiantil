@@ -4,19 +4,23 @@ namespace registroEstudiantil;
 
 require_once '../ORM.php';
 /**
- * Description of Model
+ * Model esta clase php generea todas las consultas y actualizaciones de la 
+ * base de datos.
  *
- * @author ricardo
+ * @author Ricardo Presilla
  */
 class Model {
     /**Este método devolverá los datos de un estudiante en específico desde la 
      * tabla “estudiantes”, tomando en cuenta que el parámetro enviado 
      * “cedulaEstudiante” coincida con el campo “cedula” de la tabla en la BD.
+     * @param $cedulaEstudiante Tipo String, contiene la cedula del estudiante.
+     * @return Object Array.
      */
     public function mdlObtenerDatosEstudiante($cedulaEstudiante)
     {
         $BD = new BaseDatos();
-        $query = "select * from estudiantes where cedulaEstudiante = '".$cedulaEstudiante."'";
+        $query = "select * from estudiantes where cedulaEstudiante = '"
+                .$cedulaEstudiante."'";
         $resultado = $BD->mdlQueryDB($query);
         $row = mysql_fetch_row($resultado);
         $datos = $row[0];
