@@ -1,0 +1,119 @@
+/*Hoja de estilos princial
+*/
+/* 
+    Created on : 18-sep-2015, 15:49:44
+    Author     : Ricardo Presilla
+*/
+/*Encabezado de la pagina*/
+.encabezado{
+    background-color: #FFFFFF;
+    height: 208px;
+    width: 100%;
+    top: 0%;
+    margin: 0%;
+    padding: 0%;
+    position: absolute;
+    min-height: 80px;
+    overflow: hidden;
+    opacity: 1;
+    z-index: 1;
+}
+/**Para la barra azul*/
+.barra{
+    background-color: #001A55;
+    height: 4px;
+    width: 100%;
+    top: 208px;
+    margin: 0%;
+    padding: 0%;
+    position: absolute;
+    z-index: 1;
+}
+/**Para la barra dorada*/
+.barra2{
+    background-color: #EFCD09;
+    height: 6px;
+    width: 100%;
+    top: 217px;
+    margin: 0%;
+    padding: 0%;
+    position: absolute;
+    z-index: 1;
+}
+/**Para el logo*/
+.logo{
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+    top: 6%;
+    left: 0px;
+    width: 116px;
+    height: 99px;
+    position: absolute;
+    min-width: 116px;
+    min-height: 99px;
+    vertical-align: middle;
+    z-index: 2;    
+}
+/*Para el membrete*/
+.membrete{
+    color: #001A55;
+    text-align: center;
+    font-family: Helvetica LT Std, sans-serif;
+    font-size: 36px;
+    height: 208px;
+    width: auto;
+    left: 147px;
+    top: 64px;
+    position: absolute;
+    z-index: 2;
+}
+/**Cuerpo de la pagina*/
+main{
+    background-color: #FDFDFD;
+    margin: 0%;
+    padding: 0%;
+}
+/*Pie de página del desarrollador*/
+.pie{
+    background-color: #E4E4E4;
+    width: 1920px;
+    height: 47px;
+    top: 690px;
+    bottom: 0px;
+    position: absolute;
+    background-image: url(../img/pie.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+.pie2{
+    background-color: #E4E4E4;
+    width: 100%;
+    height: 47px;
+    top: 690px;
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+    background-image: url(../img/pie2.png);
+    background-repeat: repeat-x;
+    z-index: 0;
+}
+/**Para la capa del login*/
+.capaLogin{
+    width: 751px;
+    height: 144px;
+    position: absolute;
+    top: 307px;
+    left: 208px;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #FFFFFF;
+    border: 6px;
+    background-image: url(../img/formulario.png);
+    background-repeat: no-repeat;
+    z-index: 1;
+}
