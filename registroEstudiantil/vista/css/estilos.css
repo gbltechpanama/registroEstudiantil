@@ -76,11 +76,12 @@ main{
     background-color: #FDFDFD;
     margin: 0%;
     padding: 0%;
+    width: 100%;
 }
 /*Pie de página del desarrollador*/
 .pie{
     background-color: #E4E4E4;
-    width: 1920px;
+    width: 100%;
     height: 47px;
     top: 690px;
     bottom: 0px;
