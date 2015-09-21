@@ -10,8 +10,8 @@
     <body>
         <header>
             <div class="logo"></div>
+            <div class="membrete1">Ficha automatizada de estudiantes</div>
             <div class="membrete">
-                Ficha automatizada de estudiantes <br>
                 Universidad Nororiental Privada <br>
                 "Gran Mariscal de Ayacucho" <br>
             </div>
