@@ -25,16 +25,12 @@
             ?>
             <div class="capaLogin">
                 <form action="" name="formularioLogin">
-                    <div>Bienvenido(a) Profesor(a)
+                    <div class="bienvenida">Bienvenido(a) Profesor(a)
                         <br> 
                         Ingrese su clave de ingreso
                     </div>
-                    <div>
-                        <input type="password" name="clave" value="" />
-                    </div>
-                    <div>
-                        <input type="submit" value="Aceptar" name="aceptar" />
-                    </div>
+                    <input type="password" name="clave" value="" class="clave"/>
+                    <input type="submit" value="Aceptar" name="aceptar" class="botonAceptar"/>
                 </form>
             </div>
             <div class="logo2"></div>

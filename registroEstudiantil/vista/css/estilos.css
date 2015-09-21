@@ -67,7 +67,7 @@
     height: 208px;
     width: auto;
     left: 147px;
-    top: 64px;
+    top: 54px;
     position: absolute;
     z-index: 2;
 }
@@ -117,4 +117,39 @@ main{
     background-image: url(../img/formulario.png);
     background-repeat: no-repeat;
     z-index: 1;
+}
+/***/
+.bienvenida{
+    position: absolute;
+    top: 23px;
+    left: 304px;
+    color: #000000;
+    text-align: center;
+    font-family: "Helvetica LT Std Cond Blk", "Helvetica LT Std";
+    font-size: 12px;
+}
+/**Para la clave del login*/
+.clave{
+    float: left;
+    position: absolute;
+    top: 72px;
+    left: 248px;
+    width: 258px;
+    height: 26px;
+}
+/**Para el boton de aceptar*/
+.botonAceptar{
+    float: left;
+    position: absolute;
+    top: 72px;
+    left: 544px;
+    width: 125px;
+    height: 29px;
+    background-image: url(../img/aceptar.png);
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: "Helvetica LT Std Cond Blk", "Helvetica LT Std";
+    font-size: 12px;
+    border-radius: 6px;
 }
