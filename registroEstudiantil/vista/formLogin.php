@@ -33,11 +33,11 @@
                     <input type="submit" value="Aceptar" name="aceptar" class="botonAceptar"/>
                 </form>
             </div>
-            <div class="logo2"></div>
             <div class="pie"></div>
+            <div class="logo2"></div>
         </main>
-        <footer>
+<!--        <footer>
             <div class="pie2"></div>
-        </footer>
+        </footer>-->
     </body>
 </html>
