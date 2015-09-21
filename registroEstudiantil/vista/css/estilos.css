@@ -167,14 +167,27 @@ main{
     position: absolute;
     top: 72px;
     left: 544px;
-    width: 125px;
-    height: 29px;
-    background-image: url(../img/aceptar.png);
+    width: 123px;
+    height: 27px;
+}
+/**Para el error del login*/
+.errorLogin{
+    width: 590px;
+    height: 190px;
+    position: absolute;
+    top: 307px;
+    left: calc(50% - 290px);
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #FFFFFF;
+    border: 6px;
+    background-image: url(../img/errorLogin.png);
     background-repeat: no-repeat;
-    color: #FFFFFF;
-    text-align: center;
-    font-family: "Helvetica LT Std Cond Blk", "Helvetica LT Std";
-    font-size: 12px;
-    border-radius: 8px;
-    padding-top: -2px;
+    z-index: 1;
+}
+/***/
+.enlace1{
+    position: absolute;
+    top: 104px;
+    left: 360px;
 }

@@ -6,12 +6,6 @@
         <meta charset="UTF-8">
         <title>Login Profesor(a)</title>
         <link href="css/estilos.css" rel="stylesheet" type="text/css">
-        <script>
-            function enviarDatos()
-            {
-                document.forms[0].submit();
-            }
-        </script>
     </head>
     <body>
         <header>
@@ -29,16 +23,8 @@
                 session_start();
                 $GET_SESSION['action']="";
             ?>
-            <div class="capaLogin">
-                <form action="" name="formularioLogin">
-                    <div class="bienvenida">Bienvenido(a) Profesor(a)
-                        <br> 
-                        Ingrese su clave de ingreso
-                    </div>
-                    <input type="password" name="clave" value="" class="clave"/>
-                    <img src="img/aceptar.png" alt="aceptar" class="botonAceptar" onclick='enviarDatos()'/>
-<!--                    <input type="submit" value="Aceptar" name="aceptar" />-->
-                </form>
+            <div class="errorLogin">
+                <a href="formLogin.php" class="enlace1">Ir al inicio</a>
             </div>
             <div class="pie"></div>
             <div class="logo2"></div>
