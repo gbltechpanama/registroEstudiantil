@@ -24,29 +24,38 @@ and open the template in the editor.
         </header>
         <main>
             <div class="capaDatos">
-                <form action="" name="formularioDatos" method="post" enctype="multipart/form-data">
+                <form action="../controlador/FrontController.php?action=nuevaFoto" name="formularioDatos" method="post" enctype="multipart/form-data">
                     <div class="capaNombre">Nombre </div>
                     <input type="text" name="nombre" value="" class="tNombre"/>
+                    <div class="capaNecesario">*</div>
                     <div class="capaApellido">Apellido </div>
                     <input type="text" name="apellido" value="" class="tApellido"/>
+                    <div class="capaNecesario2">*</div>
                     <div class="capaCedula">Cedula </div>
                     <input type="text" name="cedula" value="" class="tCedula"/>
+                    <div class="capaNecesario3">*</div>
                     <div class="capaDireccion">Direcci&oacute;n </div>
                     <input type="text" name="direccion" value="" class="tDireccion"/>
+                    <div class="capaNecesario4">*</div>
                     <div class="capaTelefono">Tel&eacute;fono </div>
                     <input type="tel" name="telefono" value="" class="tTelefono"/>
+                    <div class="capaNecesario5">*</div>
                     <div class="capaEmail">Email </div>
                     <input type="email" name="email" value="" class="tEmail"/>
+                    <div class="capaNecesario6">*</div>
                     <div class="capaFechaNacimiento">Fecha de nacimiento </div>
                     <input type="datetime" name="fechaNacimiento" value="" class="tFechaNacimiento"/>
                     <div class="capaLugarNacimiento">Lugar de nacimiento </div>
                     <input type="text" name="lugarNacimiento" value="" class="tLugarNacimiento"/>
                     <div class="capaLugarTrabajo">Lugar de trabajo </div>
                     <input type="text" name="lugarTrabajo" value="" class="tLugarTrabajo"/>
+                    <div class="capaNecesario7">*</div>
                     <div class="capaCargo">Cargo </div>
                     <input type="text" name="cargo" value="" class="tCargo"/>
+                    <div class="capaNecesario8">*</div>
                     <div class="capaFoto">Cargar Foto </div>
                     <input type="file" name="cargarFoto" multiple class="tFoto"/>
+                    <div class="capaNecesario9">*</div>
                     <!--input type="submit" value="Examinar" name="Examinar" class="BExaminar"/-->
                     <img src="img/aceptar.png" alt="aceptar" class="BAceptarDatos" onclick='enviarDatos()'/>
                 </form>

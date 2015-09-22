@@ -89,11 +89,11 @@ main{
     background-color: #FDFDFD;
     margin: 0%;
     padding: 0%;
-    width: 100%;
+    width: 1180px;
 }
 /*Pie de página del desarrollador*/
 .pie{
-    width: 100%;
+    width: 1180px;
     height: 88px;
     top: 690px;
     bottom: 0px;
@@ -105,7 +105,7 @@ main{
 }
 .pie2{
     background-color: #E4E4E4;
-    width: 100%;
+    width: 1180px;
     height: 88px;
     top: 690px;
     left: 0px;
@@ -381,7 +381,7 @@ main{
 .capaFechaNacimiento{
     position: absolute;
     top: 241px;
-    left: 155px;
+    left: 165px;
 }
 .capaLugarNacimiento{
     position: absolute;
@@ -392,7 +392,7 @@ main{
 .capaLugarTrabajo{
     position: absolute;
     top: 291px;
-    left: 181px;
+    left: 189px;
 }
 .capaCargo{
     position: absolute;
@@ -402,7 +402,71 @@ main{
 .capaFoto{
     position: absolute;
     top: 343px;
-    left: 209px;
+    left: 215px;
+}
+/**Para indicar el asterisco rojo*/
+.capaNecesario{
+    color: #ff0000;
+    position: absolute;
+    top: 90px;
+    left: 566px;
+    font-weight: bold;
+}
+.capaNecesario2{
+    color: #ff0000;
+    position: absolute;
+    top: 90px;
+    left: 1025px;
+    font-weight: bold;
+}
+.capaNecesario3{
+    color: #ff0000;
+    position: absolute;
+    top: 139px;
+    left: 566px;
+    font-weight: bold;
+}
+.capaNecesario4{
+    color: #ff0000;
+    position: absolute;
+    top: 139px;
+    left: 1025px;
+    font-weight: bold;
+}
+.capaNecesario5{
+    color: #ff0000;
+    position: absolute;
+    top: 189px;
+    left: 566px;
+    font-weight: bold;
+}
+.capaNecesario6{
+    color: #ff0000;
+    position: absolute;
+    top: 189px;
+    left: 1025px;
+    font-weight: bold;
+}
+.capaNecesario7{
+    color: #ff0000;
+    position: absolute;
+    top: 291px;
+    left: 566px;
+    font-weight: bold;
+}
+.capaNecesario8{
+    color: #ff0000;
+    position: absolute;
+    top: 291px;
+    left: 1025px;
+    font-weight: bold;
+}
+.capaNecesario9{
+    color: #ff0000;
+    position: absolute;
+    top: 343px;
+    left: 566px;
+    font-weight: bold;
 }
 /**Para las cajas de texto*/
 .tNombre{
