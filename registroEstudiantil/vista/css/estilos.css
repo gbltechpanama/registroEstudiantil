@@ -327,15 +327,15 @@ main{
 /**Fuente personalizada para el texto*/
 @font-face {
     font-family: HelveticaBlack;
-    src: url('../fonts/HelveticaLTStd-Blk.ttf');
+    src: url('../fonts/HelveticaLTStd-Blk.otf');
 }
 @font-face {
     font-family: HelveticaCondensada;
-    src: url('../fonts/HelveticaLTStd-Cond.ttf'); 
+    src: url('../fonts/HelveticaLTStd-Cond.otf'); 
 }
 @font-face {
     font-family: HelveticaNegrita;
-    src: url('../fonts/HelveticaLTStd-Bold.ttf'); 
+    src: url('../fonts/HelveticaLTStd-Bold.otf'); 
 }
 /**Para la carga de datos*/
 .capaDatos{
@@ -509,12 +509,15 @@ main{
     position: absolute;
     top: 336px;
     left: 306px;
-    width: 174px;
+    width: 258px;
     height: 26px;
     border-color: #000000;
     border: 1px;
     border-style: solid;
     direction: rtl;
+    display: block;
+    visibility: visible;
+    overflow: hidden;
 }
 /**Para el boton de aceptar en cargar datos*/
 .BAceptarDatos{
