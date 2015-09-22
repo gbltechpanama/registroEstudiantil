@@ -11,7 +11,7 @@ and open the template in the editor.
         <script type="text/javascript">
             function redireccion()
             {
-                    document.location.href = "";
+                    document.location.href = "../vista/ingresarCI.html";
                     //prueba
             }
         </script>
