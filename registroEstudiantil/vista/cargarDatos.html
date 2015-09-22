@@ -24,7 +24,7 @@ and open the template in the editor.
         </header>
         <main>
             <div class="capaDatos">
-                <form action="" name="formularioDatos">
+                <form action="" name="formularioDatos" method="post" enctype="multipart/form-data">
                     <div class="capaNombre">Nombre </div>
                     <input type="text" name="nombre" value="" class="tNombre"/>
                     <div class="capaApellido">Apellido </div>
@@ -46,9 +46,9 @@ and open the template in the editor.
                     <div class="capaCargo">Cargo </div>
                     <input type="text" name="cargo" value="" class="tCargo"/>
                     <div class="capaFoto">Cargar Foto </div>
-                    <input type="file" name="cargarFoto" value="" class="tFoto"/>
-                    <input type="submit" value="Examinar" name="Examinar" />
-                    <img src="img/aceptar.png" alt="aceptar" class="botonAceptar" onclick='enviarDatos()'/>
+                    <input type="file" name="cargarFoto" class="tFoto"/>
+                    <input type="submit" value="Examinar" name="Examinar" class="BExaminar"/>
+                    <img src="img/aceptar.png" alt="aceptar" class="BAceptarDatos" onclick='enviarDatos()'/>
                 </form>
             </div>
             <div class="pie"></div>

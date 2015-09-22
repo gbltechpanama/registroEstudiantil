@@ -509,9 +509,28 @@ main{
     position: absolute;
     top: 336px;
     left: 306px;
-    width: 259px;
+    width: 174px;
     height: 26px;
     border-color: #000000;
     border: 1px;
     border-style: solid;
+}
+/**Para el boton de aceptar en cargar datos*/
+.BAceptarDatos{
+    float: left;
+    position: absolute;
+    top: 374px;
+    left: 891px;
+    width: 123px;
+    height: 27px;
+}
+/**Para el boton de examinar en cargar datos*/
+.BExaminar{
+    float: left;
+    position: absolute;
+    top: 336px;
+    left: 482px;
+    width: 123px;
+    height: 27px;
+    background-image: url("/img/examinar.png");
 }
