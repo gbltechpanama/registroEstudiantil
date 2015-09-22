@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login Profesor(a)</title>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css">
+        <script>
+            function enviarDatos()
+            {
+                document.forms[0].submit();
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="logo"></div>
+            <div class="membrete1">Ficha automatizada de estudiantes</div>
+            <div class="membrete">
+                Universidad Nororiental Privada <br>
+                "Gran Mariscal de Ayacucho" <br>
+            </div>
+            <div class="barra"></div>
+            <div class="barra2"></div>
+        </header>
+        <main>
+            <form name="formularioCambioClave" class="cambioClave">
+                <div class="texto1">Cambio de clave de ingreso</div>
+                <div class="texto2">Ingrese su clave actual</div>
+                <input type="password" name="claveAnterior" value="" class="cAnterior"/>
+                <div class="texto3">Ingrese su nueva clave</div>
+                <input type="password" name="claveNueva" value="" class="cNueva"/>
+                <div class="texto4">Confirme su nueva clave</div>
+                <input type="password" name="confirmarclave" value="" class="cConfirmar"/>
+                <img src="img/aceptar.png" alt="aceptar" class="botonAceptar2" onclick='enviarDatos()'/>
+            </form>
+            <div class="pie"></div>
+            <div class="logo2"></div>
+        </main>
+    </body>
+</html>

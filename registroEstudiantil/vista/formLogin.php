@@ -37,14 +37,10 @@
                     </div>
                     <input type="password" name="clave" value="" class="clave"/>
                     <img src="img/aceptar.png" alt="aceptar" class="botonAceptar" onclick='enviarDatos()'/>
-<!--                    <input type="submit" value="Aceptar" name="aceptar" />-->
                 </form>
             </div>
             <div class="pie"></div>
             <div class="logo2"></div>
         </main>
-<!--        <footer>
-            <div class="pie2"></div>
-        </footer>-->
     </body>
 </html>

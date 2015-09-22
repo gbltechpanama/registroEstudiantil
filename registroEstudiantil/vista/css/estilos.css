@@ -185,9 +185,97 @@ main{
     background-repeat: no-repeat;
     z-index: 1;
 }
-/***/
+/**Para el enlace de salida del error login*/
 .enlace1{
     position: absolute;
     top: 104px;
     left: 360px;
+}
+/**Para el cambio de clave*/
+.cambioClave{
+    width: 493px;
+    height: 286px;
+    position: absolute;
+    top: 307px;
+    left: calc(50% - 221px);
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #FFFFFF;
+    border: 6px;
+    background-image: url(../img/CambioClave-Profesor.png);
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+/***/
+.cAnterior{
+    position: absolute;
+    top: 82px;
+    left: 119px;
+    width: 258px;
+    height: 25px;
+}
+/***/
+.cNueva{
+    position: absolute;
+    top: 131px;
+    left: 119px;
+    width: 258px;
+    height: 25px;
+}
+/***/
+.cConfirmar{
+    position: absolute;
+    top: 182px;
+    left: 119px;
+    width: 258px;
+    height: 25px;
+}
+/**Para el boton de aceptar*/
+.botonAceptar2{
+    float: left;
+    position: absolute;
+    top: 239px;
+    right: 27px;
+    width: 123px;
+    height: 27px;
+}
+/**Para el titulo del cambio de clave*/
+.texto1{
+    position: absolute;
+    top: 15px;
+    left: 168px;
+    color: #000000;
+    text-align: center;
+    font-family: "Helvetica LT Std Cond", "Helvetica LT Std";
+    font-size: 14px;
+}
+/**Para la primera linea de texto*/
+.texto2{
+    position: absolute;
+    top: 62px;
+    left: 120px;
+    color: #000000;
+    text-align: center;
+    font-family: "Helvetica LT Std Cond", "Helvetica LT Std";
+    font-size: 14px;
+}
+/**Para la segunda linea de texto*/
+.texto3{
+    position: absolute;
+    top: 114px;
+    left: 120px;
+    color: #000000;
+    text-align: center;
+    font-family: "Helvetica LT Std Cond", "Helvetica LT Std";
+    font-size: 14px;
+}
+/**Para la tercera linea de texto*/
+.texto4{
+    position: absolute;
+    top: 165px;
+    left: 120px;
+    color: #000000;
+    text-align: center;
+    font-family: "Helvetica LT Std Cond", "Helvetica LT Std";
+    font-size: 14px;
 }
