@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<!--Error en el Login del profesor
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
 -->
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Error Login</title>
+        <title>Login Profesor(a)</title>
         <link href="css/estilos.css" rel="stylesheet" type="text/css">
+        <script>
+            function enviarDatos()
+            {
+                document.forms[0].submit();
+            }
+        </script>
     </head>
     <body>
         <header>
@@ -19,8 +28,11 @@
             <div class="barra2"></div>
         </header>
         <main>
-            <div class="errorLogin">
-                <a href="formLogin.php" class="enlace1">Ir al inicio</a>
+            <div class="ingresarCedula">
+                <form action="" name="formularioCedula">
+                    <input type="password" name="clave" value="" class="clave"/>
+                    <img src="img/aceptar.png" alt="aceptar" class="botonAceptar" onclick='enviarDatos()'/>
+                </form>
             </div>
             <div class="pie"></div>
             <div class="logo2"></div>

@@ -246,7 +246,7 @@ main{
     left: 168px;
     color: #000000;
     text-align: center;
-    font-family: "Helvetica LT Std Cond", "Helvetica LT Std";
+    font-family: "Helvetica LT Std Cond Blk", "Helvetica LT Std";
     font-size: 14px;
 }
 /**Para la primera linea de texto*/
@@ -278,4 +278,34 @@ main{
     text-align: center;
     font-family: "Helvetica LT Std Cond", "Helvetica LT Std";
     font-size: 14px;
+}
+/**Para el error de la base de datos*/
+.errorBaseDatos{
+    width: 590px;
+    height: 190px;
+    position: absolute;
+    top: 307px;
+    left: calc(50% - 290px);
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #FFFFFF;
+    border: 6px;
+    background-image: url(../img/errorLogin.png);
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+/***/
+.ingresarCedula{
+    width: 751px;
+    height: 144px;
+    position: absolute;
+    top: 307px;
+    left: calc(50% - 376px);
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #FFFFFF;
+    border: 6px;
+    background-image: url(../img/ingresarCI.png);
+    background-repeat: no-repeat;
+    z-index: 1;
 }
