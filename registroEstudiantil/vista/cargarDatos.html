@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Cargar Datos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header>
+            <div class="logo"></div>
+            <div class="membrete1">Ficha automatizada de estudiantes</div>
+            <div class="membrete">
+                Universidad Nororiental Privada <br>
+                "Gran Mariscal de Ayacucho" <br>
+            </div>
+            <div class="barra"></div>
+            <div class="barra2"></div>
+        </header>
+        <main>
+            <div class="capaDatos">
+                <form action="" name="formularioDatos">
+                    <div class="capaNombre">Nombre </div>
+                    <input type="text" name="nombre" value="" class="tNombre"/>
+                    <div class="capaApellido">Apellido </div>
+                    <input type="text" name="apellido" value="" class="tApellido"/>
+                    <div class="capaCedula">Cedula </div>
+                    <input type="text" name="cedula" value="" class="tCedula"/>
+                    <div class="capaDireccion">Direcci&oacute;n </div>
+                    <input type="text" name="direccion" value="" class="tDireccion"/>
+                    <div class="capaTelefono">Tel&eacute;fono </div>
+                    <input type="text" name="telefono" value="" class="tTelefono"/>
+                    <div class="capaEmail">Email </div>
+                    <input type="text" name="email" value="" class="tEmail"/>
+                    <div class="capaFechaNacimiento">Fecha de nacimiento </div>
+                    <input type="text" name="fechaNacimiento" value="" class="tFechaNacimiento"/>
+                    <div class="capaLugarNacimiento">Lugar de nacimiento </div>
+                    <input type="text" name="lugarNacimiento" value="" class="tLugarNacimiento"/>
+                    <div class="capaLugarTrabajo">Lugar de trabajo </div>
+                    <input type="text" name="lugarTrabajo" value="" class="tLugarTrabajo"/>
+                    <div class="capaCargo">Cargo </div>
+                    <input type="text" name="cargo" value="" class="tCargo"/>
+                    <div class="capaFoto">Cargar Foto </div>
+                    <input type="file" name="cargarFoto" value="" class="tFoto"/>
+                    <input type="submit" value="Examinar" name="Examinar" />
+                    <img src="img/aceptar.png" alt="aceptar" class="botonAceptar" onclick='enviarDatos()'/>
+                </form>
+            </div>
+            <div class="pie"></div>
+            <div class="logo2"></div>
+        </main>
+    </body>
+</html>

@@ -337,3 +337,181 @@ main{
     font-family: HelveticaNegrita;
     src: url('../fonts/HelveticaLTStd-Bold.ttf'); 
 }
+/**Para la carga de datos*/
+.capaDatos{
+    position: absolute;
+    top: 223px;
+    left: 0px;
+    width: 100%;
+    color: #000000;
+    text-align: right;
+    font-family: HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+}
+.capaNombre{
+    position: absolute;
+    top: 90px;
+    left: 236px;
+}
+.capaApellido{
+    position: absolute;
+    top: 90px;
+    left: 689px;
+}
+.capaCedula{
+    position: absolute;
+    top: 139px;
+    left: 241px;
+}
+.capaDireccion{
+    position: absolute;
+    top: 139px;
+    left: 683px;
+}
+.capaTelefono{
+    position: absolute;
+    top: 189px;
+    left: 230px;
+}
+.capaEmail{
+    position: absolute;
+    top: 189px;
+    left: 705px;
+}
+.capaFechaNacimiento{
+    position: absolute;
+    top: 241px;
+    left: 155px;
+}
+.capaLugarNacimiento{
+    position: absolute;
+    top: 241px;
+    left: 612px;
+    width: 130px;
+}
+.capaLugarTrabajo{
+    position: absolute;
+    top: 291px;
+    left: 181px;
+}
+.capaCargo{
+    position: absolute;
+    top: 291px;
+    left: 705px;
+}
+.capaFoto{
+    position: absolute;
+    top: 343px;
+    left: 209px;
+}
+/**Para las cajas de texto*/
+.tNombre{
+    position: absolute;
+    top: 83px;
+    left: 306px;
+    width: 258px;
+    height: 25px;
+    border-color: #000000;
+    border: 1px;
+    border-style: solid;
+}
+.tApellido{
+    position: absolute;
+    top: 83px;
+    left: 766px;
+    width: 258px;
+    height: 25px;
+    border-color: #000000;
+    border: 1px;
+    border-style: solid;
+}
+.tCedula{
+    position: absolute;
+    top: 135px;
+    left: 306px;
+    width: 258px;
+    height: 25px;
+    border-color: #000000;
+    border: 1px;
+    border-style: solid;
+}
+.tDireccion{
+    position: absolute;
+    top: 135px;
+    left: 766px;
+    width: 258px;
+    height: 25px;
+    border-color: #000000;
+    border: 1px;
+    border-style: solid;
+}
+.tTelefono{
+    position: absolute;
+    top: 186px;
+    left: 306px;
+    width: 258px;
+    height: 25px;
+    border-color: #000000;
+    border: 1px;
+    border-style: solid;
+}
+.tEmail{
+    position: absolute;
+    top: 186px;
+    left: 766px;
+    width: 258px;
+    height: 25px;
+    border-color: #000000;
+    border: 1px;
+    border-style: solid;
+}
+.tFechaNacimiento{
+    position: absolute;
+    top: 237px;
+    left: 306px;
+    width: 258px;
+    height: 25px;
+    border-color: #000000;
+    border: 1px;
+    border-style: solid;
+}
+.tLugarNacimiento{
+    position: absolute;
+    top: 237px;
+    left: 766px;
+    width: 258px;
+    height: 25px;
+    border-color: #000000;
+    border: 1px;
+    border-style: solid;
+}
+.tLugarTrabajo{
+    position: absolute;
+    top: 288px;
+    left: 306px;
+    width: 258px;
+    height: 25px;
+    border-color: #000000;
+    border: 1px;
+    border-style: solid;
+}
+.tCargo{
+    position: absolute;
+    top: 288px;
+    left: 766px;
+    width: 258px;
+    height: 25px;
+    border-color: #000000;
+    border: 1px;
+    border-style: solid;
+}
+.tFoto{
+    position: absolute;
+    top: 336px;
+    left: 306px;
+    width: 259px;
+    height: 26px;
+    border-color: #000000;
+    border: 1px;
+    border-style: solid;
+}
