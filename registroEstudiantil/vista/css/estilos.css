@@ -514,6 +514,7 @@ main{
     border-color: #000000;
     border: 1px;
     border-style: solid;
+    direction: rtl;
 }
 /**Para el boton de aceptar en cargar datos*/
 .BAceptarDatos{
@@ -532,5 +533,6 @@ main{
     left: 482px;
     width: 123px;
     height: 27px;
-    background-image: url("/img/examinar.png");
+    background-image: url(../img/examinar.png);
+    background-repeat: no-repeat;
 }

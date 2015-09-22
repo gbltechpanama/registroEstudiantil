@@ -34,11 +34,11 @@ and open the template in the editor.
                     <div class="capaDireccion">Direcci&oacute;n </div>
                     <input type="text" name="direccion" value="" class="tDireccion"/>
                     <div class="capaTelefono">Tel&eacute;fono </div>
-                    <input type="text" name="telefono" value="" class="tTelefono"/>
+                    <input type="tel" name="telefono" value="" class="tTelefono"/>
                     <div class="capaEmail">Email </div>
-                    <input type="text" name="email" value="" class="tEmail"/>
+                    <input type="email" name="email" value="" class="tEmail"/>
                     <div class="capaFechaNacimiento">Fecha de nacimiento </div>
-                    <input type="text" name="fechaNacimiento" value="" class="tFechaNacimiento"/>
+                    <input type="datetime" name="fechaNacimiento" value="" class="tFechaNacimiento"/>
                     <div class="capaLugarNacimiento">Lugar de nacimiento </div>
                     <input type="text" name="lugarNacimiento" value="" class="tLugarNacimiento"/>
                     <div class="capaLugarTrabajo">Lugar de trabajo </div>
@@ -46,8 +46,8 @@ and open the template in the editor.
                     <div class="capaCargo">Cargo </div>
                     <input type="text" name="cargo" value="" class="tCargo"/>
                     <div class="capaFoto">Cargar Foto </div>
-                    <input type="file" name="cargarFoto" class="tFoto"/>
-                    <input type="submit" value="Examinar" name="Examinar" class="BExaminar"/>
+                    <input type="file" name="cargarFoto" multiple class="tFoto"/>
+                    <!--input type="submit" value="Examinar" name="Examinar" class="BExaminar"/-->
                     <img src="img/aceptar.png" alt="aceptar" class="BAceptarDatos" onclick='enviarDatos()'/>
                 </form>
             </div>
