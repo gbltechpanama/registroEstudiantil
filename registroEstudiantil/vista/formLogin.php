@@ -30,7 +30,7 @@
                 $GET_SESSION['action']="";
             ?>
             <div class="capaLogin">
-                <form action="" name="formularioLogin">
+                <form action="" name="formularioLogin" method="get">
                     <div class="bienvenida">Bienvenido(a) Profesor(a)
                         <br> 
                         Ingrese su clave de ingreso

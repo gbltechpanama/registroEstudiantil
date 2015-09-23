@@ -42,7 +42,7 @@
 }
 /**Para el logo*/
 .logo{
-    background-image: url(../img/logo.png);
+    background-image: url(../img/logo3.png);
     background-repeat: no-repeat;
     padding-top: 0%;
     padding-bottom: 0%;
@@ -131,21 +131,16 @@ main{
 }
 /**Para la capa del login*/
 .capaLogin{
-    width: 751px;
-    height: 144px;
+    width: 763px;
+    height: 158px;
     position: absolute;
-    top: 307px;
-    left: calc(50% - 376px);
+    top: 302px;
+    left: calc(50% - 381px);
     margin-left: auto;
     margin-right: auto;
-    border: 5px;
-    border-style: solid;
-    border-color: #FFFFFF;
     background-image: url(../img/formulario.png);
     background-repeat: no-repeat;
     z-index: 1;
-    -webkit-box-shadow: 0px 2px #C7C7C7;
-    box-shadow: 0px 2px #C7C7C7;
 }
 /***/
 .bienvenida{
@@ -602,4 +597,94 @@ main{
     height: 27px;
     background-image: url(../img/examinar.png);
     background-repeat: no-repeat;
+}
+/**Para el resumen de los datos del estudiante*/
+.mostrarDatos{
+    position: absolute;
+    top: 223px;
+    left: 0px;
+    width: 100%;
+    color: #000000;
+    text-align: right;
+    font-family: HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+}
+/**Capa de la foto*/
+.mostrarFoto{
+    position: absolute;
+    top: 25px;
+    left: 66px;
+    width: 154px;
+    height: 167px;
+    border: 1px;
+    border-color: #000000;
+    border-style: solid;
+}
+/**Capa del nombre*/
+.mostarNombre{
+    position: absolute;
+    top: 54px;
+    left: 242px;
+    width: 349px;
+    height: 50px;
+    color: #001647;
+    text-align: justify;
+    font-family: HelveticaNegrita, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 24px;
+}
+/**Capa de la cedula*/
+.mostarCedula{
+    position: absolute;
+    top: 108px;
+    left: 242px;
+    width: 349px;
+    height: 50px;
+    color: #001647;
+    text-align: justify;
+    font-family: HelveticaNegrita, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 18px;
+}
+/**Capa del telefono*/
+.mostarTelefono{
+    position: absolute;
+    top: 137px;
+    left: 242px;
+    width: 349px;
+    height: 50px;
+    color: #001647;
+    text-align: justify;
+    font-family: HelveticaNegrita, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 18px;
+}
+/**Separador vertical*/
+.barra3{
+    position: absolute;
+    top: 223px;
+    left: 66px;
+    width: 1048px;
+    height: 25px;
+    color: #000000;
+    text-align: justify;
+    font-family: "Myriad Pro Regular", HelveticaNegrita;
+    font-size: 18px;
+    overflow: hidden;
+}
+/**Capa del telefono, con letra 14*/
+.mostarTelefono2{
+    position: absolute;
+    top: 240px;
+    left: 66px;
+    width: 349px;
+    height: 50px;
+    color: #001647;
+    text-align: justify;
+    font-family: HelveticaNegrita, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+}
+/**Texto en negro, con letra 14*/
+.texto5{
+    color: #000000;
+    text-align: justify;
+    font-family: HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
 }
