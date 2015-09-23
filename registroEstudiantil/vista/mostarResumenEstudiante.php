@@ -12,24 +12,29 @@ and open the template in the editor.
     </head>
     <body>
         <header>
-            <div class="logo3"></div>
+            <div class="logo"></div>
             <div class="barra"></div>
             <div class="barra2"></div>
         </header>
         <main>
             <div class="mostrarDatos">
                 <?php
-                    printf("<img src=\"img/logo3.jpg\" class=\"mostrarFoto\"/>");
-                    printf("<div class=\"mostarNombre\">".$nombre."</div>");
-                    printf("<div class=\"mostarCedula\">C.I. ".$cedula."</div>");
-                    printf("<div class=\"mostarTelefono\">Tel&eacute;fono: ".$telefono."</div>");
+                    printf("<img src=\"img/".$foto."\" class=\"mostrarFoto\" alt=\"Foto\"/>");
+                    printf("<div class=\"mostrarNombre\">".$nombre."</div>");
+                    printf("<div class=\"mostrarCedula\">C.I. ".$cedula."</div>");
+                    printf("<div class=\"mostrarTelefono\">Tel&eacute;fono: ".$telefono."</div>");
                     printf("<div class=\"barra3\">");
                     for($i=0; $i < 180; $i++){
                         printf("·");
                     }
                     printf("</div>");
                     printf("<div class=\"mostrarTelefono2\">Tel&eacute;fono <div class=\"texto5\">".$telefono."</div></div>");
-                    printf("<div class=\"mostrarFechaNacimiento\"></div>");
+                    printf("<div class=\"mostrarFechaNacimiento\">Fecha de Nacimiento <div class=\"texto5\">".$fechaNacimiento."</div></div>");
+                    printf("<div class=\"mostrarLugarTrabajo\">Lugar de Trabajo <div class=\"texto5\">".$lugarTrabajo."</div></div>");
+                    printf("<div class=\"mostrarDireccion\">Direcci&oacute;n <div class=\"texto5\">".$direccion."</div></div>");
+                    printf("<div class=\"mostrarEmail\">Email <div class=\"texto5\">".$email."</div></div>");
+                    printf("<div class=\"mostrarLugarNacimiento\">Lugar de Nacimiento <div class=\"texto5\">".$lugarNacimiento."</div></div>");
+                    printf("<div class=\"mostrarCargo\">Cargo <div class=\"texto5\">".$cargo."</div></div>");
                 ?>
             </div>
             <div class="pie"></div>

@@ -48,10 +48,10 @@
     padding-bottom: 0%;
     padding-left: 0%;
     padding-right: 0%;
-    top: 56px;
+    top: 0px;
     left: 0px;
-    width: 116px;
-    height: 99px;
+    width: 590px;
+    height: 207px;
     position: absolute;
     min-width: 116px;
     min-height: 99px;
@@ -605,7 +605,7 @@ main{
     left: 0px;
     width: 100%;
     color: #000000;
-    text-align: right;
+    text-align: justify;
     font-family: HelveticaCondensada, "Helvetica LT Std";
     font-size: 14px;
 }
@@ -621,7 +621,7 @@ main{
     border-style: solid;
 }
 /**Capa del nombre*/
-.mostarNombre{
+.mostrarNombre{
     position: absolute;
     top: 54px;
     left: 242px;
@@ -633,7 +633,7 @@ main{
     font-size: 24px;
 }
 /**Capa de la cedula*/
-.mostarCedula{
+.mostrarCedula{
     position: absolute;
     top: 108px;
     left: 242px;
@@ -645,7 +645,7 @@ main{
     font-size: 18px;
 }
 /**Capa del telefono*/
-.mostarTelefono{
+.mostrarTelefono{
     position: absolute;
     top: 137px;
     left: 242px;
@@ -670,12 +670,12 @@ main{
     overflow: hidden;
 }
 /**Capa del telefono, con letra 14*/
-.mostarTelefono2{
+.mostrarTelefono2{
     position: absolute;
-    top: 240px;
+    top: 260px;
     left: 66px;
     width: 349px;
-    height: 50px;
+    height: 26px;
     color: #001647;
     text-align: justify;
     font-family: HelveticaNegrita, HelveticaCondensada, "Helvetica LT Std";
@@ -687,4 +687,141 @@ main{
     text-align: justify;
     font-family: HelveticaCondensada, "Helvetica LT Std";
     font-size: 14px;
+}
+.mostrarFechaNacimiento{
+    position: absolute;
+    top: 309px;
+    left: 66px;
+    width: 349px;
+    height: 26px;
+    color: #001647;
+    text-align: justify;
+    font-family: HelveticaNegrita, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+}
+.mostrarLugarTrabajo{
+    position: absolute;
+    top: 361px;
+    left: 66px;
+    width: 349px;
+    height: 26px;
+    color: #001647;
+    text-align: justify;
+    font-family: HelveticaNegrita, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+}
+.mostrarDireccion{
+    position: absolute;
+    top: 137px;
+    left: 590px;
+    width: 349px;
+    height: 26px;
+    color: #001647;
+    text-align: justify;
+    font-family: HelveticaNegrita, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+}
+.mostrarEmail{
+    position: absolute;
+    top: 260px;
+    left: 590px;
+    width: 349px;
+    height: 26px;
+    color: #001647;
+    text-align: justify;
+    font-family: HelveticaNegrita, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+}
+.mostrarLugarNacimiento{
+    position: absolute;
+    top: 309px;
+    left:590px;
+    width: 349px;
+    height: 26px;
+    color: #001647;
+    text-align: justify;
+    font-family: HelveticaNegrita, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+}
+.mostrarCargo{
+    position: absolute;
+    top: 361px;
+    left: 590px;
+    width: 349px;
+    height: 26px;
+    color: #001647;
+    text-align: justify;
+    font-family: HelveticaNegrita, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+}
+/**Capa de la foto en administar estudiante*/
+.mostrarFoto2{
+    position: absolute;
+    top: 96px;
+    left: 173px;
+    width: 154px;
+    height: 167px;
+    border: 1px;
+    border-color: #000000;
+    border-style: solid;
+}
+/**Capa del nombre*/
+.mostrarNombre2{
+    position: absolute;
+    top: 128px;
+    left: 340px;
+    width: 349px;
+    height: 50px;
+    color: #001647;
+    text-align: justify;
+    font-family: HelveticaNegrita, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 24px;
+}
+/**Capa de la cedula*/
+.mostrarCedula2{
+    position: absolute;
+    top: 183px;
+    left: 340px;
+    width: 349px;
+    height: 50px;
+    color: #001647;
+    text-align: justify;
+    font-family: HelveticaNegrita, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 18px;
+}
+/**Capa del telefono*/
+.mostrarTelefono3{
+    position: absolute;
+    top: 210px;
+    left: 340px;
+    width: 349px;
+    height: 50px;
+    color: #001647;
+    text-align: justify;
+    font-family: HelveticaNegrita, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 18px;
+}
+/**Para el boton de ver todo*/
+.botonVerTodo{
+    position: absolute;
+    top: 96px;
+    left: 719px;
+    background-image: url(../img/verTodo.png);
+    background-repeat: no-repeat;
+}
+/**Para el boton de modificar*/
+.botonModificar{
+    position: absolute;
+    top: 154px;
+    left: 719px;
+    background-image: url(../img/verTodo.png);
+    background-repeat: no-repeat;
+}
+/**Para el boton de eliminar*/
+.botonEliminar{
+    position: absolute;
+    top: 218px;
+    left: 719px;
+    background-image: url(../img/verTodo.png);
+    background-repeat: no-repeat;
 }

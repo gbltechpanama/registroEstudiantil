@@ -44,12 +44,16 @@ class BackController {
         $this->estadoEstudiante = $modelo->mdlValidarCI($cedulaEstudiante);
         session_start();
         if($this->estadoEstudiante){
+            $resultadoLogin = True;
             $_SESSION['cedula'] = $cedulaEstudiante;
-            header("");
+            $_SESSION['resultadoLogin'] = $resultadoLogin;
+            header("../vista/administrarEstudiante.php");
         }
         else {
-            $_SESSION['cedula'] = "";
-            header("");
+            $resultadoLogin = FALSE;
+            $_SESSION['cedula'] = "$cedulaEstudiante";
+            $_SESSION['resultadoLogin'] = $resultadoLogin;
+            header("../vista/cargarDatos.html");
         }
     }
     /**Este método permite obtener el resumen de los datos de un estudiante. 
@@ -82,6 +86,29 @@ class BackController {
             $_SESSION['action'] = "";
             $_SESSION['cedula'] = "";
             header("errorBD.Html");
+        }
+    }
+    /**Este método envía los datos a la vista de administrar estudiante, 
+     * indicado por el número de cedula.
+     * @param  $cedulaEstudiante Tipo String, almacena la cedula del estudiante.
+     */
+    public function ctrlAdministrarEstudiante($cedulaEstudiante)
+    {
+        $modelo = new Model();
+        $this->datosEstudiante = $modelo->mdlObtenerDatosEstudiante($cedulaEstudiante);
+        session_start();
+        if(count($this->datosEstudiante) > 0 ){
+            $_SESSION['cedulaEstudiante'] = $this->datosEstudiante[0];
+            $_SESSION['nombreEstudiante'] = $this->datosEstudiante[1];
+            $_SESSION['apellidoEstudiante'] = $this->datosEstudiante[2];
+            $_SESSION['fechaNac'] = $this->datosEstudiante[3];
+            $_SESSION['lugarNac'] = $this->datosEstudiante[4];
+            $_SESSION['lugarTrabajo'] = $this->datosEstudiante[5];
+            $_SESSION['cargoTrabajo'] = $this->datosEstudiante[6];
+            header("../vista/administrarEstudiante.php");
+        }
+        else {
+            header("../vista/errorBD.html");
         }
     }
 }

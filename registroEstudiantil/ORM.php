@@ -10,9 +10,9 @@ class BaseDatos
      */
     private static $servidor = "localhost";
     private static $puerto = "3306";
-    private static $baseDatos = "erd";
-    private static $usuario = "universidad";
-    private static $password = "universidad.2015";
+    private static $baseDatos = "estudiantil";
+    private static $usuario = "root";
+    private static $password = "mago de oz";
     
     private function modelAbrirConexionBD()
     {
@@ -25,14 +25,11 @@ class BaseDatos
         
     }
 
-    public function modelQueryDB($query)
+    public function modeloQueryDB($query)
     {
         $conexion = $this->modelAbrirConexionBD();
-        
         $resultado = mysql_query($query, $conexion);
-        
         $this->modelCerrarConexionBD();
-
         return $resultado;
     }
     

@@ -19,17 +19,12 @@ and open the template in the editor.
     <body>
         <header>
             <div class="logo"></div>
-            <div class="membrete1">Ficha automatizada de estudiantes</div>
-            <div class="membrete">
-                Universidad Nororiental Privada <br>
-                "Gran Mariscal de Ayacucho" <br>
-            </div>
             <div class="barra"></div>
             <div class="barra2"></div>
         </header>
         <main>
             <div class="ingresarCedula">
-                <form action="" name="formularioCedula">
+                <form action="../controlador/FrontController.php?action=validarCI" name="formularioCedula" method="post">
                     <input type="password" name="clave" value="" class="clave"/>
                     <img src="img/aceptar.png" alt="aceptar" class="botonAceptar" onclick='enviarDatos()'/>
                 </form>

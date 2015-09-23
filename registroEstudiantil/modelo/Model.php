@@ -215,14 +215,19 @@ class Model {
     public function mdlValidarCI($cedulaEstudiante)
     {
         $BD = new BaseDatos();
-        $query ="select * from estudiantes where cedulaEstudiane='"
+        $query ="select * from estudiantes where cedulaEstudiante='"
                 .$cedulaEstudiante."';";
-        $resultado = $BD->mdlQueryDB($query);
-        if($resultado->num_rows > 0){
-            return TRUE;
+        $resultado = $BD->modeloQueryDB($query);
+        if($resultado->connect_error){
+            die("Coneccion fallida: " . $conn->connect_error);
         }
-        else {
-            return FALSE;
+        else{
+            if($resultado != NULL){
+            return TRUE;
+            }
+            else {
+                return FALSE;
+            }
         }
     }
     /**: Este método se encarga de cambiar la clave de acceso del administrador 
