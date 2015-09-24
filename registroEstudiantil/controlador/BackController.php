@@ -46,7 +46,8 @@ class BackController {
         if($this->estadoEstudiante){
             $resultadoLogin = True;
             $_SESSION['cedula'] = $cedulaEstudiante;
-            $_SESSION['resultadoLogin'] = $resultadoLogin; //Llamar metodo administrarEstudiante
+            $_SESSION['resultadoLogin'] = $resultadoLogin; 
+            //Llama al metodo administrarEstudiante
             $this->ctrlAdministrarEstudiante($cedulaEstudiante);
         }
         else {
@@ -95,16 +96,20 @@ class BackController {
     public function ctrlAdministrarEstudiante($cedulaEstudiante)
     {
         $modelo = new Model();
-        $this->datosEstudiante = $modelo->mdlObtenerDatosEstudiante($cedulaEstudiante);
+        $this->datosEstudiante = $modelo->mdlObtenerDatosEstudiante2($cedulaEstudiante);
         session_start();
         if(count($this->datosEstudiante) > 0 ){
             $_SESSION['cedulaEstudiante'] = $this->datosEstudiante[0];
             $_SESSION['nombreEstudiante'] = $this->datosEstudiante[1];
             $_SESSION['apellidoEstudiante'] = $this->datosEstudiante[2];
-            $_SESSION['fechaNac'] = $this->datosEstudiante[3];
-            $_SESSION['lugarNac'] = $this->datosEstudiante[4];
-            $_SESSION['lugarTrabajo'] = $this->datosEstudiante[5];
-            $_SESSION['cargoTrabajo'] = $this->datosEstudiante[6];
+            $_SESSION['direccionEstudiante'] = $this->datosEstudiante[3];
+            $_SESSION['telefonoEstudiante'] = $this->datosEstudiante[4];
+            $_SESSION['email'] = $this->datosEstudiante[5];
+            $_SESSION['fechaNac'] = $this->datosEstudiante[6];
+            $_SESSION['lugarNac'] = $this->datosEstudiante[7];
+            $_SESSION['lugarTrabajo'] = $this->datosEstudiante[8];
+            $_SESSION['cargoTrabajo'] = $this->datosEstudiante[9];
+            $_SESSION['rutaFoto'] =  $this->datosEstudiante[10];
             header("Location: ../vista/administrarEstudiante.php");
         }
         else {

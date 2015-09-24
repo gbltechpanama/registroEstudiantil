@@ -21,9 +21,13 @@ and open the template in the editor.
             <div class="mostrarDatos">
                 <?php
                     session_start();
-//                    $_SESSION[]=
+                    $foto = $_POST['rutaFoto'];
+                    $nombre = $_POST['nombreEstudiante'];
+                    $apellido = $_POST['apellidoEstudiante'];
+                    $cedula = $_POST['cedulaEstudiante'];
+                    $telefono = $_POST['telefonoEstudiante'];
                     printf("<img src=\"img/".$foto."\" class=\"mostrarFoto2\" alt=\"Foto\"/>");
-                    printf("<div class=\"mostrarNombre2\">".$nombre."</div>");
+                    printf("<div class=\"mostrarNombre2\">".$nombre."  ".$apellido."</div>");
                     printf("<div class=\"mostrarCedula2\">C.I. ".$cedula."</div>");
                     printf("<div class=\"mostrarTelefono3\">Tel&eacute;fono: ".$telefono."</div>");
                 ?>
@@ -34,8 +38,5 @@ and open the template in the editor.
             <div class="pie"></div>
             <div class="logo2"></div>
         </main>
-        <?php
-        // put your code here
-        ?>
     </body>
 </html>
