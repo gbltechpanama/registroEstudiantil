@@ -11,8 +11,8 @@ class BaseDatos
     private static $servidor = "localhost";
     private static $puerto = "3306";
     private static $baseDatos = "estudiantil";
-    private static $usuario = "root";
-    private static $password = "mago de oz";
+    private static $usuario = "universidad";
+    private static $password = "univerisdad.2015";
     
     private function modelAbrirConexionBD()
     {

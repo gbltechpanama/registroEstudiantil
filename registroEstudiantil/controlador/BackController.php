@@ -96,7 +96,7 @@ class BackController {
     public function ctrlAdministrarEstudiante($cedulaEstudiante)
     {
         $modelo = new Model();
-        $this->datosEstudiante = $modelo->mdlObtenerDatosEstudiante2($cedulaEstudiante);
+        $this->datosEstudiante = $modelo->mdlObtenerDatosEstudiante($cedulaEstudiante);
         session_start();
         if(count($this->datosEstudiante) > 0 ){
             $_SESSION['cedulaEstudiante'] = $this->datosEstudiante[0];

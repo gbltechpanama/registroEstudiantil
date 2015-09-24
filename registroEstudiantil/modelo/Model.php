@@ -10,22 +10,6 @@ require_once '../ORM.php';
  * @author Ricardo Presilla
  */
 class Model {
-    /**Este método devolverá los datos de un estudiante en específico desde la 
-     * tabla “estudiantes”, tomando en cuenta que el parámetro enviado 
-     * “cedulaEstudiante” coincida con el campo “cedula” de la tabla en la BD.
-     * @param $cedulaEstudiante Tipo String, contiene la cedula del estudiante.
-     * @return Object Array.
-     */
-    public function mdlObtenerDatosEstudiante($cedulaEstudiante)
-    {
-        $BD = new BaseDatos();
-        $query = "select * from estudiantes where cedulaEstudiante = '"
-                .$cedulaEstudiante."'";
-        $resultado = $BD->modeloQueryDB($query);
-        $row = mysql_fetch_row($resultado);
-        $datos = $row[0];
-        return $datos;
-    }
     /**Este método devolverá los nombres de los estudiantes desde la tabla 
      * “estudiantes”, tomando en cuenta que el parámetro enviado “criterio” 
      * coincida parcialmente con todos los campos de la tabla en la BD.
@@ -131,7 +115,7 @@ class Model {
         //Cambiando de nombre la foto ha guardar.
         if(rename("../img/".$foto[nombre], $rutafoto)){
         //Preparando la instrucción
-            $query ="insert to estudiantes ( cedulaEstudiane, nombres, apellidos, "
+            $query ="insert to estudiantes ( cedulaEstudiante, nombres, apellidos, "
                     ."direccion, telefono, email, fechaNacimiento, lugarNacimiento,"
                     ."lugarTrabajo, cargoTrabajo, rutaFoto ) values ('"
                     .$cedulaEstudiante."', '".$nombre."', '".$apellido."', '"
@@ -177,7 +161,7 @@ class Model {
         //Cambiando de nombre la foto ha guardar.
         if(rename("../img/".$foto[nombre], $rutafoto)){
         //Preparando la instrucción
-            $query ="update estudiantes set cedulaEstudiane='".$cedulaEstudiante
+            $query ="update estudiantes set cedulaEstudiante='".$cedulaEstudiante
                     ."', nombres='".$nombre."', apellidos='".$apellido."', "
                     ."direccion='".$direccion."', telefono='".$telefono."', "
                     ."email='".$email."', fechaNacimiento='".$fechaNacimiento
@@ -197,10 +181,10 @@ class Model {
      * coincida con el campo “cedulaEstudiante” de la tabla “estudiantes” de la 
      * BD.
      */
-    public function mdlObtenerDatosEstudiante2($cedulaEstudiante)
+    public function mdlObtenerDatosEstudiante($cedulaEstudiante)
     {
         $BD = new BaseDatos();
-        $query ="select * from estudiantes where cedulaEstudiane='"
+        $query ="select * from estudiantes where cedulaEstudiante='"
                 .$cedulaEstudiante."';";
         $resultado = $BD->modeloQueryDB($query);
         if($resultado->num_rows > 0){
