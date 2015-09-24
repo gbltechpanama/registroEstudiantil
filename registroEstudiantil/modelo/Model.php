@@ -22,7 +22,7 @@ class Model {
         '%".$criterio."%' or email like '%".$criterio."%' or fechaNacimiento like '%".$criterio."%' or 
         lugarNacimiento like '%".$criterio."%' or lugarTrabajo like '%".$criterio."%' or
         cargoTrabajo like '%".$criterio."%' or rutaFoto like '%".$criterio."%'";
-        $resultado = $BD->modeloQueryDB($query);
+        $resultado = $BD->modelQueryDB($query);
         if($resultado->num_rows > 0){
             $datos = $BD->modelConvertirEnArray($resultado);
         }
@@ -43,7 +43,7 @@ class Model {
         '%".$criterio."%' or email like '%".$criterio."%' or fechaNacimiento like '%".$criterio."%' or 
         lugarNacimiento like '%".$criterio."%' or lugarTrabajo like '%".$criterio."%' or
         cargoTrabajo like '%".$criterio."%' or rutaFoto like '%".$criterio."%'";
-        $resultado = $BD->modeloQueryDB($query);
+        $resultado = $BD->modelQueryDB($query);
         if($resultado->num_rows > 0){
             $datos = $BD->modelConvertirEnArray($resultado);
         }
@@ -65,7 +65,7 @@ class Model {
                 .$criterio."%' or lugarNacimiento like '%".$criterio."%' or "
                 ."lugarTrabajo like '%".$criterio."%' or cargoTrabajo like '%"
                 .$criterio."%' or rutaFoto like '%".$criterio."%'";
-        $resultado = $BD->modeloQueryDB($query);
+        $resultado = $BD->modelQueryDB($query);
         if($resultado->num_rows > 0){
             $datos = $BD->modelConvertirEnArray($resultado);
         }
@@ -87,7 +87,7 @@ class Model {
                 .$criterio."%' or lugarNacimiento like '%".$criterio."%' or "
                 ."lugarTrabajo like '%".$criterio."%' or cargoTrabajo like '%"
                 .$criterio."%' or rutaFoto like '%".$criterio."%'";
-        $resultado = $BD->modeloQueryDB($query);
+        $resultado = $BD->modelQueryDB($query);
         if($resultado->num_rows > 0){
             $datos = $BD->modelConvertirEnArray($resultado);
         }
@@ -110,7 +110,7 @@ class Model {
             $rutaFoto = "../img/".rand(1, 99999).".jpg";
             $query = "select rutaFoto from estudiantes where rutaFoto = '"
                     .$rutaFoto."'";
-            $resultado = $BD->modeloQueryDB($query);
+            $resultado = $BD->modelQueryDB($query);
         }while ($resultado->num_rows > 0);
         //Cambiando de nombre la foto ha guardar.
         if(rename("../img/".$foto[nombre], $rutafoto)){
@@ -122,7 +122,7 @@ class Model {
                     .$direccion."', '".$telefono."', '".$email."', '"
                     .$fechaNacimiento."', '".$LugarNacimiento."', '"
                     .$lugarTrabajo."', '".$cargoTrabajo."', '".$rutaFoto."' )";
-            $resultado = $BD->modeloQueryDB($query);
+            $resultado = $BD->modelQueryDB($query);
         }
         else{
             $resultado = FALSE;
@@ -136,7 +136,7 @@ class Model {
         $BD = new BaseDatos();
         $query = "select password from acceso where password=MD5('".$password
                 ."');";
-        $resultado = $BD->modeloQueryDB($query);
+        $resultado = $BD->modelQueryDB($query);
         if($resultado->num_rows > 0){
             return TRUE;
         }
@@ -156,7 +156,7 @@ class Model {
             $rutaFoto = "../img/".rand(1, 99999).".jpg";
             $query = "select rutaFoto from estudiantes where rutaFoto = '"
                     .$rutaFoto."'";
-            $resultado = $BD->modeloQueryDB($query);
+            $resultado = $BD->modelQueryDB($query);
         }while ($resultado->num_rows > 0);
         //Cambiando de nombre la foto ha guardar.
         if(rename("../img/".$foto[nombre], $rutafoto)){
@@ -169,7 +169,7 @@ class Model {
                     .$lugarTrabajo."', cargoTrabajo='".$cargoTrabajo."',
                     rutaFoto='".$rutaFoto."' where cedulaEstudiane='"
                     .$cedulaAnterior."';";
-            $resultado = $BD->modeloQueryDB($query);
+            $resultado = $BD->modelQueryDB($query);
         }
         else{
             $resultado = FALSE;
@@ -186,7 +186,7 @@ class Model {
         $BD = new BaseDatos();
         $query ="select * from estudiantes where cedulaEstudiante='"
                 .$cedulaEstudiante."';";
-        $resultado = $BD->modeloQueryDB($query);
+        $resultado = $BD->modelQueryDB($query);
         if($resultado->num_rows > 0){
             $datos = $BD->modelConvertirEnArray($resultado);
         }
@@ -201,7 +201,7 @@ class Model {
         $BD = new BaseDatos();
         $query ="select * from estudiantes where cedulaEstudiante='"
                 .$cedulaEstudiante."';";
-        $resultado = $BD->modeloQueryDB($query);
+        $resultado = $BD->modelQueryDB($query);
         if($resultado->connect_error){
             die("Coneccion fallida: " . $conn->connect_error);
         }
@@ -225,7 +225,7 @@ class Model {
        $BD = new BaseDatos();
         $query = "update acceso set password= MD5('".$claveNueva
                     ."') where password='".$claveAnterior."';";
-        $resultado = $BD->modeloQueryDB($query);
+        $resultado = $BD->modelQueryDB($query);
         if($resultado->num_rows > 0){
             return TRUE;
         }

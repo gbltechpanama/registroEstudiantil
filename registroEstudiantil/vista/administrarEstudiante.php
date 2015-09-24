@@ -10,6 +10,11 @@ and open the template in the editor.
         <title>Administrar Estudiante</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/estilos.css" rel="stylesheet" type="text/css">
+        <script>
+            function verTodo()
+            {
+            }
+        </script>
     </head>
     <body>
         <header>
@@ -21,11 +26,17 @@ and open the template in the editor.
             <div class="mostrarDatos">
                 <?php
                     session_start();
-                    $foto = $_POST['rutaFoto'];
+                    $foto = $_POST['rutaFotoEstudiante'];
                     $nombre = $_POST['nombreEstudiante'];
                     $apellido = $_POST['apellidoEstudiante'];
                     $cedula = $_POST['cedulaEstudiante'];
                     $telefono = $_POST['telefonoEstudiante'];
+                    $direccion = $_POST['direccionEstudiante'];
+                    $email = $_POST['email'];
+                    $fechaNacimiento = $_POST['fechaNac'];
+                    $lugarNacimiento = $_POST['lugarNac'];
+                    $lugarTrabajo = $_POST['lugarTrabajo'];
+                    $cargoTrabajo = $_POST['cargoTrabajo'];
                     printf("<img src=\"img/".$foto."\" class=\"mostrarFoto2\" alt=\"Foto\"/>");
                     printf("<div class=\"mostrarNombre2\">".$nombre."  ".$apellido."</div>");
                     printf("<div class=\"mostrarCedula2\">C.I. ".$cedula."</div>");

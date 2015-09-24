@@ -25,7 +25,7 @@ class BaseDatos
         
     }
 
-    public function modeloQueryDB($query)
+    public function modelQueryDB($query)
     {
         $conexion = $this->modelAbrirConexionBD();
         $resultado = mysql_query($query, $conexion);

@@ -52,7 +52,7 @@ class BackController {
         }
         else {
             $resultadoLogin = FALSE;
-            $_SESSION['cedula'] = "$cedulaEstudiante";
+            $_SESSION['cedula'] = $cedulaEstudiante;
             $_SESSION['resultadoLogin'] = $resultadoLogin;
             header("Location: ../vista/cargarDatos.html");
         }
@@ -65,7 +65,25 @@ class BackController {
     {
         $modelo = new Model();
         $this->datosEstudiante = $modelo->mdlObtenerDatosEstudiante($cedulaEstudiante);
-        /***/
+        session_start();
+        if(count($this->datosEstudiante) > 0 ){
+            $_SESSION['cedulaEstudiante'] = $this->datosEstudiante[0];
+            $_SESSION['nombreEstudiante'] = $this->datosEstudiante[1];
+            $_SESSION['apellidoEstudiante'] = $this->datosEstudiante[2];
+            $_SESSION['direccionEstudiante'] = $this->datosEstudiante[3];
+            $_SESSION['telefonoEstudiante'] = $this->datosEstudiante[4];
+            $_SESSION['email'] = $this->datosEstudiante[5];
+            $_SESSION['fechaNac'] = $this->datosEstudiante[6];
+            $_SESSION['lugarNac'] = $this->datosEstudiante[7];
+            $_SESSION['lugarTrabajo'] = $this->datosEstudiante[8];
+            $_SESSION['cargoTrabajo'] = $this->datosEstudiante[9];
+            $_SESSION['rutaFotoEstudiante'] =  $this->datosEstudiante[10];
+            header("Location: ../vista/administrarEstudiante.php");
+        }
+        else {
+            $_SESSION['action'] = "error";
+            header("Location: ../vista/errorBD.html");
+        }
     }
     /**Este método permite modificar los datos de un estudiante en particular.
      * @param $cedulaAnterior Tipo String, contiene la cedula anterior del estudiante.
@@ -81,12 +99,12 @@ class BackController {
         if($this->estadoConsulta){
             $_SESSION['action'] = 'mostrarResumen';
             $_SESSION['cedula'] = $cedulaEstudiante;
-            header("FrontController.php");
+            header("Location: ../controlador/FrontController.php");
         }
         else {
-            $_SESSION['action'] = "";
+            $_SESSION['action'] = "error";
             $_SESSION['cedula'] = "";
-            header("errorBD.Html");
+            header("Location: ../vista/errorBD.html");
         }
     }
     /**Este método envía los datos a la vista de administrar estudiante, 
@@ -113,6 +131,45 @@ class BackController {
             header("Location: ../vista/administrarEstudiante.php");
         }
         else {
+            header("Location: ../vista/errorBD.html");
+        }
+    }
+    /**Este método permite agregar un estudiante a la base de datos.
+     * @param $cedulaEstudiante Tipo String, almacena la cedula del estudiante.
+     * @param $nombre Tipo String, almacena el nombre del estudiante.
+     * @param $apellido Tipo String, almacena el apellido del estudiante.
+     * @param $direccion Tipo String, almacena la dirección del estudiante.
+     * @param $telefono Tipo String, almacena el número de teléfono del 
+     * estudiante.
+     * @param $email Tipo String, almacena el correo electrónico del estudiante.
+     * @param $fechaNacimiento Tipo Date, almacena la fecha de nacimiento del 
+     * estudiante.
+     * @param $LugarNacimiento Tipo String, almacena el lugar de nacimiento del
+     * estudiante.
+     * @param $lugarTrabajo Tipo String, almacena el lugar de trabajo del
+     * estudiante.
+     * @param $cargoTrabajo Tipo String, almacena el cargo de trabajo del
+     * estudiante.
+     * @param $foto Tipo objeto, almacena el archivo con la foto del estudiante.
+     */
+    public function ctrlCargarDatos ($cedulaEstudiante, $nombre, $apellido, 
+            $direccion, $telefono, $email, $fechaNacimiento, $LugarNacimiento, 
+            $lugarTrabajo, $cargoTrabajo, $foto)
+    {
+        $modelo = new Model();
+        $this->estadoConsulta = $modelo->mdlCargarEstudiante($cedulaEstudiante, 
+                $nombre, $apellido, $direccion, $telefono, $email, 
+                $fechaNacimiento, $LugarNacimiento, $lugarTrabajo, 
+                $cargoTrabajo, $foto);
+        session_start();
+        if($this->estadoConsulta){
+            $_SESSION['action'] = 'mostrarResumen';
+            $_SESSION['cedula'] = $cedulaEstudiante;
+            header("Location: ../controlador/FrontController.php");
+        }
+        else {
+            $_SESSION['action'] = "error";
+            $_SESSION['cedula'] = "";
             header("Location: ../vista/errorBD.html");
         }
     }
