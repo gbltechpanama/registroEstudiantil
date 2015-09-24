@@ -20,6 +20,8 @@ and open the template in the editor.
         <main>
             <div class="mostrarDatos">
                 <?php
+                    session_start();
+//                    $_SESSION[]=
                     printf("<img src=\"img/".$foto."\" class=\"mostrarFoto2\" alt=\"Foto\"/>");
                     printf("<div class=\"mostrarNombre2\">".$nombre."</div>");
                     printf("<div class=\"mostrarCedula2\">C.I. ".$cedula."</div>");

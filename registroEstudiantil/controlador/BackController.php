@@ -46,14 +46,14 @@ class BackController {
         if($this->estadoEstudiante){
             $resultadoLogin = True;
             $_SESSION['cedula'] = $cedulaEstudiante;
-            $_SESSION['resultadoLogin'] = $resultadoLogin;
-            header("../vista/administrarEstudiante.php");
+            $_SESSION['resultadoLogin'] = $resultadoLogin; //Llamar metodo administrarEstudiante
+            $this->ctrlAdministrarEstudiante($cedulaEstudiante);
         }
         else {
             $resultadoLogin = FALSE;
             $_SESSION['cedula'] = "$cedulaEstudiante";
             $_SESSION['resultadoLogin'] = $resultadoLogin;
-            header("../vista/cargarDatos.html");
+            header("Location: ../vista/cargarDatos.html");
         }
     }
     /**Este método permite obtener el resumen de los datos de un estudiante. 
@@ -105,10 +105,10 @@ class BackController {
             $_SESSION['lugarNac'] = $this->datosEstudiante[4];
             $_SESSION['lugarTrabajo'] = $this->datosEstudiante[5];
             $_SESSION['cargoTrabajo'] = $this->datosEstudiante[6];
-            header("../vista/administrarEstudiante.php");
+            header("Location: ../vista/administrarEstudiante.php");
         }
         else {
-            header("../vista/errorBD.html");
+            header("Location: ../vista/errorBD.html");
         }
     }
 }
