@@ -21,8 +21,6 @@ switch ($action){
 //        $back->
         break;
     case 'cargarDatos':
-        //Directorio de destino de la imagen
-        $directorioDestino = "img/";
         //Datos del formulario
         $cedulaEstudiante = $_POST['cedula'];
         $nombre = $_POST['nombre'];

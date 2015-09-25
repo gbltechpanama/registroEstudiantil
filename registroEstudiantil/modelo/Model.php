@@ -103,17 +103,19 @@ class Model {
             $direccion, $telefono, $email, $fechaNacimiento, $LugarNacimiento,
             $lugarTrabajo, $cargoTrabajo, $foto)
     {
-        $rutaFoto = "../img/00000.jpg";
+        $rutaFoto = "../img/fotos/00000.jpg";
         $BD = new BaseDatos();
         //Asignando valor aleatorio al nombre de la foto.
         do{
-            $rutaFoto = "../img/".rand(1, 99999).".jpg";
+            $rutaFoto = "../vista/img/fotos/".rand(1, 99999).".jpg";
             $query = "select rutaFoto from estudiantes where rutaFoto = '"
                     .$rutaFoto."'";
             $resultado = $BD->modelQueryDB($query);
         }while ($resultado->num_rows > 0);
+        //Guarda la foto en la ruta indicada
+        if(move_uploaded_file($foto["tmp_name"], $rutaFoto)){
         //Cambiando de nombre la foto ha guardar.
-        if(rename("../img/".$foto[nombre], $rutafoto)){
+//        if(rename("../img/".$foto[nombre], $rutafoto)){
         //Preparando la instrucción
             $query ="insert to estudiantes ( cedulaEstudiante, nombres, apellidos, "
                     ."direccion, telefono, email, fechaNacimiento, lugarNacimiento,"
