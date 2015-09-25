@@ -12,7 +12,7 @@ class BaseDatos
     private static $puerto = "3306";
     private static $baseDatos = "estudiantil";
     private static $usuario = "universidad";
-    private static $password = "univerisdad.2015";
+    private static $password = "universidad.2015";
     
     private function modelAbrirConexionBD()
     {
@@ -44,7 +44,7 @@ class BaseDatos
         $i = 0;
 
         while ($row = mysql_fetch_row($resultado)) {
-                $data_array[$i] = $row[0];
+                $data_array[$i] = $row[$i];
                 $i++;
         }
 

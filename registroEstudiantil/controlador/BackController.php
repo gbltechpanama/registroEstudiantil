@@ -45,16 +45,13 @@ class BackController {
         session_start();
         if($this->estadoEstudiante){
             $resultadoLogin = True;
-            $_SESSION['cedula'] = $cedulaEstudiante;
-            $_SESSION['resultadoLogin'] = $resultadoLogin; 
-            //Llama al metodo administrarEstudiante
-            $this->ctrlAdministrarEstudiante($cedulaEstudiante);
+            $_SESSION['cedula'] = $cedulaEstudiante; 
+            header("Location: ../controlador/FrontController.php?action=admEstudiante cedula");
         }
         else {
             $resultadoLogin = FALSE;
             $_SESSION['cedula'] = $cedulaEstudiante;
-            $_SESSION['resultadoLogin'] = $resultadoLogin;
-            header("Location: ../vista/cargarDatos.html");
+            header("Location: ../controlador/FrontController.php?action=cargarDatos");
         }
     }
     /**Este método permite obtener el resumen de los datos de un estudiante. 
@@ -97,12 +94,10 @@ class BackController {
         $this->estadoConsulta = $modelo->mdlModificarEstudiante($cedulaAnterior, $cedulaEstudiante, $nombre, $apellido, $direccion, $telefono, $email, $fechaNacimiento, $LugarNacimiento, $lugarTrabajo, $cargoTrabajo, $foto);
         session_start();
         if($this->estadoConsulta){
-            $_SESSION['action'] = 'mostrarResumen';
             $_SESSION['cedula'] = $cedulaEstudiante;
-            header("Location: ../controlador/FrontController.php");
+            header("Location: ../controlador/FrontController.php?action=mostrarResumen");
         }
         else {
-            $_SESSION['action'] = "error";
             $_SESSION['cedula'] = "";
             header("Location: ../vista/errorBD.html");
         }

@@ -26,7 +26,7 @@ and open the template in the editor.
             <div class="mostrarDatos">
                 <?php
                     session_start();
-                    $foto = $_POST['rutaFotoEstudiante'];
+                    $foto = $_POST['rutaFoto'];
                     $nombre = $_POST['nombreEstudiante'];
                     $apellido = $_POST['apellidoEstudiante'];
                     $cedula = $_POST['cedulaEstudiante'];

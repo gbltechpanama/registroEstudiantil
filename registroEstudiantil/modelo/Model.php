@@ -187,8 +187,8 @@ class Model {
         $query ="select * from estudiantes where cedulaEstudiante='"
                 .$cedulaEstudiante."';";
         $resultado = $BD->modelQueryDB($query);
-        if($resultado->num_rows > 0){
-            $datos = $BD->modelConvertirEnArray($resultado);
+        if($resultado != NULL){
+            $datos = mysql_fetch_row($resultado);
         }
         else {
             $datos = NULL;
@@ -203,7 +203,7 @@ class Model {
                 .$cedulaEstudiante."';";
         $resultado = $BD->modelQueryDB($query);
         if($resultado->connect_error){
-            die("Coneccion fallida: " . $conn->connect_error);
+            die("Coneccion fallida: ".$conn->connect_error);
         }
         else{
             if($resultado != NULL){
