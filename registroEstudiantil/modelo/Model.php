@@ -114,8 +114,6 @@ class Model {
         }while ($resultado->num_rows > 0);
         //Guarda la foto en la ruta indicada
         if(move_uploaded_file($foto["tmp_name"], $rutaFoto)){
-        //Cambiando de nombre la foto ha guardar.
-//        if(rename("../img/".$foto[nombre], $rutafoto)){
         //Preparando la instrucción
             $query ="insert to estudiantes ( cedulaEstudiante, nombres, apellidos, "
                     ."direccion, telefono, email, fechaNacimiento, lugarNacimiento,"
