@@ -17,7 +17,7 @@ switch ($action){
         $back->ctrlValidarCIEstudiante($cedulaEstudiante);
         break;
     case 'admEstudiante': //Administrar estudiante
-        $cedulaEstudiante = $_POST['cedula'];
+        $cedulaEstudiante = $_GET['cedula'];
         $back->ctrlAdministrarEstudiante($cedulaEstudiante);
         break;
     case 'cargarDatos':
