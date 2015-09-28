@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -16,6 +13,11 @@ and open the template in the editor.
         <script>
             function verTodo()
             {
+                document.location.href = "../vista/mostrarResumenEstudiantes.php?action=mostrarResumen";
+            }
+            function modificar()
+            {
+                document.location.href = "../vista/modificarEstudiante.php";
             }
         </script>
     </head>
@@ -28,6 +30,7 @@ and open the template in the editor.
         <main>
             <div class="mostrarDatos">
                 <?php
+                    session_start();
                     $cedula = $_POST['cedulaEstudiante'];
                     $nombre = $_POST['nombreEstudiante'];
                     $apellido = $_POST['apellidoEstudiante'];
@@ -39,14 +42,17 @@ and open the template in the editor.
                     $lugarTrabajo = $_POST['lugarTrabajo'];
                     $cargoTrabajo = $_POST['cargoTrabajo'];
                     $foto = $_POST['rutaFoto'];
-                    printf("<img src=\"img/".$foto."\" class=\"mostrarFoto2\" alt=\"Foto\"/>");
+                    printf("<img src=\"".$foto."\" class=\"mostrarFoto2\" alt=\"Foto\"/>");
                     printf("<div class=\"mostrarNombre2\">".$nombre."  ".$apellido."</div>");
                     printf("<div class=\"mostrarCedula2\">C.I. ".$cedula."</div>");
                     printf("<div class=\"mostrarTelefono3\">Tel&eacute;fono: ".$telefono."</div>");
                 ?>
-                <img src="img/verTodo.png" width="123" height="27" alt="Ver Todo" class="botonVerTodo" onclick="verTodo();"/>
-                <img src="img/modificar.png" width="124" height="28" alt="Modificar" class="botonModificar"/>
-                <img src="img/eliminar.png" width="123" height="27" alt="Eliminar" class="botonEliminar"/>
+                <img src="img/verTodo.png" width="123" height="27" 
+                    alt="Ver Todo" class="botonVerTodo" onclick="verTodo();"/>
+                <img src="img/modificar.png" width="124" height="28" 
+                    alt="Modificar" class="botonModificar" onclick="modificar();"/>
+                <img src="img/eliminar.png" width="123" height="27" 
+                    alt="Eliminar" class="botonEliminar"/>
             </div>
             <div class="pie"></div>
             <div class="logo2"></div>

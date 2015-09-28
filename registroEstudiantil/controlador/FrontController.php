@@ -38,8 +38,25 @@ switch ($action){
                 $lugarNacimiento, $lugarTrabajo, $cargoTrabajo, $archivofoto);
         break;
     case 'mostrarResumen':
-        $cedulaEstudiante = $_POST['cedula'];
+        $cedulaEstudiante = $_GET['cedula'];
         $back->ctrlMostrarResumenEstudiante($cedulaEstudiante);
+        break;
+    case 'modificarDatos':
+        //Datos para mostrar
+        $cedulaEstudiante = $_POST['cedula'];
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $direccion = $_POST['direccion'];
+        $telefono = $_POST['telefono'];
+        $email = $_POST['email'];
+        $fechaNacimiento = $_POST['fechaNacimiento'];
+        $lugarNacimiento = $_POST['lugarNacimiento'];
+        $lugarTrabajo = $_POST['lugarTrabajo'];
+        $cargoTrabajo = $_POST['cargoTrabajo'];
+        $archivofoto = $_FILES['foto'];
+        $back->ctrlModificarDatos($cedulaAnterior, $cedulaEstudiante, $nombre, 
+                $apellido, $direccion, $telefono, $email, $fechaNacimiento, 
+                $lugarNacimiento, $lugarTrabajo, $cargoTrabajo, $foto);
         break;
     default :
         echo "<h1>Error</h1>";

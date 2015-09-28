@@ -45,13 +45,11 @@ class BackController {
         session_start();
         if($this->estadoEstudiante){
             $resultadoLogin = True;
-            $_SESSION['cedula'] = $cedulaEstudiante; 
-            header("Location: ../controlador/FrontController.php?action=admEstudiante");
+            header("Location: ../controlador/FrontController.php?action=admEstudiante&cedula=".$cedulaEstudiante);
         }
         else {
             $resultadoLogin = FALSE;
-            $_SESSION['cedula'] = $cedulaEstudiante;
-            header("Location: ../controlador/FrontController.php?action=cargarDatos");
+            header("Location: ../controlador/FrontController.php?action=cargarDatos&cedula=".$cedulaEstudiante);
         }
     }
     /**Este método permite obtener el resumen de los datos de un estudiante. 
@@ -75,12 +73,12 @@ class BackController {
             $_SESSION['lugarTrabajo'] = $this->datosEstudiante[8];
             $_SESSION['cargoTrabajo'] = $this->datosEstudiante[9];
             $_SESSION['rutaFotoEstudiante'] =  $this->datosEstudiante[10];
-            header("Location: ../vista/administrarEstudiante.php");
+            header("Location: ../vista/mostrarResumenEstudiante.php");
         }
-        else {
-            $_SESSION['action'] = "error";
-            header("Location: ../vista/errorBD.html");
-        }
+//        else {
+//            $_SESSION['action'] = "error";
+//            header("Location: ../vista/errorBD.html");
+//        }
     }
     /**Este método permite modificar los datos de un estudiante en particular.
      * @param $cedulaAnterior Tipo String, contiene la cedula anterior del estudiante.
@@ -91,16 +89,23 @@ class BackController {
             $LugarNacimiento, $lugarTrabajo, $cargoTrabajo, $foto)
     {
         $modelo = new Model();
-        $this->estadoConsulta = $modelo->mdlModificarEstudiante($cedulaAnterior, $cedulaEstudiante, $nombre, $apellido, $direccion, $telefono, $email, $fechaNacimiento, $LugarNacimiento, $lugarTrabajo, $cargoTrabajo, $foto);
-        session_start();
+        $this->estadoConsulta = $this->ctrlValidarCIEstudiante($cedulaAnterior);
         if($this->estadoConsulta){
-            $_SESSION['cedula'] = $cedulaEstudiante;
-            header("Location: ../controlador/FrontController.php?action=mostrarResumen");
+            $this->estadoConsulta = $modelo->mdlModificarEstudiante($cedulaAnterior, $cedulaEstudiante, $nombre, $apellido, $direccion, $telefono, $email, $fechaNacimiento, $LugarNacimiento, $lugarTrabajo, $cargoTrabajo, $foto);
+            session_start();
+            if($this->estadoConsulta){
+                $_SESSION['cedula'] = $cedulaEstudiante;
+                header("Location: ../controlador/FrontController.php?action=mostrarResumen");
+            }
+            else {
+                $_SESSION['cedula'] = "";
+                header("Location: ../vista/errorBD.html");
+            }
         }
         else {
-            $_SESSION['cedula'] = "";
-            header("Location: ../vista/errorBD.html?action=error");
-        }
+                $_SESSION['cedula'] = "";
+                header("Location: ../vista/errorLogin.html");
+            }
     }
     /**Este método envía los datos a la vista de administrar estudiante, 
      * indicado por el número de cedula.
@@ -112,17 +117,17 @@ class BackController {
         $this->datosEstudiante = $modelo->mdlObtenerDatosEstudiante($cedulaEstudiante);
         session_start();
         if(count($this->datosEstudiante) > 0 ){
-            $_SESSION['cedulaEstudiante'] = $this->datosEstudiante[0];
-            $_SESSION['nombreEstudiante'] = $this->datosEstudiante[1];
-            $_SESSION['apellidoEstudiante'] = $this->datosEstudiante[2];
-            $_SESSION['direccionEstudiante'] = $this->datosEstudiante[3];
-            $_SESSION['telefonoEstudiante'] = $this->datosEstudiante[4];
-            $_SESSION['email'] = $this->datosEstudiante[5];
-            $_SESSION['fechaNac'] = $this->datosEstudiante[6];
-            $_SESSION['lugarNac'] = $this->datosEstudiante[7];
-            $_SESSION['lugarTrabajo'] = $this->datosEstudiante[8];
-            $_SESSION['cargoTrabajo'] = $this->datosEstudiante[9];
-            $_SESSION['rutaFoto'] =  $this->datosEstudiante[10];
+            $_POST['cedulaEstudiante'] = $this->datosEstudiante[0];
+            $_POST['nombreEstudiante'] = $this->datosEstudiante[1];
+            $_POST['apellidoEstudiante'] = $this->datosEstudiante[2];
+            $_POST['direccionEstudiante'] = $this->datosEstudiante[3];
+            $_POST['telefonoEstudiante'] = $this->datosEstudiante[4];
+            $_POST['email'] = $this->datosEstudiante[5];
+            $_POST['fechaNac'] = $this->datosEstudiante[6];
+            $_POST['lugarNac'] = $this->datosEstudiante[7];
+            $_POST['lugarTrabajo'] = $this->datosEstudiante[8];
+            $_POST['cargoTrabajo'] = $this->datosEstudiante[9];
+            $_POST['rutaFoto'] =  $this->datosEstudiante[10];
             header("Location: ../vista/administrarEstudiante.php");
         }
         else {
