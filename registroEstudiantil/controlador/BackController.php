@@ -46,7 +46,7 @@ class BackController {
         if($this->estadoEstudiante){
             $resultadoLogin = True;
             $_SESSION['cedula'] = $cedulaEstudiante; 
-            header("Location: ../controlador/FrontController.php?action=admEstudiante cedula");
+            header("Location: ../controlador/FrontController.php?action=admEstudiante");
         }
         else {
             $resultadoLogin = FALSE;
@@ -99,7 +99,7 @@ class BackController {
         }
         else {
             $_SESSION['cedula'] = "";
-            header("Location: ../vista/errorBD.html");
+            header("Location: ../vista/errorBD.html?action=error");
         }
     }
     /**Este método envía los datos a la vista de administrar estudiante, 
@@ -126,7 +126,7 @@ class BackController {
             header("Location: ../vista/administrarEstudiante.php");
         }
         else {
-            header("Location: ../vista/errorBD.html");
+            header("Location: ../vista/errorBD.html?action=error");
         }
     }
     /**Este método permite agregar un estudiante a la base de datos.
@@ -158,14 +158,12 @@ class BackController {
                 $cargoTrabajo, $foto);
         session_start();
         if($this->estadoConsulta){
-            $_SESSION['action'] = 'mostrarResumen';
             $_SESSION['cedula'] = $cedulaEstudiante;
-            header("Location: ../controlador/FrontController.php");
+            header("Location: ../controlador/FrontController.php?action=mostrarResumen");
         }
         else {
-            $_SESSION['action'] = "error";
             $_SESSION['cedula'] = "";
-            header("Location: ../vista/errorBD.html");
+            header("Location: ../vista/errorBD.html?action=error");
         }
     }
 }

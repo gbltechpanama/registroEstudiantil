@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -25,18 +28,17 @@ and open the template in the editor.
         <main>
             <div class="mostrarDatos">
                 <?php
-                    session_start();
-                    $foto = $_POST['rutaFoto'];
+                    $cedula = $_POST['cedulaEstudiante'];
                     $nombre = $_POST['nombreEstudiante'];
                     $apellido = $_POST['apellidoEstudiante'];
-                    $cedula = $_POST['cedulaEstudiante'];
-                    $telefono = $_POST['telefonoEstudiante'];
                     $direccion = $_POST['direccionEstudiante'];
+                    $telefono = $_POST['telefonoEstudiante'];
                     $email = $_POST['email'];
                     $fechaNacimiento = $_POST['fechaNac'];
                     $lugarNacimiento = $_POST['lugarNac'];
                     $lugarTrabajo = $_POST['lugarTrabajo'];
                     $cargoTrabajo = $_POST['cargoTrabajo'];
+                    $foto = $_POST['rutaFoto'];
                     printf("<img src=\"img/".$foto."\" class=\"mostrarFoto2\" alt=\"Foto\"/>");
                     printf("<div class=\"mostrarNombre2\">".$nombre."  ".$apellido."</div>");
                     printf("<div class=\"mostrarCedula2\">C.I. ".$cedula."</div>");
