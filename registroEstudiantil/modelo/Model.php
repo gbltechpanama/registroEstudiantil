@@ -149,17 +149,17 @@ class Model {
             $nombre, $apellido, $direccion, $telefono, $email, $fechaNacimiento,
             $LugarNacimiento, $lugarTrabajo, $cargoTrabajo, $foto)
     {
-        $rutaFoto = "../img/00000.jpg";
+        $rutaFoto = "../img/fotos/00000.jpg";
         $BD = new BaseDatos();
         //Asignando valor aleatorio al nombre de la foto.
         do{
-            $rutaFoto = "../img/".rand(1, 99999).".jpg";
+            $rutaFoto = "../vista/img/fotos/".rand(1, 99999).".jpg";
             $query = "select rutaFoto from estudiantes where rutaFoto = '"
                     .$rutaFoto."'";
             $resultado = $BD->modelQueryDB($query);
         }while ($resultado->num_rows > 0);
-        //Cambiando de nombre la foto ha guardar.
-        if(rename("../img/".$foto[nombre], $rutafoto)){
+        //Guarda la foto en la ruta indicada
+        if(move_uploaded_file($foto["tmp_name"], $rutaFoto)){
         //Preparando la instrucción
             $query ="update estudiantes set cedulaEstudiante='".$cedulaEstudiante
                     ."', nombres='".$nombre."', apellidos='".$apellido."', "
@@ -203,7 +203,7 @@ class Model {
                 .$cedulaEstudiante."';";
         $resultado = $BD->modelQueryDB($query);
         if($resultado->connect_error){
-            die("Coneccion fallida: ".$conn->connect_error);
+            die("Coneccion fallida: ".$resultado->connect_error);
         }
         else{
             if($resultado != NULL){
@@ -214,7 +214,7 @@ class Model {
             }
         }
     }
-    /**: Este método se encarga de cambiar la clave de acceso del administrador 
+    /** Este método se encarga de cambiar la clave de acceso del administrador 
      * en la tabla “acceso”. Para hacer el cambio de la clave primero se debe 
      * verificar si el parámetro“claveAnterior” coincide con la clave almacenada
      * en el campo “password” de la tabla “acceso”. Se debe tomar en cuenta que 
