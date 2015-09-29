@@ -13,7 +13,7 @@ and open the template in the editor.
         <script>
             function verTodo()
             {
-                document.location.href = "../vista/mostrarResumenEstudiantes.php?action=mostrarResumen";
+                document.location.href = "../vista/mostrarResumenEstudiante.php?action=mostrarResumen";
             }
             function modificar()
             {
@@ -31,17 +31,17 @@ and open the template in the editor.
             <div class="mostrarDatos">
                 <?php
                     session_start();
-                    $cedula = $_POST['cedulaEstudiante'];
-                    $nombre = $_POST['nombreEstudiante'];
-                    $apellido = $_POST['apellidoEstudiante'];
-                    $direccion = $_POST['direccionEstudiante'];
-                    $telefono = $_POST['telefonoEstudiante'];
-                    $email = $_POST['email'];
-                    $fechaNacimiento = $_POST['fechaNac'];
-                    $lugarNacimiento = $_POST['lugarNac'];
-                    $lugarTrabajo = $_POST['lugarTrabajo'];
-                    $cargoTrabajo = $_POST['cargoTrabajo'];
-                    $foto = $_POST['rutaFoto'];
+                    $cedula = $_SESSION['cedulaEstudiante'];
+                    $nombre = $_SESSION['nombreEstudiante'];
+                    $apellido = $_SESSION['apellidoEstudiante'];
+                    $direccion = $_SESSION['direccionEstudiante'];
+                    $telefono = $_SESSION['telefonoEstudiante'];
+                    $email = $_SESSION['email'];
+                    $fechaNacimiento = $_SESSION['fechaNac'];
+                    $lugarNacimiento = $_SESSION['lugarNac'];
+                    $lugarTrabajo = $_SESSION['lugarTrabajo'];
+                    $cargoTrabajo = $_SESSION['cargoTrabajo'];
+                    $foto = $_SESSION['rutaFoto'];
                     printf("<img src=\"".$foto."\" class=\"mostrarFoto2\" alt=\"Foto\"/>");
                     printf("<div class=\"mostrarNombre2\">".$nombre."  ".$apellido."</div>");
                     printf("<div class=\"mostrarCedula2\">C.I. ".$cedula."</div>");

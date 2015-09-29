@@ -117,17 +117,17 @@ class BackController {
         $this->datosEstudiante = $modelo->mdlObtenerDatosEstudiante($cedulaEstudiante);
         session_start();
         if(count($this->datosEstudiante) > 0 ){
-            $_POST['cedulaEstudiante'] = $this->datosEstudiante[0];
-            $_POST['nombreEstudiante'] = $this->datosEstudiante[1];
-            $_POST['apellidoEstudiante'] = $this->datosEstudiante[2];
-            $_POST['direccionEstudiante'] = $this->datosEstudiante[3];
-            $_POST['telefonoEstudiante'] = $this->datosEstudiante[4];
-            $_POST['email'] = $this->datosEstudiante[5];
-            $_POST['fechaNac'] = $this->datosEstudiante[6];
-            $_POST['lugarNac'] = $this->datosEstudiante[7];
-            $_POST['lugarTrabajo'] = $this->datosEstudiante[8];
-            $_POST['cargoTrabajo'] = $this->datosEstudiante[9];
-            $_POST['rutaFoto'] =  $this->datosEstudiante[10];
+            $_SESSION['cedulaEstudiante'] = $this->datosEstudiante[0];
+            $_SESSION['nombreEstudiante'] = $this->datosEstudiante[1];
+            $_SESSION['apellidoEstudiante'] = $this->datosEstudiante[2];
+            $_SESSION['direccionEstudiante'] = $this->datosEstudiante[3];
+            $_SESSION['telefonoEstudiante'] = $this->datosEstudiante[4];
+            $_SESSION['email'] = $this->datosEstudiante[5];
+            $_SESSION['fechaNac'] = $this->datosEstudiante[6];
+            $_SESSION['lugarNac'] = $this->datosEstudiante[7];
+            $_SESSION['lugarTrabajo'] = $this->datosEstudiante[8];
+            $_SESSION['cargoTrabajo'] = $this->datosEstudiante[9];
+            $_SESSION['rutaFoto'] =  $this->datosEstudiante[10];
             header("Location: ../vista/administrarEstudiante.php");
         }
         else {
