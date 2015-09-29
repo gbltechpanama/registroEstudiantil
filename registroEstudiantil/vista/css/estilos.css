@@ -587,17 +587,6 @@ main{
     width: 123px;
     height: 27px;
 }
-/**Para el boton de examinar en cargar datos*/
-.BExaminar{
-    float: left;
-    position: absolute;
-    top: 336px;
-    left: 482px;
-    width: 123px;
-    height: 27px;
-    background-image: url(../img/examinar.png);
-    background-repeat: no-repeat;
-}
 /**Para el resumen de los datos del estudiante*/
 .mostrarDatos{
     position: absolute;
