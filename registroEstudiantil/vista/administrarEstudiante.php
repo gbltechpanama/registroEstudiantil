@@ -15,7 +15,7 @@ and open the template in the editor.
             {
                 document.location.href = "../controlador/FrontController.php?action=mostrarResumen&cedula="+cedula;
             }
-            function modificar()
+            function modificar(cedula)
             {
                 document.location.href = "../vista/modificarEstudiante.php";
             }
@@ -48,9 +48,9 @@ and open the template in the editor.
                     printf("<div class=\"mostrarTelefono3\">Tel&eacute;fono: ".$telefono."</div>");
                     printf("<img src=\"img/verTodo.png\" width=\"123\" height=\"27\" 
                     alt=\"Ver Todo\" class=\"botonVerTodo\" onclick=\"verTodo(".$cedula.");\"/>");
+                    printf("<img src=\"img/modificar.png\" width=\"124\" height=\"28\" 
+                    alt=\"Modificar\" class=\"botonModificar\" onclick=\"modificar(".$cedula.");\"/>");
                 ?>
-                <img src="img/modificar.png" width="124" height="28" 
-                    alt="Modificar" class="botonModificar" onclick="modificar();"/>
                 <img src="img/eliminar.png" width="123" height="27" 
                      alt="Eliminar" class="botonEliminar" onclick="eliminar();"/>
             </div>
