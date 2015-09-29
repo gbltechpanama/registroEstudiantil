@@ -573,7 +573,7 @@ main{
     border-color: #000000;
     border: 1px;
     border-style: solid;
-    direction: rtl;
+    /* direction: rtl; */
     display: block;
     visibility: visible;
     overflow: hidden;
@@ -824,4 +824,33 @@ main{
     left: 719px;
     background-image: url(../img/verTodo.png);
     background-repeat: no-repeat;
+}
+/**Para personalizar el selector de archivos*/
+#archivo {
+    display: none;
+}
+#botonSeleccion {
+    background-color:#e6e6e6;
+    background-image: url(../img/examinar.png);
+    background-repeat: no-repeat;
+    cursor:pointer;
+    height: 27px;
+    width: 84px;
+    position: absolute;
+    top: 336px;
+    left: 482px;
+}
+#listaArchivo {
+    position: absolute;
+    top: 336px;
+    left: 306px;
+    width: 174px;
+    height: 26px;
+    border-color: #000000;
+    border: 1px;
+    border-style: solid;
+    text-align: justify;
+    font-family: HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+    color: #000000;
 }

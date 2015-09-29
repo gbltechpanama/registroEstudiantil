@@ -42,7 +42,8 @@ switch ($action){
         $back->ctrlMostrarResumenEstudiante($cedulaEstudiante);
         break;
     case 'modificarDatos':
-        //Datos para mostrar
+        $cedulaAnterior= $_POST['cedulaAnterior'];
+        //Datos modificados
         $cedulaEstudiante = $_POST['cedula'];
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];

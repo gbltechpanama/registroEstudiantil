@@ -1,21 +1,12 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Cargar Datos</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/estilos.css" rel="stylesheet" type="text/css">
-        <script>
-            function enviarDatos()
-            {
-                document.forms[0].submit();
-            }
-        </script>
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src='js/formularios.js'></script>
     </head>
     <body>
         <header>
@@ -27,7 +18,7 @@ and open the template in the editor.
             <div class="capaDatos">
                 <form action="../controlador/FrontController.php?action=cargarDatos" name="formularioDatos" method="post" enctype="multipart/form-data">
                     <div class="capaNombre">Nombre </div>
-                    <input type="text" name="nombre" value="" class="tNombre"/>
+                    <input type="text" name="nombre" value="" class="tNombre" required/>
                     <div class="capaNecesario">*</div>
                     <div class="capaApellido">Apellido </div>
                     <input type="text" name="apellido" value="" class="tApellido"/>
@@ -54,11 +45,15 @@ and open the template in the editor.
                     <div class="capaCargo">Cargo </div>
                     <input type="text" name="cargoTrabajo" value="" class="tCargo"/>
                     <div class="capaNecesario8">*</div>
-                    <!--Cargar foto a la carpeta img -->
+                    <!--Cargar foto al servidor -->
                     <div class="capaFoto">Cargar Foto </div>
-                    <input type="file" name="foto" multiple class="tFoto"/>
+                    <!-- selector de imagen que esta oculto -->
+                    <input type="file" name="foto" id="archivo" multiple class="tFoto"/>
+                    <!-- div en formato de boton para seleccionar la imagen -->
+                    <div id="botonSeleccion"></div>
+                    <!-- muestra el archivo seleccionado -->
+                    <div id="listaArchivo">Seleccione un archivo</div>
                     <div class="capaNecesario9">*</div>
-                    <!--input type="submit" value="Examinar" name="Examinar" class="BExaminar"/-->
                     <img src="img/aceptar.png" alt="aceptar" class="BAceptarDatos" onclick='enviarDatos()'/>
                 </form>
             </div>

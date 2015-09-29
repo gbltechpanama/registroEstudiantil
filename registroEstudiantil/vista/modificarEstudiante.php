@@ -10,12 +10,8 @@ and open the template in the editor.
         <title>Modificar datos del Estudiante.</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/estilos.css" rel="stylesheet" type="text/css">
-        <script>
-            function enviarDatos()
-            {
-                document.forms[0].submit();
-            }
-        </script>
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src='js/formularios.js'></script>
     </head>
     <body>
         <header>
@@ -68,9 +64,12 @@ and open the template in the editor.
                         printf("<input type=\"text\" name=\"cargoTrabajo\" value=\"".$cargoTrabajo."\" class=\"tCargo\"/>");
                         printf("<div class=\"capaNecesario8\">*</div>");
                         printf("<div class=\"capaFoto\">Cargar Foto </div>");
-                        printf("<input type=\"file\" name=\"foto\" multiple class=\"tFoto\"/>");
+                        printf("<input type=\"file\" name=\"foto\" id=\"archivo\" multiple class=\"tFoto\"/>");
+                        printf("<div id=\"botonSeleccion\"></div>");
+                        printf("<div id=\"listaArchivo\">Seleccione un archivo</div>");
                         printf("<div class=\"capaNecesario9\">*</div>");
                         printf("<img src=\"img/aceptar.png\" alt=\"aceptar\" class=\"BAceptarDatos\" onclick='enviarDatos()'/>");
+                        $_POST['cedulaAnterior'] = $cedula;
                     printf("</form>");
                 ?>
             </div>
