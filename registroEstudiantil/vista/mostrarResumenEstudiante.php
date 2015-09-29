@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+<!--Vista para mostrar el resumen de los datos del estudiante.
 -->
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Resumen</title>
+        <title>Resumen del estudiante.</title>
         <link href="css/estilos.css" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -19,7 +16,19 @@ and open the template in the editor.
         <main>
             <div class="mostrarDatos">
                 <?php
-                    printf("<img src=\"img/".$foto."\" class=\"mostrarFoto\" alt=\"Foto\"/>");
+                    session_start();
+                    $cedula = $_SESSION['cedulaEstudiante'];
+                    $nombre = $_SESSION['nombreEstudiante'];
+                    $apellido = $_SESSION['apellidoEstudiante'];
+                    $direccion = $_SESSION['direccionEstudiante'];
+                    $telefono = $_SESSION['telefonoEstudiante'];
+                    $email = $_SESSION['email'];
+                    $fechaNacimiento = $_SESSION['fechaNac'];
+                    $lugarNacimiento = $_SESSION['lugarNac'];
+                    $lugarTrabajo = $_SESSION['lugarTrabajo'];
+                    $cargoTrabajo = $_SESSION['cargoTrabajo'];
+                    $foto = $_SESSION['rutaFoto'];
+                    printf("<img src=\"".$foto."\" class=\"mostrarFoto\" alt=\"Foto\"/>");
                     printf("<div class=\"mostrarNombre\">".$nombre."</div>");
                     printf("<div class=\"mostrarCedula\">C.I. ".$cedula."</div>");
                     printf("<div class=\"mostrarTelefono\">Tel&eacute;fono: ".$telefono."</div>");
@@ -34,7 +43,7 @@ and open the template in the editor.
                     printf("<div class=\"mostrarDireccion\">Direcci&oacute;n <div class=\"texto5\">".$direccion."</div></div>");
                     printf("<div class=\"mostrarEmail\">Email <div class=\"texto5\">".$email."</div></div>");
                     printf("<div class=\"mostrarLugarNacimiento\">Lugar de Nacimiento <div class=\"texto5\">".$lugarNacimiento."</div></div>");
-                    printf("<div class=\"mostrarCargo\">Cargo <div class=\"texto5\">".$cargo."</div></div>");
+                    printf("<div class=\"mostrarCargo\">Cargo <div class=\"texto5\">".$cargoTrabajo."</div></div>");
                 ?>
             </div>
             <div class="pie"></div>

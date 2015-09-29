@@ -11,9 +11,9 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/estilos.css" rel="stylesheet" type="text/css">
         <script>
-            function verTodo()
+            function verTodo(cedula)
             {
-                document.location.href = "../vista/mostrarResumenEstudiante.php?action=mostrarResumen";
+                document.location.href = "../controlador/FrontController.php?action=mostrarResumen&cedula="+cedula;
             }
             function modificar()
             {
@@ -46,13 +46,13 @@ and open the template in the editor.
                     printf("<div class=\"mostrarNombre2\">".$nombre."  ".$apellido."</div>");
                     printf("<div class=\"mostrarCedula2\">C.I. ".$cedula."</div>");
                     printf("<div class=\"mostrarTelefono3\">Tel&eacute;fono: ".$telefono."</div>");
+                    printf("<img src=\"img/verTodo.png\" width=\"123\" height=\"27\" 
+                    alt=\"Ver Todo\" class=\"botonVerTodo\" onclick=\"verTodo(".$cedula.");\"/>");
                 ?>
-                <img src="img/verTodo.png" width="123" height="27" 
-                    alt="Ver Todo" class="botonVerTodo" onclick="verTodo();"/>
                 <img src="img/modificar.png" width="124" height="28" 
                     alt="Modificar" class="botonModificar" onclick="modificar();"/>
                 <img src="img/eliminar.png" width="123" height="27" 
-                    alt="Eliminar" class="botonEliminar"/>
+                     alt="Eliminar" class="botonEliminar" onclick="eliminar();"/>
             </div>
             <div class="pie"></div>
             <div class="logo2"></div>
