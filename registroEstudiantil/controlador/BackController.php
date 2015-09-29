@@ -75,10 +75,6 @@ class BackController {
             $_SESSION['rutaFotoEstudiante'] =  $this->datosEstudiante[10];
             header("Location: ../vista/mostrarResumenEstudiante.php");
         }
-//        else {
-//            $_SESSION['action'] = "error";
-//            header("Location: ../vista/errorBD.html");
-//        }
     }
     /**Este método permite modificar los datos de un estudiante en particular.
      * @param $cedulaAnterior Tipo String, contiene la cedula anterior del estudiante.
