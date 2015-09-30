@@ -494,6 +494,18 @@ main{
     border: 1px;
     border-style: solid;
 }
+/**Para la cedula anterior en la modificación de los datos*/
+.tCedulaAnterior{
+    position: absolute;
+    top: 135px;
+    left: 306px;
+    width: 258px;
+    height: 25px;
+    border-color: #000000;
+    border: 1px;
+    border-style: solid;
+    display: none;
+}
 .tDireccion{
     position: absolute;
     top: 135px;

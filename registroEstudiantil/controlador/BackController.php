@@ -85,8 +85,8 @@ class BackController {
             $LugarNacimiento, $lugarTrabajo, $cargoTrabajo, $foto)
     {
         $modelo = new Model();
-        $this->estadoConsulta = $this->ctrlValidarCIEstudiante($cedulaAnterior);
-        if($this->estadoConsulta){
+        $this->estadoEstudiante = $modelo->mdlValidarCI($cedulaAnterior);
+        if($this->estadoEstudiante){
             $this->estadoConsulta = $modelo->mdlModificarEstudiante($cedulaAnterior, $cedulaEstudiante, $nombre, $apellido, $direccion, $telefono, $email, $fechaNacimiento, $LugarNacimiento, $lugarTrabajo, $cargoTrabajo, $foto);
             session_start();
             if($this->estadoConsulta){
@@ -166,5 +166,16 @@ class BackController {
             $_SESSION['cedula'] = "";
             header("Location: ../vista/errorBD.html?action=error");
         }
+    }
+    /**Este método permite buscar un estudiante deacuerdo a un criterio 
+     * indicado.
+     * @param $criterio Tipo String, almacena la cadena de caracteres ha buscar.
+     */
+    public function ctrlBusquedaEstudiante($criterio){
+        $modelo = new Model();
+        $this->estadoConsulta = $modelo->mdlBusquedaNombreEstudiantes($criterio);
+        session_start();
+        if($this->estadoConsulta){}
+        else {}
     }
 }

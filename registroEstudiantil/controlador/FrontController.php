@@ -54,7 +54,7 @@ switch ($action){
         $lugarNacimiento = $_POST['lugarNacimiento'];
         $lugarTrabajo = $_POST['lugarTrabajo'];
         $cargoTrabajo = $_POST['cargoTrabajo'];
-        $archivofoto = $_FILES['foto'];
+        $foto = $_FILES['foto'];
         $back->ctrlModificarDatos($cedulaAnterior, $cedulaEstudiante, $nombre, 
                 $apellido, $direccion, $telefono, $email, $fechaNacimiento, 
                 $lugarNacimiento, $lugarTrabajo, $cargoTrabajo, $foto);
