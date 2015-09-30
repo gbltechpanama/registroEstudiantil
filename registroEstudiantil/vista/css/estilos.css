@@ -573,7 +573,6 @@ main{
     border-color: #000000;
     border: 1px;
     border-style: solid;
-    /* direction: rtl; */
     display: block;
     visibility: visible;
     overflow: hidden;

@@ -49,7 +49,7 @@ class BackController {
         }
         else {
             $resultadoLogin = FALSE;
-            header("Location: ../controlador/FrontController.php?action=cargarDatos&cedula=".$cedulaEstudiante);
+            header("Location: ../vista/cargarDatos.html");
         }
     }
     /**Este método permite obtener el resumen de los datos de un estudiante. 

@@ -115,7 +115,7 @@ class Model {
         //Guarda la foto en la ruta indicada
         if(move_uploaded_file($foto["tmp_name"], $rutaFoto)){
         //Preparando la instrucción
-            $query ="insert to estudiantes ( cedulaEstudiante, nombres, apellidos, "
+            $query ="insert into estudiantes ( cedulaEstudiante, nombres, apellidos, "
                     ."direccion, telefono, email, fechaNacimiento, lugarNacimiento,"
                     ."lugarTrabajo, cargoTrabajo, rutaFoto ) values ('"
                     .$cedulaEstudiante."', '".$nombre."', '".$apellido."', '"
@@ -204,10 +204,11 @@ class Model {
         $resultado = $BD->modelQueryDB($query);
         if($resultado->connect_error){
             die("Coneccion fallida: ".$resultado->connect_error);
+            return FALSE;
         }
         else{
-            if($resultado != NULL){
-            return TRUE;
+            if($resultado != NULL && mysql_num_rows($resultado)>0){
+                return TRUE;
             }
             else {
                 return FALSE;

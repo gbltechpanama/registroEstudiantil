@@ -32,7 +32,7 @@ switch ($action){
         $lugarNacimiento = $_POST['lugarNacimiento'];
         $lugarTrabajo = $_POST['lugarTrabajo'];
         $cargoTrabajo = $_POST['cargoTrabajo'];
-        $archivofoto = $_FILES['foto']; //$_POST['foto'];
+        $archivofoto = $_FILES['foto']; 
         $back->ctrlCargarDatos($cedulaEstudiante, $nombre, $apellido, 
                 $direccion, $telefono, $email, $fechaNacimiento, 
                 $lugarNacimiento, $lugarTrabajo, $cargoTrabajo, $archivofoto);
