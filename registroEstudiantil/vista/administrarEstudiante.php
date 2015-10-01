@@ -22,40 +22,42 @@ and open the template in the editor.
         </script>
     </head>
     <body>
-        <header>
-            <div class="logo"></div>
-            <div class="barra"></div>
-            <div class="barra2"></div>
-        </header>
-        <main>
-            <div class="mostrarDatos">
-                <?php
-                    session_start();
-                    $cedula = $_SESSION['cedulaEstudiante'];
-                    $nombre = $_SESSION['nombreEstudiante'];
-                    $apellido = $_SESSION['apellidoEstudiante'];
-                    $direccion = $_SESSION['direccionEstudiante'];
-                    $telefono = $_SESSION['telefonoEstudiante'];
-                    $email = $_SESSION['email'];
-                    $fechaNacimiento = $_SESSION['fechaNac'];
-                    $lugarNacimiento = $_SESSION['lugarNac'];
-                    $lugarTrabajo = $_SESSION['lugarTrabajo'];
-                    $cargoTrabajo = $_SESSION['cargoTrabajo'];
-                    $foto = $_SESSION['rutaFoto'];
-                    printf("<img src=\"".$foto."\" class=\"mostrarFoto2\" alt=\"Foto\"/>");
-                    printf("<div class=\"mostrarNombre2\">".$nombre."  ".$apellido."</div>");
-                    printf("<div class=\"mostrarCedula2\">C.I. ".$cedula."</div>");
-                    printf("<div class=\"mostrarTelefono3\">Tel&eacute;fono: ".$telefono."</div>");
-                    printf("<img src=\"img/verTodo.png\" width=\"123\" height=\"27\" 
-                    alt=\"Ver Todo\" class=\"botonVerTodo\" onclick=\"verTodo(".$cedula.");\"/>");
-                    printf("<img src=\"img/modificar.png\" width=\"124\" height=\"28\" 
-                    alt=\"Modificar\" class=\"botonModificar\" onclick=\"modificar(".$cedula.");\"/>");
-                ?>
-                <img src="img/eliminar.png" width="123" height="27" 
-                     alt="Eliminar" class="botonEliminar" onclick="eliminar();"/>
-            </div>
-            <div class="pie"></div>
-            <div class="logo2"></div>
-        </main>
+        <div class="container">
+            <header>
+                <div class="logo"></div>
+                <div class="barra"></div>
+                <div class="barra2"></div>
+            </header>
+            <main>
+                <div class="mostrarDatos">
+                    <?php
+                        session_start();
+                        $cedula = $_SESSION['cedulaEstudiante'];
+                        $nombre = $_SESSION['nombreEstudiante'];
+                        $apellido = $_SESSION['apellidoEstudiante'];
+                        $direccion = $_SESSION['direccionEstudiante'];
+                        $telefono = $_SESSION['telefonoEstudiante'];
+                        $email = $_SESSION['email'];
+                        $fechaNacimiento = $_SESSION['fechaNac'];
+                        $lugarNacimiento = $_SESSION['lugarNac'];
+                        $lugarTrabajo = $_SESSION['lugarTrabajo'];
+                        $cargoTrabajo = $_SESSION['cargoTrabajo'];
+                        $foto = $_SESSION['rutaFoto'];
+                        printf("<img src=\"".$foto."\" class=\"mostrarFoto2\" alt=\"Foto\"/>");
+                        printf("<div class=\"mostrarNombre2\">".$nombre."  ".$apellido."</div>");
+                        printf("<div class=\"mostrarCedula2\">C.I. ".$cedula."</div>");
+                        printf("<div class=\"mostrarTelefono3\">Tel&eacute;fono: ".$telefono."</div>");
+                        printf("<img src=\"img/verTodo.png\" width=\"123\" height=\"27\" 
+                        alt=\"Ver Todo\" class=\"botonVerTodo\" onclick=\"verTodo(".$cedula.");\"/>");
+                        printf("<img src=\"img/modificar.png\" width=\"124\" height=\"28\" 
+                        alt=\"Modificar\" class=\"botonModificar\" onclick=\"modificar(".$cedula.");\"/>");
+                    ?>
+                    <img src="img/eliminar.png" width="123" height="27" 
+                         alt="Eliminar" class="botonEliminar" onclick="eliminar();"/>
+                </div>
+                <div class="pie"></div>
+                <div class="logo2"></div>
+            </main>
+        </div>
     </body>
 </html>

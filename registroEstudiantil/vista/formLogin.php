@@ -14,28 +14,30 @@
         </script>
     </head>
     <body>
-        <header>
-            <div class="logo"></div>
-            <div class="barra"></div>
-            <div class="barra2"></div>
-        </header>
-        <main>
-            <?php
-                session_start();
-                $GET_SESSION['action']="";
-            ?>
-            <div class="capaLogin">
-                <form action="" name="formularioLogin" method="get">
-                    <div class="bienvenida">Bienvenido(a) Profesor(a)
-                        <br> 
-                        Ingrese su clave de ingreso
-                    </div>
-                    <input type="password" name="clave" value="" class="clave"/>
-                    <img src="img/aceptar.png" alt="aceptar" class="botonAceptar" onclick='enviarDatos()'/>
-                </form>
-            </div>
-            <div class="pie"></div>
-            <div class="logo2"></div>
-        </main>
+        <div class="container">
+            <header>
+                <div class="logo"></div>
+                <div class="barra"></div>
+                <div class="barra2"></div>
+            </header>
+            <main>
+                <?php
+                    session_start();
+                    $GET_SESSION['action']="";
+                ?>
+                <div class="capaLogin">
+                    <form action="" name="formularioLogin" method="get">
+                        <div class="bienvenida">Bienvenido(a) Profesor(a)
+                            <br> 
+                            Ingrese su clave de ingreso
+                        </div>
+                        <input type="password" name="clave" value="" class="clave"/>
+                        <img src="img/aceptar.png" alt="aceptar" class="botonAceptar" onclick='enviarDatos()'/>
+                    </form>
+                </div>
+                <div class="pie"></div>
+                <div class="logo2"></div>
+            </main>
+        </div>
     </body>
 </html>

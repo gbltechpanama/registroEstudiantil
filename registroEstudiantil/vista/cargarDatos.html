@@ -12,61 +12,63 @@
         <script type="text/javascript" src="js/calendarios.js"></script>
     </head>
     <body>
-        <header>
-            <div class="logo"></div>
-            <div class="barra"></div>
-            <div class="barra2"></div>
-        </header>
-        <main>
-            <div class="capaDatos">
-                <form action="../controlador/FrontController.php?action=cargarDatos" name="formularioDatos" method="post" enctype="multipart/form-data">
-                    <div class="capaNombre">Nombre </div>
-                    <input type="text" name="nombre" value="" class="tNombre" required/>
-                    <div class="capaNecesario">*</div>
-                    <div class="capaApellido">Apellido </div>
-                    <input type="text" name="apellido" value="" class="tApellido"/>
-                    <div class="capaNecesario2">*</div>
-                    <div class="capaCedula">Cedula </div>
-                    <input type="text" name="cedula" value="" class="tCedula"/>
-                    <div class="capaNecesario3">*</div>
-                    <div class="capaDireccion">Direcci&oacute;n </div>
-                    <input type="text" name="direccion" value="" class="tDireccion"/>
-                    <div class="capaNecesario4">*</div>
-                    <div class="capaTelefono">Tel&eacute;fono </div>
-                    <input type="tel" name="telefono" value="" class="tTelefono"/>
-                    <div class="capaNecesario5">*</div>
-                    <div class="capaEmail">Email </div>
-                    <input type="email" name="email" value="" class="tEmail"/>
-                    <div class="capaNecesario6">*</div>
-                    <!--En Esta sección se coloca el calendario emergente-->
-                    <div class="capaFechaNacimiento">Fecha de nacimiento </div>
-                    <div id="botonFecha" class="botonFecha" onclick="mostrarCalendario();"></div>
-                    <div id="capaCalendario" class="calendario"></div>
-                    <!--Caja de texto del calendario-->
-                    <div id="resultado" class="tFecha"></div>
-                    <input type="date" name="fechaNacimiento" id="fechaNacimiento" value="" class="tFechaNacimiento"/>
-                    <div class="capaLugarNacimiento">Lugar de nacimiento </div>
-                    <input type="text" name="lugarNacimiento" value="" class="tLugarNacimiento"/>
-                    <div class="capaLugarTrabajo">Lugar de trabajo </div>
-                    <input type="text" name="lugarTrabajo" value="" class="tLugarTrabajo"/>
-                    <div class="capaNecesario7">*</div>
-                    <div class="capaCargo">Cargo </div>
-                    <input type="text" name="cargoTrabajo" value="" class="tCargo"/>
-                    <div class="capaNecesario8">*</div>
-                    <!--Cargar foto al servidor -->
-                    <div class="capaFoto">Cargar Foto </div>
-                    <!-- selector de imagen que esta oculto -->
-                    <input type="file" name="foto" id="archivo" multiple class="tFoto"/>
-                    <!-- div en formato de boton para seleccionar la imagen -->
-                    <div id="botonSeleccion"></div>
-                    <!-- muestra el archivo seleccionado -->
-                    <div id="listaArchivo">Seleccione un archivo</div>
-                    <div class="capaNecesario9">*</div>
-                    <img src="img/aceptar.png" alt="aceptar" class="BAceptarDatos" onclick='enviarDatos()'/>
-                </form>
-            </div>
-            <div class="pie"></div>
-            <div class="logo2"></div>
-        </main>
+        <div class="container">
+            <header>
+                <div class="logo"></div>
+                <div class="barra"></div>
+                <div class="barra2"></div>
+            </header>
+            <main>
+                <div class="capaDatos">
+                    <form action="../controlador/FrontController.php?action=cargarDatos" name="formularioDatos" method="post" enctype="multipart/form-data">
+                        <div class="capaNombre">Nombre </div>
+                        <input type="text" name="nombre" value="" class="tNombre" required/>
+                        <div class="capaNecesario">*</div>
+                        <div class="capaApellido">Apellido </div>
+                        <input type="text" name="apellido" value="" class="tApellido"/>
+                        <div class="capaNecesario2">*</div>
+                        <div class="capaCedula">Cedula </div>
+                        <input type="text" name="cedula" value="" class="tCedula"/>
+                        <div class="capaNecesario3">*</div>
+                        <div class="capaDireccion">Direcci&oacute;n </div>
+                        <input type="text" name="direccion" value="" class="tDireccion"/>
+                        <div class="capaNecesario4">*</div>
+                        <div class="capaTelefono">Tel&eacute;fono </div>
+                        <input type="tel" name="telefono" value="" class="tTelefono"/>
+                        <div class="capaNecesario5">*</div>
+                        <div class="capaEmail">Email </div>
+                        <input type="email" name="email" value="" class="tEmail"/>
+                        <div class="capaNecesario6">*</div>
+                        <!--En Esta sección se coloca el calendario emergente-->
+                        <div class="capaFechaNacimiento">Fecha de nacimiento </div>
+                        <div id="botonFecha" class="botonFecha" onclick="mostrarCalendario();"></div>
+                        <div id="capaCalendario" class="calendario"></div>
+                        <!--Caja de texto del calendario-->
+                        <div id="resultado" class="tFecha"></div>
+                        <input type="date" name="fechaNacimiento" id="fechaNacimiento" value="" class="tFechaNacimiento"/>
+                        <div class="capaLugarNacimiento">Lugar de nacimiento </div>
+                        <input type="text" name="lugarNacimiento" value="" class="tLugarNacimiento"/>
+                        <div class="capaLugarTrabajo">Lugar de trabajo </div>
+                        <input type="text" name="lugarTrabajo" value="" class="tLugarTrabajo"/>
+                        <div class="capaNecesario7">*</div>
+                        <div class="capaCargo">Cargo </div>
+                        <input type="text" name="cargoTrabajo" value="" class="tCargo"/>
+                        <div class="capaNecesario8">*</div>
+                        <!--Cargar foto al servidor -->
+                        <div class="capaFoto">Cargar Foto </div>
+                        <!-- selector de imagen que esta oculto -->
+                        <input type="file" name="foto" id="archivo" multiple class="tFoto"/>
+                        <!-- div en formato de boton para seleccionar la imagen -->
+                        <div id="botonSeleccion"></div>
+                        <!-- muestra el archivo seleccionado -->
+                        <div id="listaArchivo">Seleccione un archivo</div>
+                        <div class="capaNecesario9">*</div>
+                        <img src="img/aceptar.png" alt="aceptar" class="BAceptarDatos" onclick='enviarDatos()'/>
+                    </form>
+                </div>
+                <div class="pie"></div>
+                <div class="logo2"></div>
+            </main>
+        </div>
     </body>
 </html>
