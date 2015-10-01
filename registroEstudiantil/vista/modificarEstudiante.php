@@ -34,7 +34,8 @@
                         $lugarNacimiento = $_SESSION['lugarNac'];
                         $lugarTrabajo = $_SESSION['lugarTrabajo'];
                         $cargoTrabajo = $_SESSION['cargoTrabajo'];
-                        $foto = $_SESSION['rutaFoto'];
+                        $rutaFoto = $_SESSION['rutaFoto'];
+                        $foto = file($rutaFoto);
                         printf("<form action=\"../controlador/FrontController.php?action=modificarDatos\" name=\"formularioDatos\" method=\"post\" enctype=\"multipart/form-data\">");
                             printf("<div class=\"capaNombre\">Nombre </div>");
                             printf("<input type=\"text\" name=\"nombre\" value=\"".$nombre."\" class=\"tNombre\"/>");
@@ -73,7 +74,7 @@
                             printf("<div class=\"capaFoto\">Cargar Foto </div>");
                             printf("<input type=\"file\" name=\"foto\" id=\"archivo\" multiple class=\"tFoto\"/>");
                             printf("<div id=\"botonSeleccion\"></div>");
-                            printf("<div id=\"listaArchivo\">".$foto."</div>");
+                            printf("<div id=\"listaArchivo\">". basename ( $rutaFoto )."</div>");
                             printf("<div class=\"capaNecesario9\">*</div>");
                             printf("<img src=\"img/aceptar.png\" alt=\"aceptar\" class=\"BAceptarDatos\" onclick='enviarDatos()'/>");
                         printf("</form>");
