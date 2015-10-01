@@ -129,8 +129,8 @@ class Model {
         }
         return $resultado;
     }
-    /**Este método se encarga de validar si la variable “password” enviada como 
-     * parámetro coincide con el campo “password” de la tabla “acceso”.*/
+/**Este método se encarga de validar si la variable “password” enviada como 
+ * parámetro coincide con el campo “password” de la tabla “acceso”.*/
     public function mdlValidarLogin($password)
     {
         $BD = new BaseDatos();
@@ -144,7 +144,9 @@ class Model {
             return FALSE;
         }
     }
-    /***/
+/**Este método modifica los datos de un estudiante. Regresa verdadero si 
+ * realiza la actualizaciòn sino regresa falso.
+ */
     public function mdlModificarEstudiante($cedulaAnterior, $cedulaEstudiante, 
             $nombre, $apellido, $direccion, $telefono, $email, $fechaNacimiento,
             $LugarNacimiento, $lugarTrabajo, $cargoTrabajo, $foto)
@@ -171,8 +173,16 @@ class Model {
                     .$cedulaAnterior."';";
             $resultado = $BD->modelQueryDB($query);
         }
-        else{
-            $resultado = FALSE;
+        else{//No hay foto modificada
+            $query ="update estudiantes set cedulaEstudiante='".$cedulaEstudiante
+                    ."', nombres='".$nombre."', apellidos='".$apellido."', "
+                    ."direccion='".$direccion."', telefono='".$telefono."', "
+                    ."email='".$email."', fechaNacimiento='".$fechaNacimiento
+                    ."', lugarNacimiento='".$LugarNacimiento."', lugarTrabajo='"
+                    .$lugarTrabajo."', cargoTrabajo='".$cargoTrabajo."',
+                    rutaFoto='".$foto."' where cedulaEstudiante='"
+                    .$cedulaAnterior."';";
+            $resultado = $BD->modelQueryDB($query);
         }
         return $resultado;
     }

@@ -92,8 +92,8 @@ class BackController {
             $this->estadoConsulta = $modelo->mdlModificarEstudiante($cedulaAnterior, $cedulaEstudiante, $nombre, $apellido, $direccion, $telefono, $email, $fechaNacimiento, $LugarNacimiento, $lugarTrabajo, $cargoTrabajo, $foto);
             session_start();
             if($this->estadoConsulta){
-                $_SESSION['cedula'] = $cedulaEstudiante;
-                header("Location: ../controlador/FrontController.php?action=mostrarResumen");
+//                $_SESSION['cedula'] = $cedulaEstudiante;
+                header("Location: ../controlador/FrontController.php?action=mostrarResumen&cedula=".$cedulaEstudiante);
             }
             else {
                 $_SESSION['cedula'] = "";

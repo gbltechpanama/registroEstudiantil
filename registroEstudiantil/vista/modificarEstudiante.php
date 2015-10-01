@@ -61,7 +61,7 @@
                             printf("<div id=\"capaCalendario\" class=\"calendario\"></div>");
                             /*Caja de texto del calendario*/
                             printf("<div id=\"resultado\" class=\"tFecha\">".$fechaNacimiento."</div>");
-                            printf("<input type=\"date\" name=\"fechaNacimiento\" value=\"".$fechaNacimiento."\" class=\"tFechaNacimiento\"/>");
+                            printf("<input type=\"date\" name=\"fechaNacimiento\" id=\"fechaNacimiento\" value=\"".$fechaNacimiento."\" class=\"tFechaNacimiento\"/>");
                             printf("<div class=\"capaLugarNacimiento\">Lugar de nacimiento </div>");
                             printf("<input type=\"text\" name=\"lugarNacimiento\" value=\"".$lugarNacimiento."\" class=\"tLugarNacimiento\"/>");
                             printf("<div class=\"capaLugarTrabajo\">Lugar de trabajo </div>");
