@@ -77,8 +77,10 @@ class BackController {
         }
     }
     /**Este método permite modificar los datos de un estudiante en particular.
-     * @param $cedulaAnterior Tipo String, contiene la cedula anterior del estudiante.
-     * @param $cedulaEstudiante Tipo String, contiene la cedula actual del estudiante.
+     * @param $cedulaAnterior Tipo String, contiene la cedula anterior del 
+     * estudiante.
+     * @param $cedulaEstudiante Tipo String, contiene la cedula actual del 
+     * estudiante.
      */
     public function ctrlModificarDatos ($cedulaAnterior, $cedulaEstudiante, 
             $nombre, $apellido, $direccion, $telefono, $email, $fechaNacimiento, 

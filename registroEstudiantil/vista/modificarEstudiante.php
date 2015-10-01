@@ -7,6 +7,9 @@
         <link href="css/estilos.css" rel="stylesheet" type="text/css">
         <script src="js/jquery-1.10.2.min.js"></script>
         <script src='js/formularios.js'></script>
+        <link rel="stylesheet" type="text/css" media="all" href="css/jsDatePick_ltr.min.css" />
+        <script type="text/javascript" src="js/jsDatePick.min.1.3.js"></script>
+        <script type="text/javascript" src="js/calendarios.js"></script>
     </head>
     <body>
         <div class="container">
@@ -26,6 +29,8 @@
                         $telefono = $_SESSION['telefonoEstudiante'];
                         $email = $_SESSION['email'];
                         $fechaNacimiento = $_SESSION['fechaNac'];
+                        $fecha = DateTime::createFromFormat('Y-m-d', $fechaNacimiento);
+                        $fechaNacimiento = $fecha->format('d/m/Y');
                         $lugarNacimiento = $_SESSION['lugarNac'];
                         $lugarTrabajo = $_SESSION['lugarTrabajo'];
                         $cargoTrabajo = $_SESSION['cargoTrabajo'];
@@ -50,6 +55,7 @@
                             printf("<div class=\"capaEmail\">Email </div>");
                             printf("<input type=\"email\" name=\"email\" value=\"".$email."\" class=\"tEmail\"/>");
                             printf("<div class=\"capaNecesario6\">*</div>");
+                            /*En Esta sección se coloca el calendario emergente*/
                             printf("<div class=\"capaFechaNacimiento\">Fecha de nacimiento </div>");
                             printf("<div id=\"botonFecha\" class=\"botonFecha\" onclick=\"mostrarCalendario();\"></div>");
                             printf("<div id=\"capaCalendario\" class=\"calendario\"></div>");

@@ -564,7 +564,7 @@ main{
     position: absolute;
     top: 237px;
     left: 306px;
-    width: 208px;
+    width: 226px;
     height: 25px;
     border-color: #000000;
     border: 1px;
@@ -888,7 +888,7 @@ main{
 .botonFecha{
     position: absolute;
     top: 229px;
-    left: 516px;
+    left: 536px;
     display: block;
     background: url(../img/calendario.png);
     border: 0;
@@ -906,7 +906,7 @@ main{
     background-color: #FDFDFD;
     display: none;//es invisible por defecto
     position: absolute;
-    left: 516px;
+    left: 536px;
     top: 257px;
     z-index: 2;
 }

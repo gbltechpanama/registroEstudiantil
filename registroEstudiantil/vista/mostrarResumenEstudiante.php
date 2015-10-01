@@ -25,6 +25,8 @@
                         $telefono = $_SESSION['telefonoEstudiante'];
                         $email = $_SESSION['email'];
                         $fechaNacimiento = $_SESSION['fechaNac'];
+                        $fecha = DateTime::createFromFormat('Y-m-d', $fechaNacimiento);
+                        $fechaNacimiento = $fecha->format('d/m/Y');
                         $lugarNacimiento = $_SESSION['lugarNac'];
                         $lugarTrabajo = $_SESSION['lugarTrabajo'];
                         $cargoTrabajo = $_SESSION['cargoTrabajo'];

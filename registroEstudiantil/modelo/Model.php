@@ -167,7 +167,7 @@ class Model {
                     ."email='".$email."', fechaNacimiento='".$fechaNacimiento
                     ."', lugarNacimiento='".$LugarNacimiento."', lugarTrabajo='"
                     .$lugarTrabajo."', cargoTrabajo='".$cargoTrabajo."',
-                    rutaFoto='".$rutaFoto."' where cedulaEstudiane='"
+                    rutaFoto='".$rutaFoto."' where cedulaEstudiante='"
                     .$cedulaAnterior."';";
             $resultado = $BD->modelQueryDB($query);
         }
