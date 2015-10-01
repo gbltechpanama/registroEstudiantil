@@ -7,6 +7,9 @@
         <link href="css/estilos.css" rel="stylesheet" type="text/css">
         <script src="js/jquery-1.10.2.min.js"></script>
         <script src='js/formularios.js'></script>
+        <link rel="stylesheet" type="text/css" media="all" href="css/jsDatePick_ltr.min.css" />
+        <script type="text/javascript" src="js/jsDatePick.min.1.3.js"></script>
+        <script type="text/javascript" src="js/calendarios.js"></script>
     </head>
     <body>
         <header>
@@ -35,8 +38,13 @@
                     <div class="capaEmail">Email </div>
                     <input type="email" name="email" value="" class="tEmail"/>
                     <div class="capaNecesario6">*</div>
+                    <!--En Esta sección se coloca el calendario emergente-->
                     <div class="capaFechaNacimiento">Fecha de nacimiento </div>
-                    <input type="date" name="fechaNacimiento" value="" class="tFechaNacimiento"/>
+                    <div id="botonFecha" class="botonFecha" onclick="mostrarCalendario();"></div>
+                    <div id="capaCalendario" class="calendario"></div>
+                    <!--Caja de texto del calendario-->
+                    <div id="resultado" class="tFecha"></div>
+                    <input type="date" name="fechaNacimiento" id="fechaNacimiento" value="" class="tFechaNacimiento"/>
                     <div class="capaLugarNacimiento">Lugar de nacimiento </div>
                     <input type="text" name="lugarNacimiento" value="" class="tLugarNacimiento"/>
                     <div class="capaLugarTrabajo">Lugar de trabajo </div>
