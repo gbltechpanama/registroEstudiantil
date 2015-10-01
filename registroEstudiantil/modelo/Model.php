@@ -174,13 +174,14 @@ class Model {
             $resultado = $BD->modelQueryDB($query);
         }
         else{//No hay foto modificada
+            $rutaFoto = "../vista/img/fotos/".$_FILES[$foto]['name'];
             $query ="update estudiantes set cedulaEstudiante='".$cedulaEstudiante
                     ."', nombres='".$nombre."', apellidos='".$apellido."', "
                     ."direccion='".$direccion."', telefono='".$telefono."', "
                     ."email='".$email."', fechaNacimiento='".$fechaNacimiento
                     ."', lugarNacimiento='".$LugarNacimiento."', lugarTrabajo='"
                     .$lugarTrabajo."', cargoTrabajo='".$cargoTrabajo."',
-                    rutaFoto='".$foto."' where cedulaEstudiante='"
+                    rutaFoto='".$rutaFoto."' where cedulaEstudiante='"
                     .$cedulaAnterior."';";
             $resultado = $BD->modelQueryDB($query);
         }
