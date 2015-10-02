@@ -19,8 +19,8 @@ window.onload = function(){
     });		
 
     g_globalObject.setOnSelectedDelegate(function(){
-            var obj = g_globalObject.getSelectedDay();      
-            document.getElementById("fechaNacimiento").innerHTML = obj.day + "/" + obj.month + "/" + obj.year;
+            var obj = g_globalObject.getSelectedDay(); 
+            document.getElementById("fechaNacimiento").value= obj.year + "/" + obj.month + "/" + obj.day;
             document.getElementById("resultado").innerHTML = obj.day + "/" + obj.month + "/" + obj.year;
             document.getElementById("capaCalendario").style.display="none";
     });
