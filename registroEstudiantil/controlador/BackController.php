@@ -160,11 +160,9 @@ class BackController {
                 $cargoTrabajo, $foto);
         session_start();
         if($this->estadoConsulta){
-            $_SESSION['cedula'] = $cedulaEstudiante;
-            header("Location: ../controlador/FrontController.php?action=mostrarResumen");
+            header("Location: ../controlador/FrontController.php?action=mostrarResumen&cedula=".$cedulaEstudiante);
         }
         else {
-            $_SESSION['cedula'] = "";
             header("Location: ../vista/errorBD.html?action=error");
         }
     }

@@ -30,7 +30,7 @@
                         $lugarNacimiento = $_SESSION['lugarNac'];
                         $lugarTrabajo = $_SESSION['lugarTrabajo'];
                         $cargoTrabajo = $_SESSION['cargoTrabajo'];
-                        $foto = $_SESSION['rutaFoto'];
+                        $foto = $_SESSION['rutaFotoEstudiante'];
                         printf("<img src=\"".$foto."\" class=\"mostrarFoto\" alt=\"Foto\"/>");
                         printf("<div class=\"mostrarNombre\">".$nombre."</div>");
                         printf("<div class=\"mostrarCedula\">C.I. ".$cedula."</div>");
