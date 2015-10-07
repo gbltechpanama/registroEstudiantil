@@ -12,12 +12,10 @@
         <script type="text/javascript" src="js/calendarios.js"></script>
     </head>
     <body>
+        <div class="logo"></div>
+        <div class="barra"></div>
+        <div class="barra2"></div>
         <div class="container">
-            <header>
-                <div class="logo"></div>
-                <div class="barra"></div>
-                <div class="barra2"></div>
-            </header>
             <main>
                 <div class="capaDatos">
                     <?php
@@ -80,9 +78,9 @@
                         printf("</form>");
                     ?>
                 </div>
-                <div class="pie"></div>
-                <div class="logo2"></div>
             </main>
         </div>
+        <div class="pie"></div>
+        <div class="logo2"></div>
     </body>
 </html>
