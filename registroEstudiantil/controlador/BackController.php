@@ -172,9 +172,48 @@ class BackController {
      */
     public function ctrlBusquedaEstudiante($criterio){
         $modelo = new Model();
-        $this->estadoConsulta = $modelo->mdlBusquedaNombreEstudiantes($criterio);
+        $password = $_SESSION['login'];
+        $this->resultadoLogin = $modelo->mdlValidarLogin($password);
+        if($this->resultadoLogin){
+            $this->estadoConsulta = $modelo->mdlBusquedaNombreEstudiantes($criterio);
+            session_start();
+            if($this->estadoConsulta){
+                $this->nombresEstudiantes = $modelo->mdlBusquedaNombreEstudiantes($criterio);
+                $this->apellidosEstudiantes = $modelo->mdlBusquedaApellidosEstudiantes($criterio);
+                $this->cedulaEstudiantes = $modelo->mdlBusquedaCedulaEstudiantes($criterio);
+                $this->lugarTrabajoEstudiantes = $modelo->mdlBusquedaLugarTrabajoEstudiantes($criterio);
+                $this->cargoTrabajoEstudiantes = $modelo->mdlBusquedaCargoTrabajoEstudiantes($criterio);
+                $_SESSION['nombresEstudiantes'] = $this->nombresEstudiantes;
+                $_SESSION['apellidosEstudiantes'] = $this->apellidosEstudiantes;
+                $_SESSION['cedulaEstudiantes'] = $this->cedulaEstudiantes;
+                $_SESSION['lugarTrabajoEstudiantes'] = $this->lugarTrabajoEstudiantes;
+                $_SESSION['cargoTrabajoEstudiantes'] = $this->cargoTrabajoEstudiantes;
+                header("Location: ../vista/resultadoBusqueda.php");
+            }
+            else{
+                header("Location: ../vista/errorBD.html?action=error");
+            }
+        }
+        else{
+            header("Location: ../vista/errorLogin.html");
+        }
+    }
+    /**Este método valida el login del profesor y regresa verdadero si es 
+     * correcta la clave, sino regresa nulo.
+     * @param $password Tipo String, almacena la clave a verificar.
+     * @return regresa verdadero si es correcta la clave, sino regresa nulo.
+     */
+    public function ctrlValidarLogin($password){
+        $modelo = new Model();
+        $this->resultadoLogin = $modelo->mdlValidarLogin($password);
         session_start();
-        if($this->estadoConsulta){}
-        else {}
+        if($this->resultadoLogin){
+            $_SESSION['login'] = TRUE;
+            header("Location: ../controlador/FrontController.php?action=busqueda&crierio=''");
+        }
+        else {
+            $_SESSION['login'] = FALSE;
+            header("Location: ../vista/errorLogin.html");
+        }
     }
 }

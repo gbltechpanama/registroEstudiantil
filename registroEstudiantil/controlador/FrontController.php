@@ -59,6 +59,14 @@ switch ($action){
                 $apellido, $direccion, $telefono, $email, $fechaNacimiento, 
                 $lugarNacimiento, $lugarTrabajo, $cargoTrabajo, $foto);
         break;
+    case 'login':
+        $password = $_POST['password'];
+        $back->ctrlValidarLogin($password);
+        break;
+    case 'busqueda':
+        $criterio = $_POST['crierio'];
+        $back->ctrlBusquedaEstudiante($criterio);
+        break;
     default :
         echo "<h1>Error</h1>";
         break;

@@ -118,7 +118,7 @@ main{
 }
 .pie2{
     background-color: #E4E4E4;
-    width: 1180px;
+    width: 100%;
     height: 88px;
     top: 690px;
     left: 0px;
@@ -209,21 +209,16 @@ main{
 }
 /**Para el cambio de clave*/
 .cambioClave{
-    width: 493px;
-    height: 286px;
+    width: 507px;
+    height: 301px;
     position: absolute;
     top: 307px;
-    left: calc(50% - 221px);
+    left: calc(50% - 253px);
     margin-left: auto;
     margin-right: auto;
-    border: 5px;
-    border-style: solid;
-    border-color: #FFFFFF;
     background-image: url(../img/CambioClave-Profesor.png);
     background-repeat: no-repeat;
     z-index: 1;
-    -webkit-box-shadow: 0px 2px #C7C7C7;
-    box-shadow: 0px 2px #C7C7C7;
 }
 /***/
 .cAnterior{
@@ -909,4 +904,28 @@ main{
     left: 536px;
     top: 257px;
     z-index: 2;
+}
+/**Para la busqueda*/
+.buscar{
+    width: 256px;
+    height: 26px;
+    position: absolute;
+    top: 250px;
+    right: 68px;
+}
+/**Para el boton de busqueda*/
+.botonBuscar{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 250px;
+    right: 39px;
+}
+/**Para el boton de cambiar la clave*/
+.botonModificarClave{
+    width: 256px;
+    height: 26px;
+    position: absolute;
+    top: 250px;
+    left: 68px;
 }
