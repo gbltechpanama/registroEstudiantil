@@ -929,3 +929,28 @@ main{
     top: 250px;
     left: 68px;
 }
+/**Para la tabla dinamica*/
+/**Titulos de las columnas*/
+.titulosTabla{
+    background-color: #EFCD09;
+    color: #000000;
+    text-align: center;
+    font-family: HelveticaBlack, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+}
+/**Lineas pares*/
+.lineaPar{
+    background-color: #CBD0DC;
+    color: #000000;
+    text-align: left;
+    font-family: HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+}
+/**Lineas pares*/
+.lineaImpar{
+    background-color: #FFFBE4;
+    color: #000000;
+    text-align: left;
+    font-family: HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+}

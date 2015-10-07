@@ -29,7 +29,7 @@ and open the template in the editor.
                 </form>
                 <table border="1">
                     <thead>
-                        <tr>
+                        <tr class="titulosTabla">
                             <th>NOMBRE</th>
                             <th>APELLIDO</th>
                             <th>CEDULA</th>
@@ -40,28 +40,41 @@ and open the template in the editor.
                         </tr>
                     </thead>
                     <tbody>                   
-                <?php
-                // crea la tabla con el resultado
-                    session_start();
-                    $cedulaEstudiantes = $_SESSION['cedulaEstudiantes'];
-                    $nombreEstudiantes = $_SESSION['nombresEstudiantes'];
-                    $apellidoEstudiantes = $_SESSION['apellidosEstudiantes'];
-                    $lugarTrabajoEstudiantes = $_SESSION['lugarTrabajoEstudiantes'];
-                    $cargoTrabajoEstudiantes = $_SESSION['cargoTrabajoEstudiantes'];
-                    $n = count($nombreEstudiantes);
-                    for($i=0; $i < $n; $i++){
-                        printf("<tr>");
-                            printf("<td>".$nombreEstudiantes[$i]."</td>");
-                            printf("<td>".$apellidoEstudiantes[$i]."</td>");
-                            printf("<td>".$cedulaEstudiantes[$i]."</td>");
-                            printf("<td>".$lugarTrabajoEstudiantes[$i]."</td>");
-                            printf("<td>".$cargoTrabajoEstudiantes[$i]."</td>");
-                            printf("<td style=\"text-align:center\"><img src=\"icono.jpg\"></td>");
-                            printf("<td style=\"text-align:center\"><img src=\"icono2.jpg\"></td>");
-                        printf("</tr>");
-                    }
-                ?>
-                        </tbody>
+                        <?php
+                        // crea la tabla con el resultado
+                            session_start();
+                            $cedulaEstudiantes = $_SESSION['cedulaEstudiantes'];
+                            $nombreEstudiantes = $_SESSION['nombresEstudiantes'];
+                            $apellidoEstudiantes = $_SESSION['apellidosEstudiantes'];
+                            $lugarTrabajoEstudiantes = $_SESSION['lugarTrabajoEstudiantes'];
+                            $cargoTrabajoEstudiantes = $_SESSION['cargoTrabajoEstudiantes'];
+                            $n = count($nombreEstudiantes);
+                            for($i=0; $i < $n; $i++){
+                                if($i%2 == 0){
+                                    printf("<tr class=\"lineaPar\">");
+                                        printf("<td>".$nombreEstudiantes[$i]."</td>");
+                                        printf("<td>".$apellidoEstudiantes[$i]."</td>");
+                                        printf("<td>".$cedulaEstudiantes[$i]."</td>");
+                                        printf("<td>".$lugarTrabajoEstudiantes[$i]."</td>");
+                                        printf("<td>".$cargoTrabajoEstudiantes[$i]."</td>");
+                                        printf("<td style=\"text-align:center\"><img src=\"icono.jpg\"></td>");
+                                        printf("<td style=\"text-align:center\"><img src=\"icono2.jpg\"></td>");
+                                    printf("</tr>");
+                                }
+                                else{
+                                    printf("<tr class=\"lineaImpar\">");
+                                        printf("<td>".$nombreEstudiantes[$i]."</td>");
+                                        printf("<td>".$apellidoEstudiantes[$i]."</td>");
+                                        printf("<td>".$cedulaEstudiantes[$i]."</td>");
+                                        printf("<td>".$lugarTrabajoEstudiantes[$i]."</td>");
+                                        printf("<td>".$cargoTrabajoEstudiantes[$i]."</td>");
+                                        printf("<td style=\"text-align:center\"><img src=\"icono.jpg\"></td>");
+                                        printf("<td style=\"text-align:center\"><img src=\"icono2.jpg\"></td>");
+                                    printf("</tr>");
+                                }
+                            }
+                        ?>
+                    </tbody>
                 </table>
             </main>
         </div>
