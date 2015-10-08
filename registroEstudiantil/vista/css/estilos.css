@@ -981,3 +981,27 @@ main{
 .celda{
     border-spacing: 1px;
 }
+/**Para la capa de clave satisfactoria*/
+.cambioAceptado{
+    width: 592px;
+    height: 190px;
+    position: absolute;
+    top: 307px;
+    left: calc(50% - 296px);
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../img/sucessClave.png);
+    background-repeat: no-repeat;
+}
+.mensaje{
+    color: #FFFFFF;
+    text-align: right;
+    font-family: HelveticaBlack, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 18px;
+}
+/**Para el enlace de salida del cambio de clave correcto*/
+.enlace2{
+    position: absolute;
+    top: 100px;
+    left: 372px;
+}
