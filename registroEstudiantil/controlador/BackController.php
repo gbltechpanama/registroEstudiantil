@@ -163,7 +163,7 @@ class BackController {
             header("Location: ../controlador/FrontController.php?action=mostrarResumen&cedula=".$cedulaEstudiante);
         }
         else {
-            header("Location: ../vista/errorBD.html?action=error");
+            header("Location: ../vista/errorBD.html");
         }
     }
     /**Este método permite buscar un estudiante deacuerdo a un criterio 
@@ -207,6 +207,20 @@ class BackController {
         else {
             $_SESSION['login'] = FALSE;
             header("Location: ../vista/errorLogin.html");
+        }
+    }
+    /**Este método elimina el registro de un estudiante.
+     * @param $cedulaEstudiante Tipo String, almacena la cedula del estudiante.
+     * @return Regresa verdadero si realiza la operación, sino regresa falso.
+     */
+    public function ctrlEliminar($cedulaEstudiante){
+        $modelo = new Model();
+        $this->estadoConsulta = $modelo->mdlEliminarEstudiante($cedulaEstudiante);
+        if($this->estadoConsulta){
+            header("Location: FrontController.php?action=busqueda");
+        }
+        else{
+            header("Location: ../vista/errorBD.html");
         }
     }
 }

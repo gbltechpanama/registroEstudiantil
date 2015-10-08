@@ -271,7 +271,7 @@ class Model {
      * usando el algortimo MD5.*/
    public function mdlCambiarClaveAdmin($claveAnterior, $claveNueva)
    {
-       $BD = new BaseDatos();
+        $BD = new BaseDatos();
         $query = "update acceso set password= MD5('".$claveNueva
                     ."') where password='".$claveAnterior."';";
         $resultado = $BD->modelQueryDB($query);
@@ -279,6 +279,28 @@ class Model {
             return TRUE;
         }
         else {
+            return FALSE;
+        }
+   }
+   /***/
+    public function mdlEliminarEstudiante($cedulaEstudiante){
+        $BD = new BaseDatos();
+        //Busca la ruta de la foto
+        $query = "select rutaFoto from estudiantes where cedulaEstudiante='"
+                .$cedulaEstudiante."';";
+        $resultado = $BD->modelQueryDB($query);
+        $row = mysql_fetch_row($resultado);
+        $rutaFoto = row[0];
+        //Borra el registro de la base de datos
+        $query = "delete from estudiantes where cedulaEstudiante='"
+                .$cedulaEstudiante."';";
+        $resultado = $BD->modelQueryDB($query);
+        if($resultado){
+            /*ELIMINAR EL ARCHIVO SUBIDO EN EL DIRECTORIO /IMG/FOTOS/*/
+            unlink($rutaFoto);
+            return TRUE;
+        }
+        else{
             return FALSE;
         }
    }
