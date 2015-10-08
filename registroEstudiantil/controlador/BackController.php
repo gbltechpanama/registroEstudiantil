@@ -44,11 +44,11 @@ class BackController {
         $this->estadoEstudiante = $modelo->mdlValidarCI($cedulaEstudiante);
         session_start();
         if($this->estadoEstudiante){
-            $resultadoLogin = True;
+            $_SESSION['login'] = TRUE;
             header("Location: ../controlador/FrontController.php?action=admEstudiante&cedula=".$cedulaEstudiante);
         }
         else {
-            $resultadoLogin = FALSE;
+            $_SESSION['login'] = False;
             header("Location: ../vista/cargarDatos.html");
         }
     }
@@ -87,8 +87,8 @@ class BackController {
             $LugarNacimiento, $lugarTrabajo, $cargoTrabajo, $foto)
     {
         $modelo = new Model();
-        $this->estadoEstudiante = $modelo->mdlValidarCI($cedulaAnterior);
-        if($this->estadoEstudiante){
+        $this->resultadoLogin = $_SESSION['login'];
+        if($this->resultadoLogin){
             $this->estadoConsulta = $modelo->mdlModificarEstudiante($cedulaAnterior, $cedulaEstudiante, $nombre, $apellido, $direccion, $telefono, $email, $fechaNacimiento, $LugarNacimiento, $lugarTrabajo, $cargoTrabajo, $foto);
             session_start();
             if($this->estadoConsulta){

@@ -33,7 +33,6 @@
                         $lugarTrabajo = $_SESSION['lugarTrabajo'];
                         $cargoTrabajo = $_SESSION['cargoTrabajo'];
                         $rutaFoto = $_SESSION['rutaFoto'];
-                        $foto = file($rutaFoto);
                         printf("<form action=\"../controlador/FrontController.php?action=modificarDatos\" name=\"formularioDatos\" method=\"post\" enctype=\"multipart/form-data\">");
                             printf("<div class=\"capaNombre\">Nombre </div>");
                             printf("<input type=\"text\" name=\"nombre\" value=\"".$nombre."\" class=\"tNombre\"/>");
@@ -80,7 +79,7 @@
                 </div>
             </main>
         </div>
-        <div class="pie"></div>
+        <div class="pie2"></div>
         <div class="logo2"></div>
     </body>
 </html>

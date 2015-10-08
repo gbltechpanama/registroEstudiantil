@@ -39,17 +39,17 @@
                         }
                         printf("</div>");
                         printf("<div class=\"mostrarTelefono2\">Tel&eacute;fono <div class=\"texto5\">".$telefono."</div></div>");
-                        printf("<div class=\"mostrarFechaNacimiento\">Fecha de Nacimiento <div class=\"texto5\">".$fechaNacimiento."</div></div>");
-                        printf("<div class=\"mostrarLugarTrabajo\">Lugar de Trabajo <div class=\"texto5\">".$lugarTrabajo."</div></div>");
+                        printf("<div class=\"mostrarFechaNacimiento\">Fecha de Nacimiento <div class=\"texto7\">".$fechaNacimiento."</div></div>");
+                        printf("<div class=\"mostrarLugarTrabajo\">Lugar de Trabajo <div class=\"texto9\">".$lugarTrabajo."</div></div>");
                         printf("<div class=\"mostrarDireccion\">Direcci&oacute;n <div class=\"texto5\">".$direccion."</div></div>");
-                        printf("<div class=\"mostrarEmail\">Email <div class=\"texto5\">".$email."</div></div>");
-                        printf("<div class=\"mostrarLugarNacimiento\">Lugar de Nacimiento <div class=\"texto5\">".$lugarNacimiento."</div></div>");
-                        printf("<div class=\"mostrarCargo\">Cargo <div class=\"texto5\">".$cargoTrabajo."</div></div>");
+                        printf("<div class=\"mostrarEmail\">Email <div class=\"texto6\">".$email."</div></div>");
+                        printf("<div class=\"mostrarLugarNacimiento\">Lugar de Nacimiento <div class=\"texto8\">".$lugarNacimiento."</div></div>");
+                        printf("<div class=\"mostrarCargo\">Cargo <div class=\"texto10\">".$cargoTrabajo."</div></div>");
                     ?>
                 </div>
             </main>
         </div>
-        <div class="pie"></div>
+        <div class="pie2"></div>
         <div class="logo2"></div>
     </body>
 </html>

@@ -194,8 +194,7 @@ class Model {
         $query = "select rutaFoto from estudiantes where cedulaEstudiante='"
                     .$cedulaAnterior."';";
         $resultado = $BD->modelQueryDB($query);
-        $row = mysql_fetch_row($resultado);
-        $rutafotoAnterior = $row[0];
+        $rutafotoAnterior = mysql_fetch_row($resultado);
         //Guarda la foto en la ruta indicada
         if($foto["tmp_name"] != NULL || $foto["tmp_name"] != ""){
             move_uploaded_file($foto["tmp_name"], $rutaFoto);
@@ -289,8 +288,7 @@ class Model {
         $query = "select rutaFoto from estudiantes where cedulaEstudiante='"
                 .$cedulaEstudiante."';";
         $resultado = $BD->modelQueryDB($query);
-        $row = mysql_fetch_row($resultado);
-        $rutaFoto = row[0];
+        $rutaFoto = mysql_fetch_row($resultado);
         //Borra el registro de la base de datos
         $query = "delete from estudiantes where cedulaEstudiante='"
                 .$cedulaEstudiante."';";
