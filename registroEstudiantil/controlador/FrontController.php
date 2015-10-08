@@ -64,7 +64,9 @@ switch ($action){
         $back->ctrlValidarLogin($password);
         break;
     case 'busqueda':
-        $criterio = $_POST['crierio'];
+        $criterio = $_POST['criterio'];
+        if($criterio == NULL)
+            $criterio = "";
         $back->ctrlBusquedaEstudiante($criterio);
         break;
     default :

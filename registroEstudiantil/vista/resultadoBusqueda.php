@@ -68,8 +68,8 @@ and open the template in the editor.
                                         printf("<td>".$cedulaEstudiantes[$i]."</td>");
                                         printf("<td>".$lugarTrabajoEstudiantes[$i]."</td>");
                                         printf("<td>".$cargoTrabajoEstudiantes[$i]."</td>");
-                                        printf("<td style=\"text-align:center\"><img src=\"icono.jpg\"></td>");
-                                        printf("<td style=\"text-align:center\"><img src=\"icono2.jpg\"></td>");
+                                        printf("<td style=\"text-align:center\"><img src=\"ver.png\"></td>");
+                                        printf("<td style=\"text-align:center\"><img src=\"eliminar2.jpg\"></td>");
                                     printf("</tr>");
                                 }
                             }

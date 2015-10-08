@@ -159,11 +159,17 @@ class Model {
         $query = "select password from acceso where password=MD5('".$password
                 ."');";
         $resultado = $BD->modelQueryDB($query);
-        if($resultado->num_rows > 0){
-            return TRUE;
-        }
-        else {
+        if($resultado->connect_error){
+            die("Coneccion fallida: ".$resultado->connect_error);
             return FALSE;
+        }
+        else{
+            if($resultado != NULL && mysql_num_rows($resultado)>0){
+                return TRUE;
+            }
+            else {
+                return FALSE;
+            }
         }
     }
 /**Este método modifica los datos de un estudiante. Regresa verdadero si 
@@ -182,8 +188,15 @@ class Model {
                     .$rutaFoto."'";
             $resultado = $BD->modelQueryDB($query);
         }while ($resultado->num_rows > 0);
+        //Busca la ruta actual de la foto
+        $query = "select rutaFoto from estudiantes where cedulaEstudiante='"
+                    .$cedulaAnterior."';";
+        $resultado = $BD->modelQueryDB($query);
+        $row = mysql_fetch_row($resultado);
+        $rutafotoAnterior = $row[0];
         //Guarda la foto en la ruta indicada
-        if(move_uploaded_file($foto["tmp_name"], $rutaFoto)){
+        if($foto["tmp_name"] != NULL || $foto["tmp_name"] != ""){
+            move_uploaded_file($foto["tmp_name"], $rutaFoto);
         //Preparando la instrucción
             $query ="update estudiantes set cedulaEstudiante='".$cedulaEstudiante
                     ."', nombres='".$nombre."', apellidos='".$apellido."', "
@@ -194,17 +207,17 @@ class Model {
                     rutaFoto='".$rutaFoto."' where cedulaEstudiante='"
                     .$cedulaAnterior."';";
             $resultado = $BD->modelQueryDB($query);
+            //ELIMINAR IMAGEN ANTERIOR
+            unlink("../vista/img/fotos/".$rutafotoAnterior);
         }
         else{//No hay foto modificada
-            $rutaFoto = "../vista/img/fotos/".$_FILES[$foto]['name'];
             $query ="update estudiantes set cedulaEstudiante='".$cedulaEstudiante
                     ."', nombres='".$nombre."', apellidos='".$apellido."', "
                     ."direccion='".$direccion."', telefono='".$telefono."', "
                     ."email='".$email."', fechaNacimiento='".$fechaNacimiento
                     ."', lugarNacimiento='".$LugarNacimiento."', lugarTrabajo='"
-                    .$lugarTrabajo."', cargoTrabajo='".$cargoTrabajo."',
-                    rutaFoto='".$rutaFoto."' where cedulaEstudiante='"
-                    .$cedulaAnterior."';";
+                    .$lugarTrabajo."', cargoTrabajo='".$cargoTrabajo."' "
+                    . "where cedulaEstudiante='".$cedulaAnterior."';";
             $resultado = $BD->modelQueryDB($query);
         }
         return $resultado;

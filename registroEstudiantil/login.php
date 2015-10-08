@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-            header("Location: ../vista/formLogin.php");
+            header("Location: ../registroEstudiantil/vista/formLogin.php");
         ?>
     </body>
 </html>

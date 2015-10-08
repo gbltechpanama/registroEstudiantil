@@ -173,8 +173,7 @@ class BackController {
     public function ctrlBusquedaEstudiante($criterio){
         $modelo = new Model();
         $password = $_SESSION['login'];
-        $this->resultadoLogin = $modelo->mdlValidarLogin($password);
-        if($this->resultadoLogin){
+        if($password){
             $this->estadoConsulta = $modelo->mdlBusquedaNombreEstudiantes($criterio);
             session_start();
             if($this->estadoConsulta){
@@ -191,7 +190,7 @@ class BackController {
                 header("Location: ../vista/resultadoBusqueda.php");
             }
             else{
-                header("Location: ../vista/errorBD.html?action=error");
+                header("Location: ../vista/errorBD.html");
             }
         }
         else{

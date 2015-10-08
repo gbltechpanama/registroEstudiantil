@@ -20,12 +20,12 @@
         <div class="container">
             <main>
                 <div class="capaLogin">
-                    <form action="" name="formularioLogin?action=login" method="post">
+                    <form action="../controlador/FrontController.php?action=login" name="formularioLogin" method="post">
                         <div class="bienvenida">Bienvenido(a) Profesor(a)
                             <br> 
                             Ingrese su clave de ingreso
                         </div>
-                        <input type="password" name="password" value="" class="clave"/>
+                        <input type="password" name="password" value="" class="clave" required=""/>
                         <img src="img/aceptar.png" alt="aceptar" class="botonAceptar" onclick='enviarDatos()'/>
                     </form>
                 </div>
