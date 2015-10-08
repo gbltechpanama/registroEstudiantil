@@ -69,9 +69,13 @@ switch ($action){
             $criterio = "";
         $back->ctrlBusquedaEstudiante($criterio);
         break;
-    case 'eliminar':
+    case 'eliminarEstudiante':
         $cedulaEstudiante = $_GET['cedulaEstudiante'];
-        $back->ctrlEliminar($cedulaEstudiante);
+        $back->ctrlEliminarEstudiante($cedulaEstudiante);
+        break;
+    case 'admEliminarEstudiante':
+        $cedulaEstudiante = $_GET['cedulaEstudiante'];
+        $back->ctrlAdministrarEliminarEstudiante($cedulaEstudiante);
         break;
     default :
         echo "<h1>Error</h1>";

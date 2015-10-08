@@ -213,7 +213,21 @@ class BackController {
      * @param $cedulaEstudiante Tipo String, almacena la cedula del estudiante.
      * @return Regresa verdadero si realiza la operación, sino regresa falso.
      */
-    public function ctrlEliminar($cedulaEstudiante){
+    public function ctrlEliminarEstudiante($cedulaEstudiante){
+        $modelo = new Model();
+        $this->estadoConsulta = $modelo->mdlEliminarEstudiante($cedulaEstudiante);
+        if($this->estadoConsulta){
+            header("Location: ../index.php");
+        }
+        else{
+            header("Location: ../vista/errorBD.html");
+        }
+    }
+    /**Este método elimina el registro de un estudiante.
+     * @param $cedulaEstudiante Tipo String, almacena la cedula del estudiante.
+     * @return Regresa verdadero si realiza la operación, sino regresa falso.
+     */
+    public function ctrlAdministrarEliminarEstudiante($cedulaEstudiante){
         $modelo = new Model();
         $this->estadoConsulta = $modelo->mdlEliminarEstudiante($cedulaEstudiante);
         if($this->estadoConsulta){

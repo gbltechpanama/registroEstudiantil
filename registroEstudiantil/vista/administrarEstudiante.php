@@ -19,6 +19,10 @@ and open the template in the editor.
             {
                 document.location.href = "../vista/modificarEstudiante.php";
             }
+            function eliminar(cedula)
+            {
+                document.location.href = "../controlador/FrontController.php?action=eliminarEstudiante&cedula="+cedula;
+            }
         </script>
     </head>
     <body>
@@ -51,9 +55,9 @@ and open the template in the editor.
                         alt=\"Ver Todo\" class=\"botonVerTodo\" onclick=\"verTodo(".$cedula.");\"/>");
                         printf("<img src=\"img/modificar.png\" width=\"124\" height=\"28\" 
                         alt=\"Modificar\" class=\"botonModificar\" onclick=\"modificar(".$cedula.");\"/>");
-                    ?>
-                    <img src="img/eliminar.png" width="123" height="27" 
-                         alt="Eliminar" class="botonEliminar" onclick="eliminar();"/>
+                        printf("<img src=\"img/eliminar.png\" width=\"123\" height=\"27\" 
+                         alt=\"Eliminar\" class=\"botonEliminar\" onclick=\"eliminar(".$cedula.");\"/>");
+                    ?>                    
                 </div>
                 <div class="pie"></div>
                 <div class="logo2"></div>
