@@ -70,7 +70,7 @@ switch ($action){
         $back->ctrlBusquedaEstudiante($criterio);
         break;
     case 'eliminarEstudiante':
-        $cedulaEstudiante = $_GET['cedulaEstudiante'];
+        $cedulaEstudiante = $_SESSION['cedulaEstudiante'];
         $back->ctrlEliminarEstudiante($cedulaEstudiante);
         break;
     case 'admEliminarEstudiante':
