@@ -939,6 +939,9 @@ main{
     font-size: 14px;
     width: 208px;
     height: 23px;
+    border: 1px;
+    border-style: solid;
+    border-color: #EFCD09;
 }
 /**Lineas pares*/
 .lineaPar{
@@ -973,4 +976,8 @@ main{
     font-size: 14px;
     width: 48px;
     height: 23px;
+}
+/**Para las celdas*/
+.celda{
+    border-spacing: 1px;
 }
