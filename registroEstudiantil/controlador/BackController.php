@@ -237,4 +237,24 @@ class BackController {
             header("Location: ../vista/errorBD.html");
         }
     }
+    /**Este método permite cambiar la clave del profesor.
+     * @param $claveAnterior Tipo String, almacena la clave anterior.
+     * @param $claveNueva Tipo String, almacena la clave nueva.
+     */
+    public function ctrlCambiarClaveAdmin($claveAnterior, $claveNueva){
+        $modelo = new Model();
+        $login = $_SESSION['login'];
+        if($login){
+            $this->estadoConsulta = $modelo->mdlCambiarClaveAdmin($claveAnterior, $claveNueva);
+            if($this->estadoConsulta){
+                header("Location: ../vista/successClave.php");
+            }
+            else{
+                header("Location: ../vista/errorBD.html");
+            }
+        }
+        else{
+            header("Location: ../vista/errorLogin.html");
+        }
+    }
 }

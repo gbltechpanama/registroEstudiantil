@@ -14,6 +14,12 @@ and open the template in the editor.
             {
                 document.forms[0].submit();
             }
+            function validarClave(clave, confirmacion){
+                if(clave == confirmacion)
+                    return true;
+                else
+                    return false;
+            }
         </script>
     </head>
     <body>
@@ -22,7 +28,7 @@ and open the template in the editor.
         <div class="barra2"></div>
         <div class="container">
             <main>
-                <form name="formularioCambioClave" class="cambioClave">
+                <form name="formularioCambioClave" class="cambioClave" action="../controlador/FrontController.php?action=cambioClave" method="POST">
                     <div class="texto1">Cambio de clave de ingreso</div>
                     <div class="texto2">Ingrese su clave actual</div>
                     <input type="password" name="claveAnterior" value="" class="cAnterior"/>
@@ -30,7 +36,7 @@ and open the template in the editor.
                     <input type="password" name="claveNueva" value="" class="cNueva"/>
                     <div class="texto4">Confirme su nueva clave</div>
                     <input type="password" name="confirmarclave" value="" class="cConfirmar"/>
-                    <img src="img/aceptar.png" alt="aceptar" class="botonAceptar2" onclick='enviarDatos()'/>
+                    <img src="img/aceptar.png" alt="aceptar" class="botonAceptar2" onclick="enviarDatos();"/>
                 </form>
             </main>
         </div>

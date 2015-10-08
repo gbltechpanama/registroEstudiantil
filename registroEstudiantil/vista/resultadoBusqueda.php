@@ -9,6 +9,23 @@
             {
                 document.forms[0].submit();
             }
+            function verTodo(cedula)
+            {
+                if(cedula!=""){
+                    document.location.href = "../controlador/FrontController.php?action=mostrarResumen&cedula="+cedula;
+                }
+            }
+            function eliminar(cedula)
+            {
+                if(cedula!=""){
+                    document.location.href = "../controlador/FrontController.php?action=admEliminarEstudiante&cedulaEstudiante="+cedula;
+                }
+            }
+            function buscar(criterio){
+                if(criterio!=""){
+                    document.location.href = "../controlador/FrontController.php?action=busqueda&criterio="+criterio;
+                }
+            }
         </script>
     </head>
     <body>
@@ -19,9 +36,11 @@
             <main>
                 <form name="formularioBuscar" action="../controlador/FrontController.php?action=busqueda" method="POST">
                     <input type="text" name="criterio" value="Escriba aquí palabra clave de busqueda" class="buscar" />
-                    <img src="img/buscar.png" width="25" height="25" alt="buscar" class="botonBuscar"/>
-                    <img src="img/modificarClave.png" width="225" height="27" alt="modificarClave" class="botonModificarClave" onclick=""/>
+                    <img src="img/buscar.png" width="25" height="25" alt="buscar" class="botonBuscar" onclick="enviarDatos();"/>
                 </form>
+                <a href="formCambioClave.html">
+                    <img src="img/modificarClave.png" width="225" height="27" alt="modificarClave" class="botonModificarClave"/>
+                </a>
                 <table border="0" class="tabla">
                     <thead>
                         <tr>
@@ -52,8 +71,8 @@
                                         printf("<td>".$cedulaEstudiantes[$i]."</td>");
                                         printf("<td>".$lugarTrabajoEstudiantes[$i]."</td>");
                                         printf("<td>".$cargoTrabajoEstudiantes[$i]."</td>");
-                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/ver.png\"></td>");
-                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/eliminar2.png\"></td>");
+                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/ver.png\" onclick=\"verTodo(".$cedulaEstudiantes[$i].");\"></td>");
+                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/eliminar2.png\" onclick=\"eliminar(".$cedulaEstudiantes[$i].");\"/></td>");
                                     printf("</tr>");
                                 }
                                 else{
@@ -63,8 +82,8 @@
                                         printf("<td>".$cedulaEstudiantes[$i]."</td>");
                                         printf("<td>".$lugarTrabajoEstudiantes[$i]."</td>");
                                         printf("<td>".$cargoTrabajoEstudiantes[$i]."</td>");
-                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/ver.png\"></td>");
-                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/eliminar2.png\"></td>");
+                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/ver.png\" onclick=\"verTodo(".$cedulaEstudiantes[$i].");\"></td>");
+                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/eliminar2.png\" onclick=\"eliminar(".$cedulaEstudiantes[$i].");\"/></td>");
                                     printf("</tr>");
                                 }
                             }

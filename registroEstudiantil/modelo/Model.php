@@ -104,7 +104,7 @@ class Model {
     public function mdlBusquedaCedulaEstudiantes($criterio){
         $BD = new BaseDatos();
         $query = "select cedulaEstudiante from estudiantes where "
-                ."cedulaEstudiante like '%".$criterio."%' nombres like '%"
+                ."cedulaEstudiante like '%".$criterio."%' or nombres like '%"
                 .$criterio."%' or apellidos like '%".$criterio."%' or direccion"
                 ." like '%".$criterio."%' or telefono like '%".$criterio."%' or "
                 ."email like '%".$criterio."%' or fechaNacimiento like '%"

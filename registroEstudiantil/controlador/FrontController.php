@@ -77,6 +77,11 @@ switch ($action){
         $cedulaEstudiante = $_GET['cedulaEstudiante'];
         $back->ctrlAdministrarEliminarEstudiante($cedulaEstudiante);
         break;
+    case 'cambioClave':
+        $claveAnterior = $_POST['claveAnterior'];
+        $claveNueva = $_POST['claveNueva'];
+        $back->ctrlCambiarClaveAdmin($claveAnterior, $claveNueva);
+        break;
     default :
         echo "<h1>Error</h1>";
         break;
