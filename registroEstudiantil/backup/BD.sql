@@ -29,3 +29,9 @@ insert into estudiantes ( cedulaEstudiante, nombres, apellidos, direccion,
     cargoTrabajo, rutaFoto ) values ('12345677', 'Maria', 'Perez', 'Barcelona', 
     '02812345679', 'maperez@gmail.com', '2000-10-10', 'Barcelona', 'Muebleria el turco', 
     'Vendedora', '../vista/img/fotos/54285.jpg' );
+
+INSERT INTO estudiantil.estudiantes (`cedulaEstudiante`, nombres, apellidos, 
+    direccion, telefono, email, `fechaNacimiento`, `lugarNacimiento`, 
+    `lugarTrabajo`, `cargoTrabajo`, `rutaFoto`) VALUES ('32435465', 'Luis', 
+    'Perez', 'Caracas', '02121234567', 'lperez@gmail.com', '1994-06-15', 
+    'Caracas', 'Muebleria el turco', 'Vendedor', '../vista/img/fotos/19651.jpg');
