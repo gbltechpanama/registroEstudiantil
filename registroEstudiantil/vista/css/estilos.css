@@ -937,6 +937,8 @@ main{
     text-align: center;
     font-family: HelveticaBlack, HelveticaCondensada, "Helvetica LT Std";
     font-size: 14px;
+    width: 208px;
+    height: 23px;
 }
 /**Lineas pares*/
 .lineaPar{
@@ -953,4 +955,22 @@ main{
     text-align: left;
     font-family: HelveticaCondensada, "Helvetica LT Std";
     font-size: 14px;
+}
+/**Para la tabla de resultados*/
+.tabla{
+    position: absolute;
+    top: 338px;
+    left: 34px;
+    right: 34px;
+    width: 1111px;
+}
+/**Para los iconos*/
+.iconosTabla{
+    background-color: #EFCD09;
+    color: #000000;
+    text-align: center;
+    font-family: HelveticaBlack, HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+    width: 48px;
+    height: 23px;
 }

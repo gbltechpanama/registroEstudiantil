@@ -17,13 +17,15 @@ class Model {
     public function mdlBusquedaNombreEstudiantes($criterio)
     {
         $BD = new BaseDatos();
-        $query = "select nombres from estudiantes where nombres like '%".$criterio."%' or 
-        apellidos like '%".$criterio."%' or direccion like '%".$criterio."%' or telefono like 
-        '%".$criterio."%' or email like '%".$criterio."%' or fechaNacimiento like '%".$criterio."%' or 
-        lugarNacimiento like '%".$criterio."%' or lugarTrabajo like '%".$criterio."%' or
-        cargoTrabajo like '%".$criterio."%' or rutaFoto like '%".$criterio."%'";
+        $query = "select nombres from estudiantes where nombres like '%"
+                .$criterio."%' or apellidos like '%".$criterio."%' or direccion "
+                ."like '%".$criterio."%' or telefono like '%".$criterio."%' or "
+                ."email like '%".$criterio."%' or fechaNacimiento like '%"
+                .$criterio."%' or lugarNacimiento like '%".$criterio."%' or "
+                ."lugarTrabajo like '%".$criterio."%' or cargoTrabajo like '%"
+                .$criterio."%' or rutaFoto like '%".$criterio."%'";
         $resultado = $BD->modelQueryDB($query);
-        if($resultado->num_rows > 0){
+        if($resultado != NULL && mysql_num_rows($resultado)>0){
             $datos = $BD->modelConvertirEnArray($resultado);
         }
         else {
@@ -44,7 +46,7 @@ class Model {
         lugarNacimiento like '%".$criterio."%' or lugarTrabajo like '%".$criterio."%' or
         cargoTrabajo like '%".$criterio."%' or rutaFoto like '%".$criterio."%'";
         $resultado = $BD->modelQueryDB($query);
-        if($resultado->num_rows > 0){
+        if($resultado != NULL && mysql_num_rows($resultado)>0){
             $datos = $BD->modelConvertirEnArray($resultado);
         }
         else {
@@ -66,7 +68,7 @@ class Model {
                 ."lugarTrabajo like '%".$criterio."%' or cargoTrabajo like '%"
                 .$criterio."%' or rutaFoto like '%".$criterio."%'";
         $resultado = $BD->modelQueryDB($query);
-        if($resultado->num_rows > 0){
+        if($resultado != NULL && mysql_num_rows($resultado)>0){
             $datos = $BD->modelConvertirEnArray($resultado);
         }
         else {
@@ -88,7 +90,7 @@ class Model {
                 ."lugarTrabajo like '%".$criterio."%' or cargoTrabajo like '%"
                 .$criterio."%' or rutaFoto like '%".$criterio."%'";
         $resultado = $BD->modelQueryDB($query);
-        if($resultado->num_rows > 0){
+        if($resultado != NULL && mysql_num_rows($resultado)>0){
             $datos = $BD->modelConvertirEnArray($resultado);
         }
         else {
@@ -110,7 +112,7 @@ class Model {
                 ."lugarTrabajo like '%".$criterio."%' or cargoTrabajo like '%"
                 .$criterio."%' or rutaFoto like '%".$criterio."%'";
         $resultado = $BD->modelQueryDB($query);
-        if($resultado->num_rows > 0){
+        if($resultado != NULL && mysql_num_rows($resultado)>0){
             $datos = $BD->modelConvertirEnArray($resultado);
         }
         else {

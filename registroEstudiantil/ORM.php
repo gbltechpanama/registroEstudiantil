@@ -42,12 +42,10 @@ class BaseDatos
     public function modelConvertirEnArray($resultado)
     {
         $i = 0;
-
         while ($row = mysql_fetch_row($resultado)) {
-                $data_array[$i] = $row[$i];
+                $data_array[$i] = $row[0];
                 $i++;
         }
-
         return $data_array;
     }
     /************************************************/

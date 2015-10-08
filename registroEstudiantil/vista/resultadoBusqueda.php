@@ -27,16 +27,16 @@ and open the template in the editor.
                     <img src="img/buscar.png" width="25" height="25" alt="buscar" class="botonBuscar"/>
                     <img src="img/modificarClave.png" width="225" height="27" alt="modificarClave" class="botonModificarClave" onclick=""/>
                 </form>
-                <table border="1">
+                <table border="0" class="tabla">
                     <thead>
-                        <tr class="titulosTabla">
-                            <th>NOMBRE</th>
-                            <th>APELLIDO</th>
-                            <th>CEDULA</th>
-                            <th>L. TRABAJO</th>
-                            <th>CARGO</th>
-                            <th>VER</th>
-                            <th>ELIM</th>
+                        <tr>
+                            <th class="titulosTabla">NOMBRE</th>
+                            <th class="titulosTabla">APELLIDO</th>
+                            <th class="titulosTabla">CEDULA</th>
+                            <th class="titulosTabla">L. TRABAJO</th>
+                            <th class="titulosTabla">CARGO</th>
+                            <th class="iconosTabla">VER</th>
+                            <th class="iconosTabla">ELIM</th>
                         </tr>
                     </thead>
                     <tbody>                   
@@ -57,8 +57,8 @@ and open the template in the editor.
                                         printf("<td>".$cedulaEstudiantes[$i]."</td>");
                                         printf("<td>".$lugarTrabajoEstudiantes[$i]."</td>");
                                         printf("<td>".$cargoTrabajoEstudiantes[$i]."</td>");
-                                        printf("<td style=\"text-align:center\"><img src=\"ver.png\"></td>");
-                                        printf("<td style=\"text-align:center\"><img src=\"eliminar2.jpg\"></td>");
+                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/ver.png\"></td>");
+                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/eliminar2.png\"></td>");
                                     printf("</tr>");
                                 }
                                 else{
@@ -68,8 +68,8 @@ and open the template in the editor.
                                         printf("<td>".$cedulaEstudiantes[$i]."</td>");
                                         printf("<td>".$lugarTrabajoEstudiantes[$i]."</td>");
                                         printf("<td>".$cargoTrabajoEstudiantes[$i]."</td>");
-                                        printf("<td style=\"text-align:center\"><img src=\"ver.png\"></td>");
-                                        printf("<td style=\"text-align:center\"><img src=\"eliminar2.jpg\"></td>");
+                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/ver.png\"></td>");
+                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/eliminar2.png\"></td>");
                                     printf("</tr>");
                                 }
                             }

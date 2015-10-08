@@ -174,24 +174,18 @@ class BackController {
         $modelo = new Model();
         $password = $_SESSION['login'];
         if($password){
-            $this->estadoConsulta = $modelo->mdlBusquedaNombreEstudiantes($criterio);
             session_start();
-            if($this->estadoConsulta){
-                $this->nombresEstudiantes = $modelo->mdlBusquedaNombreEstudiantes($criterio);
-                $this->apellidosEstudiantes = $modelo->mdlBusquedaApellidosEstudiantes($criterio);
-                $this->cedulaEstudiantes = $modelo->mdlBusquedaCedulaEstudiantes($criterio);
-                $this->lugarTrabajoEstudiantes = $modelo->mdlBusquedaLugarTrabajoEstudiantes($criterio);
-                $this->cargoTrabajoEstudiantes = $modelo->mdlBusquedaCargoTrabajoEstudiantes($criterio);
-                $_SESSION['nombresEstudiantes'] = $this->nombresEstudiantes;
-                $_SESSION['apellidosEstudiantes'] = $this->apellidosEstudiantes;
-                $_SESSION['cedulaEstudiantes'] = $this->cedulaEstudiantes;
-                $_SESSION['lugarTrabajoEstudiantes'] = $this->lugarTrabajoEstudiantes;
-                $_SESSION['cargoTrabajoEstudiantes'] = $this->cargoTrabajoEstudiantes;
-                header("Location: ../vista/resultadoBusqueda.php");
-            }
-            else{
-                header("Location: ../vista/errorBD.html");
-            }
+            $this->nombresEstudiantes = $modelo->mdlBusquedaNombreEstudiantes($criterio);
+            $this->apellidosEstudiantes = $modelo->mdlBusquedaApellidosEstudiantes($criterio);
+            $this->cedulaEstudiantes = $modelo->mdlBusquedaCedulaEstudiantes($criterio);
+            $this->lugarTrabajoEstudiantes = $modelo->mdlBusquedaLugarTrabajoEstudiantes($criterio);
+            $this->cargoTrabajoEstudiantes = $modelo->mdlBusquedaCargoTrabajoEstudiantes($criterio);
+            $_SESSION['nombresEstudiantes'] = $this->nombresEstudiantes;
+            $_SESSION['apellidosEstudiantes'] = $this->apellidosEstudiantes;
+            $_SESSION['cedulaEstudiantes'] = $this->cedulaEstudiantes;
+            $_SESSION['lugarTrabajoEstudiantes'] = $this->lugarTrabajoEstudiantes;
+            $_SESSION['cargoTrabajoEstudiantes'] = $this->cargoTrabajoEstudiantes;
+            header("Location: ../vista/resultadoBusqueda.php");
         }
         else{
             header("Location: ../vista/errorLogin.html");
@@ -208,7 +202,7 @@ class BackController {
         session_start();
         if($this->resultadoLogin){
             $_SESSION['login'] = TRUE;
-            header("Location: ../controlador/FrontController.php?action=busqueda&crierio=''");
+            header("Location: ../controlador/FrontController.php?action=busqueda&criterio=");
         }
         else {
             $_SESSION['login'] = FALSE;
