@@ -32,8 +32,8 @@
     </head>
     <body>
         <div class="logo"></div>
-        <div class="barra"></div>
-        <div class="barra2"></div>
+        <div class="barra4"></div>
+        <div class="barra5"></div>
         <div class="container">
             <main>
                 <form name="formularioBuscar" action="../controlador/FrontController.php?action=busqueda" method="POST">
@@ -94,7 +94,7 @@
                 </table>
             </main>
         </div>
-        <div class="pie2"></div>
-        <div class="logo2"></div>
+        <div class="pie"></div>
+        <div class="logo3"></div>
     </body>
 </html>
