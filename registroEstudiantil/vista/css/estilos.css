@@ -354,122 +354,121 @@ main{
 .capaNombre{
     position: absolute;
     top: 90px;
-    left: 236px;
+    left: calc(50% - 297px); /*236px;*/
 }
 .capaApellido{
     position: absolute;
     top: 90px;
-    left: 689px;
+    left: calc(50% + 99px);/*left: 689px;*/
 }
 .capaCedula{
     position: absolute;
     top: 139px;
-    left: 241px;
+    right: calc(50% + 252px); /*236px;*/
 }
 .capaDireccion{
     position: absolute;
     top: 139px;
-    left: 683px;
+    left: calc(50% + 93px);/*left: 683px;*/
 }
 .capaTelefono{
     position: absolute;
     top: 189px;
-    left: 230px;
+    right: calc(50% + 250px); /*230px;*/
 }
 .capaEmail{
     position: absolute;
     top: 189px;
-    left: 705px;
+    left: calc(50% + 116px);/*left: 705px;*/
 }
 .capaFechaNacimiento{
     position: absolute;
     top: 241px;
-    left: 165px;
+    right: calc(50% + 252px); /*165px;*/
 }
 .capaLugarNacimiento{
     position: absolute;
     top: 241px;
-    left: 612px;
+    left: calc(50% + 20px);/*left: 612px;*/
     width: 130px;
 }
 .capaLugarTrabajo{
     position: absolute;
     top: 291px;
-    left: 189px;
+    right: calc(50% + 252px); /*189px;*/
 }
 .capaCargo{
     position: absolute;
     top: 291px;
-    left: 705px;
+    left: calc(50% + 116px);/*left: 705px;*/
 }
 .capaFoto{
     position: absolute;
     top: 343px;
-    left: 215px;
+    right: calc(50% + 252px); /*215px;*/
 }
 /**Para indicar el asterisco rojo*/
 .capaNecesario{
     color: #ff0000;
     position: absolute;
     top: 90px;
-/*    left: 566px;*/
-    right: calc(50% - 16px);
+    right: calc(50% - 35px); /*left: 566px;*/
     font-weight: bold;
 }
 .capaNecesario2{
     color: #ff0000;
     position: absolute;
     top: 90px;
-    left: 1025px;
+    left: calc(50% + 438px);/*left: 1025px;*/
     font-weight: bold;
 }
 .capaNecesario3{
     color: #ff0000;
     position: absolute;
     top: 139px;
-    left: 566px;
+    right: calc(50% - 35px); /*left: 566px;*/
     font-weight: bold;
 }
 .capaNecesario4{
     color: #ff0000;
     position: absolute;
     top: 139px;
-    left: 1025px;
+    left: calc(50% + 438px);/*left: 1025px;*/
     font-weight: bold;
 }
 .capaNecesario5{
     color: #ff0000;
     position: absolute;
     top: 189px;
-    left: 566px;
+    right: calc(50% - 35px); /*left: 566px;*/
     font-weight: bold;
 }
 .capaNecesario6{
     color: #ff0000;
     position: absolute;
     top: 189px;
-    left: 1025px;
+    left: calc(50% + 438px);/*left: 1025px;*/
     font-weight: bold;
 }
 .capaNecesario7{
     color: #ff0000;
     position: absolute;
     top: 291px;
-    left: 566px;
+    right: calc(50% - 35px); /*left: 566px;*/
     font-weight: bold;
 }
 .capaNecesario8{
     color: #ff0000;
     position: absolute;
     top: 291px;
-    left: 1025px;
+    left: calc(50% + 438px);/*left: 1025px;*/
     font-weight: bold;
 }
 .capaNecesario9{
     color: #ff0000;
     position: absolute;
     top: 343px;
-    left: 566px;
+    right: calc(50% - 35px); /*left: 566px;*/
     font-weight: bold;
 }
 /**Para las cajas de texto*/
@@ -486,7 +485,7 @@ main{
 .tApellido{
     position: absolute;
     top: 83px;
-    left: 766px;
+    left: calc(50% + 176px);/*left: 766px;*/
     width: 258px;
     height: 25px;
     border-color: #000000;
@@ -518,7 +517,7 @@ main{
 .tDireccion{
     position: absolute;
     top: 135px;
-    left: 766px;
+    left: calc(50% + 176px);/*left: 766px;*/
     width: 258px;
     height: 25px;
     border-color: #000000;
@@ -538,7 +537,7 @@ main{
 .tEmail{
     position: absolute;
     top: 186px;
-    left: 766px;
+    left: calc(50% + 176px);/*left: 766px;*/
     width: 258px;
     height: 25px;
     border-color: #000000;
@@ -574,7 +573,7 @@ main{
 .tLugarNacimiento{
     position: absolute;
     top: 237px;
-    left: 766px;
+    left: calc(50% + 176px);/*left: 766px;*/
     width: 258px;
     height: 25px;
     border-color: #000000;
@@ -594,7 +593,7 @@ main{
 .tCargo{
     position: absolute;
     top: 288px;
-    left: 766px;
+    left: calc(50% + 176px);/*left: 766px;*/
     width: 258px;
     height: 25px;
     border-color: #000000;
@@ -619,7 +618,7 @@ main{
     float: left;
     position: absolute;
     top: 374px;
-    left: 891px;
+    left: calc(50% + 300px);
     width: 123px;
     height: 27px;
 }
