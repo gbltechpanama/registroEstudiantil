@@ -21,7 +21,9 @@ and open the template in the editor.
             }
             function eliminar(cedula)
             {
-                document.location.href = "../controlador/FrontController.php?action=eliminarEstudiante&cedula="+cedula;
+                if(confirm('Desea eliminar este registro?')){
+                    document.location.href = "../controlador/FrontController.php?action=eliminarEstudiante&cedula="+cedula;
+                }
             }
         </script>
     </head>

@@ -12,13 +12,12 @@ and open the template in the editor.
         <script>
             function enviarDatos()
             {
-                document.forms[0].submit();
-            }
-            function validarClave(clave, confirmacion){
-                if(clave == confirmacion)
-                    return true;
-                else
-                    return false;
+                if(document.formularioCambioClave.claveNueva.value==document.formularioCambioClave.confirmarclave.value){
+                    document.forms[0].submit();
+                }
+                else{
+                    window.alert("La clave nueva no coincide con la confirmación, debe escribirla otra vez.");
+                }
             }
         </script>
     </head>
@@ -31,11 +30,11 @@ and open the template in the editor.
                 <form name="formularioCambioClave" class="cambioClave" action="../controlador/FrontController.php?action=cambioClave" method="POST">
                     <div class="texto1">Cambio de clave de ingreso</div>
                     <div class="texto2">Ingrese su clave actual</div>
-                    <input type="password" name="claveAnterior" value="" class="cAnterior"/>
+                    <input type="password" name="claveAnterior" id="claveAnterior" value="" class="cAnterior"/>
                     <div class="texto3">Ingrese su nueva clave</div>
                     <input type="password" name="claveNueva" value="" class="cNueva"/>
                     <div class="texto4">Confirme su nueva clave</div>
-                    <input type="password" name="confirmarclave" value="" class="cConfirmar"/>
+                    <input type="password" name="confirmarclave" id="confirmarclave" value="" class="cConfirmar"/>
                     <img src="img/aceptar.png" alt="aceptar" class="botonAceptar2" onclick="enviarDatos();"/>
                 </form>
             </main>

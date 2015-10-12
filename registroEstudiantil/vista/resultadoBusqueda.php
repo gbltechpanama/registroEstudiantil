@@ -18,7 +18,9 @@
             function eliminar(cedula)
             {
                 if(cedula!=""){
-                    document.location.href = "../controlador/FrontController.php?action=admEliminarEstudiante&cedulaEstudiante="+cedula;
+                    if(confirm('Desea eliminar este registro?')){
+                        document.location.href = "../controlador/FrontController.php?action=admEliminarEstudiante&cedulaEstudiante="+cedula;
+                    }
                 }
             }
             function buscar(criterio){
