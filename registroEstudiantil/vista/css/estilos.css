@@ -8,7 +8,7 @@
 .container{
     background-color: #FDFDFD; 
     height: 100%;
-    width: 1180px;    
+    width: 100%;    
     min-height: 50%;
     min-width: 50%;
     position: relative;
@@ -126,7 +126,7 @@ main{
     position: absolute;
     background-image: url(../img/pie2.png);
     background-repeat: repeat-x;
-    overflow: no-display;
+    overflow-x: hidden;
     z-index: 1;
 }
 .logo2{
@@ -412,7 +412,8 @@ main{
     color: #ff0000;
     position: absolute;
     top: 90px;
-    left: 566px;
+/*    left: 566px;*/
+    right: calc(50% - 16px);
     font-weight: bold;
 }
 .capaNecesario2{
@@ -475,7 +476,7 @@ main{
 .tNombre{
     position: absolute;
     top: 83px;
-    left: 306px;
+    right: calc(50% - 27px);
     width: 258px;
     height: 25px;
     border-color: #000000;
@@ -495,7 +496,7 @@ main{
 .tCedula{
     position: absolute;
     top: 135px;
-    left: 306px;
+    right: calc(50% - 27px);
     width: 258px;
     height: 25px;
     border-color: #000000;
@@ -527,7 +528,7 @@ main{
 .tTelefono{
     position: absolute;
     top: 186px;
-    left: 306px;
+    right: calc(50% - 27px);
     width: 258px;
     height: 25px;
     border-color: #000000;
@@ -547,7 +548,7 @@ main{
 .tFechaNacimiento{
     position: absolute;
     top: 237px;
-    left: 306px;
+    right: calc(50% - 27px);
     width: 208px;
     height: 25px;
     border-color: #000000;
@@ -558,7 +559,7 @@ main{
 .tFecha{
     position: absolute;
     top: 237px;
-    left: 306px;
+    right: calc(50% + 4px);
     width: 226px;
     height: 25px;
     border-color: #000000;
@@ -583,7 +584,7 @@ main{
 .tLugarTrabajo{
     position: absolute;
     top: 288px;
-    left: 306px;
+    right: calc(50% - 27px);
     width: 258px;
     height: 25px;
     border-color: #000000;
@@ -603,7 +604,7 @@ main{
 .tFoto{
     position: absolute;
     top: 336px;
-    left: 306px;
+    right: calc(50% - 27px);
     width: 258px;
     height: 26px;
     border-color: #000000;
@@ -685,10 +686,10 @@ main{
     position: absolute;
     top: 223px;
     left: 66px;
-    width: 1048px;
+    width: calc(100% - 132px);
     height: 25px;
     color: #000000;
-    text-align: justify;
+    text-align: left;
     font-family: "Myriad Pro Regular", HelveticaNegrita;
     font-size: 18px;
     overflow: hidden;
@@ -915,12 +916,12 @@ main{
     width: 84px;
     position: absolute;
     top: 336px;
-    left: 482px;
+    right: calc(50% - 27px);
 }
 #listaArchivo {
     position: absolute;
     top: 336px;
-    left: 306px;
+    right: calc(50% + 57px);
     width: 174px;
     height: 26px;
     border-color: #000000;
@@ -936,7 +937,7 @@ main{
 .botonFecha{
     position: absolute;
     top: 229px;
-    left: 536px;
+    right: calc(50% - 27px);
     display: block;
     background: url(../img/calendario.png);
     border: 0;

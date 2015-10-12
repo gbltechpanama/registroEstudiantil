@@ -26,12 +26,10 @@ and open the template in the editor.
         </script>
     </head>
     <body>
+        <div class="logo"></div>
+        <div class="barra"></div>
+        <div class="barra2"></div>
         <div class="container">
-            <header>
-                <div class="logo"></div>
-                <div class="barra"></div>
-                <div class="barra2"></div>
-            </header>
             <main>
                 <div class="mostrarDatos">
                     <?php
@@ -58,10 +56,10 @@ and open the template in the editor.
                         printf("<img src=\"img/eliminar.png\" width=\"123\" height=\"27\" 
                          alt=\"Eliminar\" class=\"botonEliminar\" onclick=\"eliminar(".$cedula.");\"/>");
                     ?>                    
-                </div>
-                <div class="pie"></div>
-                <div class="logo2"></div>
+                </div>                
             </main>
         </div>
+        <div class="pie2"></div>
+        <div class="logo2"></div>
     </body>
 </html>
