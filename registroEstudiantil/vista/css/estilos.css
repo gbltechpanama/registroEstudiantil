@@ -35,6 +35,7 @@
     background-color: #001A55;
     height: 4px;
     width: 100%;
+    min-width: 1180px;
     top: 208px;
     margin: 0%;
     padding: 0%;
@@ -46,6 +47,7 @@
     background-color: #EFCD09;
     height: 6px;
     width: 100%;
+    min-width: 1180px;
     top: 217px;
     margin: 0%;
     padding: 0%;
@@ -121,6 +123,7 @@ main{
 .pie2{
     background-color: #E4E4E4;
     width: 100%;
+    min-width: 1180px;
     height: 88px;
     top: 690px;
     left: 0px;
