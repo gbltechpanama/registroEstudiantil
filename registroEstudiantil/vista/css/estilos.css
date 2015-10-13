@@ -989,6 +989,11 @@ main{
     position: absolute;
     top: 250px;
     right: 68px;
+    color: #C0C0C0;
+    text-align: left;
+    font-family: HelveticaCondensada, "Helvetica LT Std";
+    font-size: 14px;
+    font-style: italic;
 }
 /**Para el boton de busqueda*/
 .botonBuscar{
