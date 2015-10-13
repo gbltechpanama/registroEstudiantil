@@ -10,7 +10,7 @@
     height: 100%;
     width: 100%;    
     min-height: 50%;
-    min-width: 50%;
+    min-width: 1180px;
     position: relative;
     margin-left: auto; 
     margin-right: auto;
@@ -104,7 +104,8 @@ main{
     margin-left: auto;
     margin-right: auto;
     padding: 0%;
-    width: 100%; //1180px;
+    width: 100%; 
+    min-width: 1024px;
 }
 /*Pie de página del desarrollador*/
 .pie{
@@ -334,7 +335,7 @@ main{
     height: 144px;
     position: absolute;
     top: 307px;
-    left: calc(50% - 376px);
+    left: calc(50% - 375px);
     margin-left: auto;
     margin-right: auto;
     border: 5px;
@@ -656,7 +657,7 @@ main{
 .mostrarFoto{
     position: absolute;
     top: 25px;
-    left: 66px;
+    left: calc(50% - 524px);
     width: 154px;
     height: 167px;
     border: 1px;
@@ -667,7 +668,7 @@ main{
 .mostrarNombre{
     position: absolute;
     top: 54px;
-    left: 242px;
+    left: calc(50% - 348px);
     width: 349px;
     height: 50px;
     color: #001647;
@@ -679,7 +680,7 @@ main{
 .mostrarCedula{
     position: absolute;
     top: 108px;
-    left: 242px;
+    left: calc(50% - 348px);
     width: 349px;
     height: 50px;
     color: #001647;
@@ -691,7 +692,7 @@ main{
 .mostrarTelefono{
     position: absolute;
     top: 137px;
-    left: 242px;
+    left: calc(50% - 348px);
     width: 349px;
     height: 50px;
     color: #001647;
@@ -703,7 +704,7 @@ main{
 .barra3{
     position: absolute;
     top: 223px;
-    left: 66px;
+    left: calc(50% - 524px);
     width: calc(100% - 132px);
     height: 25px;
     color: #000000;
@@ -716,7 +717,7 @@ main{
 .mostrarTelefono2{
     position: absolute;
     top: 260px;
-    left: 66px;
+    left: calc(50% - 524px);
     width: 349px;
     height: 26px;
     color: #001647;
@@ -787,7 +788,7 @@ main{
 .mostrarFechaNacimiento{
     position: absolute;
     top: 309px;
-    left: 66px;
+    left: calc(50% - 524px);
     width: 349px;
     height: 26px;
     color: #001647;
@@ -798,7 +799,7 @@ main{
 .mostrarLugarTrabajo{
     position: absolute;
     top: 361px;
-    left: 66px;
+    left: calc(50% - 524px);
     width: 349px;
     height: 26px;
     color: #001647;
@@ -809,7 +810,7 @@ main{
 .mostrarDireccion{
     position: absolute;
     top: 137px;
-    left: 590px;
+    left: 50%;
     width: 349px;
     height: 26px;
     color: #001647;
@@ -820,7 +821,7 @@ main{
 .mostrarEmail{
     position: absolute;
     top: 260px;
-    left: 590px;
+    left: 50%;
     width: 349px;
     height: 26px;
     color: #001647;
@@ -831,7 +832,7 @@ main{
 .mostrarLugarNacimiento{
     position: absolute;
     top: 309px;
-    left:590px;
+    left:50%;
     width: 349px;
     height: 26px;
     color: #001647;
@@ -842,7 +843,7 @@ main{
 .mostrarCargo{
     position: absolute;
     top: 361px;
-    left: 590px;
+    left: 50%;
     width: 349px;
     height: 26px;
     color: #001647;
