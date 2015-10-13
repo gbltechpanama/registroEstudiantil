@@ -272,9 +272,9 @@ class Model {
    {
         $BD = new BaseDatos();
         $query = "update acceso set password= MD5('".$claveNueva
-                    ."') where password='".$claveAnterior."';";
+                    ."') where password= MD5('".$claveAnterior."');";
         $resultado = $BD->modelQueryDB($query);
-        if($resultado->num_rows > 0){
+        if($resultado){
             return TRUE;
         }
         else {
