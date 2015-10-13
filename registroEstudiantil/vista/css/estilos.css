@@ -98,6 +98,10 @@
     position: absolute;
     z-index: 2;
 }
+/**/
+body{
+    overflow-x: hidden;
+}
 /**Cuerpo de la pagina*/
 main{
     background-color: #FDFDFD;
