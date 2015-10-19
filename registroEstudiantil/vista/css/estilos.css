@@ -653,7 +653,7 @@ main{
     left: 0px;
     width: 100%;
     color: #000000;
-    text-align: justify;
+    text-align: right;
     font-family: HelveticaCondensada, "Helvetica LT Std";
     font-size: 14px;
 }
@@ -1005,10 +1005,18 @@ main{
 }
 /**Para el boton de cambiar la clave*/
 .botonModificarClave{
-    width: 256px;
-    height: 26px;
+    width: 225px;
+    height: 27px;
     position: absolute;
     top: 250px;
+    left: 68px;
+}
+/**Para el boton de imprimir el listado*/
+.botonImprimir{
+    width: 225px;
+    height: 27px;
+    position: absolute;
+    top: 296px;
     left: 68px;
 }
 /**Para la tabla dinamica*/

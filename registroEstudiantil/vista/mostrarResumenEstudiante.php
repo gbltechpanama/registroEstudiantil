@@ -14,6 +14,7 @@
         <div class="container">
             <main>
                 <div class="mostrarDatos">
+                    <a href="<?=$_SERVER["HTTP_REFERER"]?>">Volver...</a>
                     <?php
                         session_start();
                         $cedula = $_SESSION['cedulaEstudiante'];

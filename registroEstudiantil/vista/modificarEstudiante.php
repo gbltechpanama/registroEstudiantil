@@ -18,6 +18,7 @@
         <div class="container">
             <main>
                 <div class="capaDatos">
+                    <a href="administrarEstudiante.php">Volver...</a>
                     <?php
                         session_start();
                         $cedula = $_SESSION['cedulaEstudiante'];

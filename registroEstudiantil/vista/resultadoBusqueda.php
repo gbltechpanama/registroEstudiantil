@@ -43,6 +43,9 @@
                 <a href="formCambioClave.html">
                     <img src="img/modificarClave.png" width="225" height="27" alt="modificarClave" class="botonModificarClave"/>
                 </a>
+                <a href="#">
+                    <img src="img/imprimir.png" width="225" height="27" alt="Imprimir el listado" class="botonImprimir"/>
+                </a>
                 <table border="0" class="tabla">
                     <thead>
                         <tr>
