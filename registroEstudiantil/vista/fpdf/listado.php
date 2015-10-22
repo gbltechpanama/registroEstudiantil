@@ -59,7 +59,7 @@ class PDF extends FPDF
    }
    
 /**************Tabla coloreada************************************************/
-    function TablaColores($header)
+    function TablaColores($header, $cedulas)
     {
 //Colores, ancho de línea y fuente en negrita
         $this->SetFillColor(0,32,96);
@@ -82,6 +82,7 @@ class PDF extends FPDF
         $this->SetLineWidth(.3);
         $this->SetFont('Arial','',11);
 //Datos
+        $cedulaEstudiantes = $cedulas;
         $n = count($nombreEstudiantes);
         for($i=0, $y=73, $fila=1; $i<$n; $i++){
             $fill=false;
@@ -116,6 +117,6 @@ class PDF extends FPDF
     $pdf->AddPage();
     $pdf->SetY(65);
     $pdf->SetY(65);
-    $pdf->TablaColores($header);
+    $pdf->TablaColores($header, $cedulaEstudiantes);
     $pdf->Output();
 ?> 
