@@ -3,11 +3,6 @@ require('fpdf.php');
 
 class PDF extends FPDF
 {
-    private $cedulaEstudiantes;
-    private $nombreEstudiantes;
-    private $apellidoEstudiantes;
-    private $telefonoEstudiantes;
-    private $rutaFotos;
 //Cabecera de página
    function Header()
    {
@@ -20,13 +15,7 @@ class PDF extends FPDF
     //Movernos a la derecha
     $this->Cell(80);
     //Título
-    $this->Cell(60,10,'REPORTE DE ESTUDIANTES',0,1,'C');
-    //Arial bold 12
-    $this->SetFont('Arial','B',11);
-    //Criterio de busqueda
-    $this->Cell(160,10,'FILTRO DE BUSQUEDA UTILIZADO:',0,1,'L');
-    //Salto de línea
-    $this->Ln(20);      
+    $this->Cell(60,10,'REPORTE DE ESTUDIANTES',0,1,'C');    
    }
    //Pie de página
    function Footer()
@@ -59,8 +48,19 @@ class PDF extends FPDF
    }
    
 /**************Tabla coloreada************************************************/
-    function TablaColores($header, $cedulas)
+    function TablaColores($header, $cedulaEstudiantes, $nombreEstudiantes, 
+            $apellidoEstudiantes, $telefonosEstudiantes, $rutasFoto, $criterio)
     {
+        //Arial bold 12
+        $this->SetFont('Arial','B',11);
+        //Criterio de busqueda
+        if($criterio!=""){
+            $this->Cell(160,10,'FILTRO DE BUSQUEDA UTILIZADO: '.$criterio,0,1,'L');
+        }
+        else{
+            $this->Cell(160,10,'',0,1,'L');
+        }
+        $this->Ln(20);
 //Colores, ancho de línea y fuente en negrita
         $this->SetFillColor(0,32,96);
         $this->SetTextColor(255);
@@ -82,20 +82,19 @@ class PDF extends FPDF
         $this->SetLineWidth(.3);
         $this->SetFont('Arial','',11);
 //Datos
-        $cedulaEstudiantes = $cedulas;
         $n = count($nombreEstudiantes);
-        for($i=0, $y=73, $fila=1; $i<$n; $i++){
+        for($i=0, $y=103, $fila=1; $i<$n; $i++){
             $fill=false;
             $this->Cell(40,40,$nombreEstudiantes[$i],1,0,'C',$fill);
             $this->Cell(40,40,$apellidoEstudiantes[$i],1,0,'C',$fill);
             $this->Cell(30,40,$cedulaEstudiantes[$i],1,0,'C',$fill);
-            $this->Cell(30,40,$telefonoEstudiantes[$i],1,0,'C',$fill);
-            $this->Cell(40,40,"FOTO",1,0,'C',$fill);
-            $this->Image($rutaFotos, 152, $y, 35, 38);
+            $this->Cell(30,40,$telefonosEstudiantes[$i],1,0,'C',$fill);
+            $this->Cell(40,40,"FOTO ".$i,1,0,'C',$fill);
+            $this->Image("../img/fotos/".basename( $rutasFoto[$i] ), 152, $y, 35, 38);
             $this->Ln();
             $fill=!$fill;
             if($this->PageNo() >= 2 && $fila > 4){
-                $y = 76;
+                $y = 46;
                 $fila=1;
             }
             else{
@@ -113,10 +112,14 @@ class PDF extends FPDF
     $cedulaEstudiantes = $_SESSION['cedulaEstudiantes'];
     $nombreEstudiantes = $_SESSION['nombresEstudiantes'];
     $apellidoEstudiantes = $_SESSION['apellidosEstudiantes'];
+    $telefonosEstudiantes = $_SESSION['telefonoEstudiantes'];
+    $rutasFoto = $_SESSION['rutaFotoEstudiantes'];
+    $criterio = $_SESSION['criterio'];
     $pdf->AliasNbPages();
     $pdf->AddPage();
     $pdf->SetY(65);
     $pdf->SetY(65);
-    $pdf->TablaColores($header, $cedulaEstudiantes);
+    $pdf->TablaColores($header, $cedulaEstudiantes, $nombreEstudiantes, $apellidoEstudiantes,
+            $telefonosEstudiantes, $rutasFoto, $criterio);
     $pdf->Output();
 ?> 

@@ -23,9 +23,17 @@
                     }
                 }
             }
-            function buscar(criterio){
-                if(criterio!=""){
-                    document.location.href = "../controlador/FrontController.php?action=busqueda&criterio="+criterio;
+            function buscar(){
+                criterio=document.formularioBuscar.criterio.value;
+            }
+            function imprimirListado(){
+                criterio=document.formularioBuscar.criterio.value;
+                window.alert(criterio);
+                if(criterio!="Escriba aquí palabra clave de busqueda"){
+                    document.location.href = "../controlador/FrontController.php?action=imprimirListado&criterio="+criterio;
+                }
+                else{
+                    document.location.href = "../controlador/FrontController.php?action=imprimirListado&criterio=";
                 }
             }
         </script>
@@ -43,9 +51,7 @@
                 <a href="formCambioClave.html">
                     <img src="img/modificarClave.png" width="225" height="27" alt="modificarClave" class="botonModificarClave"/>
                 </a>
-                <a href="fpdf/listado.php">
-                    <img src="img/imprimir.png" width="225" height="27" alt="Imprimir el listado" class="botonImprimir"/>
-                </a>
+                <img src="img/imprimir.png" width="225" height="27" alt="Imprimir el listado" class="botonImprimir" onclick="imprimirListado();"/>
                 <table border="0" class="tabla">
                     <thead>
                         <tr>

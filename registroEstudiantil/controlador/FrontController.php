@@ -82,6 +82,12 @@ switch ($action){
         $claveNueva = $_POST['claveNueva'];
         $back->ctrlCambiarClaveAdmin($claveAnterior, $claveNueva);
         break;
+    case 'imprimirListado':
+        $criterio = $_POST['criterio'];
+        if($criterio == NULL)
+            $criterio = "";
+        $back->ctrlBusquedaListado($criterio);
+        break;
     default :
         echo "<h1>Error</h1>";
         break;

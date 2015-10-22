@@ -30,6 +30,12 @@ class BackController {
     /**Esta variable de tipo arreglo, almacena todos los cargos de trabajo de 
      * los estudiantes luego de realizar una búsqueda.*/
     private $cargoTrabajoEstudiantes;
+    /**Esta variable de tipo arreglo, almacena todos los telefonos de los 
+     * estudiantes luego de realizar una búsqueda.*/
+    private $telefonosEstudiantes;
+    /**Esta variable de tipo arreglo, almacena todas las rutas de las imagenes 
+     * de los estudiantes luego de realizar una búsqueda.*/
+    private $rutasFotosEstudiantes;
     /**Esta variable de tipo boolean indica si la consulta a la BD se ejecutó 
      * correctamente.*/
     private $estadoConsulta;
@@ -186,6 +192,32 @@ class BackController {
             $_SESSION['lugarTrabajoEstudiantes'] = $this->lugarTrabajoEstudiantes;
             $_SESSION['cargoTrabajoEstudiantes'] = $this->cargoTrabajoEstudiantes;
             header("Location: ../vista/resultadoBusqueda.php");
+        }
+        else{
+            header("Location: ../vista/errorLogin.html");
+        }
+    }
+    /**Este método permite buscar un estudiante deacuerdo a un criterio 
+     * indicado para imprimirlo.
+     * @param $criterio Tipo String, almacena la cadena de caracteres ha buscar.
+     */
+    public function ctrlBusquedaListado($criterio){
+        $modelo = new Model();
+        $password = $_SESSION['login'];
+        if($password){
+            session_start();
+            $this->nombresEstudiantes = $modelo->mdlBusquedaNombreEstudiantes($criterio);
+            $this->apellidosEstudiantes = $modelo->mdlBusquedaApellidosEstudiantes($criterio);
+            $this->cedulaEstudiantes = $modelo->mdlBusquedaCedulaEstudiantes($criterio);
+            $this->telefonosEstudiantes = $modelo->mdlBusquedaTelefonoEstudiantes($criterio);
+            $this->rutasFotosEstudiantes = $modelo->mdlBusquedaRutasFotosEstudiantes($criterio);
+            $_SESSION['nombresEstudiantes'] = $this->nombresEstudiantes;
+            $_SESSION['apellidosEstudiantes'] = $this->apellidosEstudiantes;
+            $_SESSION['cedulaEstudiantes'] = $this->cedulaEstudiantes;
+            $_SESSION['telefonoEstudiantes'] = $this->telefonosEstudiantes;
+            $_SESSION['rutaFotoEstudiantes'] = $this->rutasFotosEstudiantes;
+            $_SESSION['criterio'] = $criterio;
+            header("Location: ../vista/fpdf/listado.php");
         }
         else{
             header("Location: ../vista/errorLogin.html");

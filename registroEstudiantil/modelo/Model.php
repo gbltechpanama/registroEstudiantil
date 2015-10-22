@@ -120,6 +120,50 @@ class Model {
         }
         return $datos;
     }
+    /**Este método devolverá los telefonos de los estudiantes desde la tabla 
+     * “estudiantes”, tomando en cuenta que el parámetro enviado “criterio”
+     * coincida parcialmente con todos los campos  de la tabla en la BD.*/
+    public function mdlBusquedaTelefonoEstudiantes($criterio){
+        $BD = new BaseDatos();
+        $query = "select telefono from estudiantes where "
+                ."cedulaEstudiante like '%".$criterio."%' or nombres like '%"
+                .$criterio."%' or apellidos like '%".$criterio."%' or direccion"
+                ." like '%".$criterio."%' or telefono like '%".$criterio."%' or "
+                ."email like '%".$criterio."%' or fechaNacimiento like '%"
+                .$criterio."%' or lugarNacimiento like '%".$criterio."%' or "
+                ."lugarTrabajo like '%".$criterio."%' or cargoTrabajo like '%"
+                .$criterio."%' or rutaFoto like '%".$criterio."%'";
+        $resultado = $BD->modelQueryDB($query);
+        if($resultado != NULL && mysql_num_rows($resultado)>0){
+            $datos = $BD->modelConvertirEnArray($resultado);
+        }
+        else {
+            $datos = NULL;
+        }
+        return $datos;
+    }
+    /**Este método devolverá las rutas de las fotos de los estudiantes desde la 
+     * tabla “estudiantes”, tomando en cuenta que el parámetro enviado “criterio”
+     * coincida parcialmente con todos los campos  de la tabla en la BD.*/
+    public function mdlBusquedaRutasFotosEstudiantes($criterio){
+        $BD = new BaseDatos();
+        $query = "select rutaFoto from estudiantes where "
+                ."cedulaEstudiante like '%".$criterio."%' or nombres like '%"
+                .$criterio."%' or apellidos like '%".$criterio."%' or direccion"
+                ." like '%".$criterio."%' or telefono like '%".$criterio."%' or "
+                ."email like '%".$criterio."%' or fechaNacimiento like '%"
+                .$criterio."%' or lugarNacimiento like '%".$criterio."%' or "
+                ."lugarTrabajo like '%".$criterio."%' or cargoTrabajo like '%"
+                .$criterio."%' or rutaFoto like '%".$criterio."%'";
+        $resultado = $BD->modelQueryDB($query);
+        if($resultado != NULL && mysql_num_rows($resultado)>0){
+            $datos = $BD->modelConvertirEnArray($resultado);
+        }
+        else {
+            $datos = NULL;
+        }
+        return $datos;
+    }
     /**Agrega por primera vez los datos de un estudiante, la ruta de la foto 
      * debe ser aleatoria.
      */
