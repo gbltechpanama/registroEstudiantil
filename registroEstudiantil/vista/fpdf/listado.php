@@ -30,7 +30,7 @@ class PDF extends FPDF
    //Tabla simple
    function TablaSimple($header)
    {
-    //Cabecera
+   //Cabecera
     for($i=0;$i<count($header);$i++){
         if($i==2 || $i==3)
             $this->Cell(30,7,$header[$i],1,0,'C',1);
@@ -47,7 +47,7 @@ class PDF extends FPDF
     }
    }
    
-/**************Tabla coloreada************************************************/
+/*****************************Tabla coloreada**********************************/
     function TablaColores($header, $cedulaEstudiantes, $nombreEstudiantes, 
             $apellidoEstudiantes, $telefonosEstudiantes, $rutasFoto, $criterio)
     {
@@ -119,7 +119,7 @@ class PDF extends FPDF
     $pdf->AddPage();
     $pdf->SetY(65);
     $pdf->SetY(65);
-    $pdf->TablaColores($header, $cedulaEstudiantes, $nombreEstudiantes, $apellidoEstudiantes,
-            $telefonosEstudiantes, $rutasFoto, $criterio);
+    $pdf->TablaColores($header, $cedulaEstudiantes, $nombreEstudiantes, 
+            $apellidoEstudiantes, $telefonosEstudiantes, $rutasFoto, $criterio);
     $pdf->Output();
 ?> 

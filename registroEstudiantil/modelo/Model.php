@@ -144,7 +144,8 @@ class Model {
     }
     /**Este método devolverá las rutas de las fotos de los estudiantes desde la 
      * tabla “estudiantes”, tomando en cuenta que el parámetro enviado “criterio”
-     * coincida parcialmente con todos los campos  de la tabla en la BD.*/
+     * coincida parcialmente con todos los campos  de la tabla en la BD.
+     */
     public function mdlBusquedaRutasFotosEstudiantes($criterio){
         $BD = new BaseDatos();
         $query = "select rutaFoto from estudiantes where "
@@ -166,6 +167,7 @@ class Model {
     }
     /**Agrega por primera vez los datos de un estudiante, la ruta de la foto 
      * debe ser aleatoria.
+     * @param $cedulaEstudiante Tipo string, almacena la cedula del estudiante.
      */
     public function mdlCargarEstudiante($cedulaEstudiante, $nombre, $apellido, 
             $direccion, $telefono, $email, $fechaNacimiento, $LugarNacimiento,
@@ -271,6 +273,7 @@ class Model {
      * específico”, tomando en cuenta que el parámetro enviado “cedulaEstudiante” 
      * coincida con el campo “cedulaEstudiante” de la tabla “estudiantes” de la 
      * BD.
+     * @param $cedulaEstudiante Tipo string, almacena la cedula del estudiante.
      */
     public function mdlObtenerDatosEstudiante($cedulaEstudiante)
     {
@@ -286,7 +289,9 @@ class Model {
         }
         return $datos;
     }
-    /**Este método se encarga de verificar si un estudiante existe en la BD.*/
+    /**Este método se encarga de verificar si un estudiante existe en la BD.
+     * @param $cedulaEstudiante Tipo string, almacena la cedula del estudiante.
+     */
     public function mdlValidarCI($cedulaEstudiante)
     {
         $BD = new BaseDatos();
@@ -325,7 +330,10 @@ class Model {
             return FALSE;
         }
    }
-   /***/
+   /**Este método se utiliza para eliminar los datos de un estudiante, indicado 
+    * por la cedula.
+    * @param $cedulaEstudiante Tipo string, almacena la cedula del estudiante.
+    */
     public function mdlEliminarEstudiante($cedulaEstudiante){
         $BD = new BaseDatos();
         //Busca la ruta de la foto
