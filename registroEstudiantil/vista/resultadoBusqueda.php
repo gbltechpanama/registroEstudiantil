@@ -7,6 +7,7 @@
         <script>
             function enviarDatos()
             {
+//                document.criterioBusqueda.innerHTML=document.formularioBuscar.criterio.value;
                 document.forms[0].submit();
             }
             function verTodo(cedula)
@@ -28,7 +29,6 @@
             }
             function imprimirListado(){
                 criterio=document.formularioBuscar.criterio.value;
-                window.alert(criterio);
                 if(criterio!="Escriba aquí palabra clave de busqueda"){
                     document.location.href = "../controlador/FrontController.php?action=imprimirListado&criterio="+criterio;
                 }
@@ -52,6 +52,7 @@
                     <img src="img/modificarClave.png" width="225" height="27" alt="modificarClave" class="botonModificarClave"/>
                 </a>
                 <img src="img/imprimir.png" width="225" height="27" alt="Imprimir el listado" class="botonImprimir" onclick="imprimirListado();"/>
+                <div class="capaCriterioBusqueda" name="criterioBusqueda" id="criterioBusqueda"></div>
                 <table border="0" class="tabla">
                     <thead>
                         <tr>

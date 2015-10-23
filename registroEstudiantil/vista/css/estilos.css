@@ -1123,3 +1123,6 @@ main{
     top: 100px;
     left: 372px;
 }
+.capaCriterioBusqueda{
+    display: none;
+}

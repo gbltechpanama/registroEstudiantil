@@ -83,16 +83,13 @@ class PDF extends FPDF
         $this->SetFont('Arial','',11);
 //Datos
         $n = count($nombreEstudiantes);
-        for($i=0, $y=103, $fila=1; $i<$n; $i++){
+        for($i=0, $y=63, $fila=1; $i<$n; $i++){
             $fill=false;
             $this->Cell(40,40,$nombreEstudiantes[$i],1,0,'C',$fill);
             $this->Cell(40,40,$apellidoEstudiantes[$i],1,0,'C',$fill);
             $this->Cell(30,40,$cedulaEstudiantes[$i],1,0,'C',$fill);
             $this->Cell(30,40,$telefonosEstudiantes[$i],1,0,'C',$fill);
             $this->Cell(40,40,"FOTO ".$i,1,0,'C',$fill);
-            $this->Image("../img/fotos/".basename( $rutasFoto[$i] ), 152, $y, 35, 38);
-            $this->Ln();
-            $fill=!$fill;
             if($this->PageNo() >= 2 && $fila > 4){
                 $y = 46;
                 $fila=1;
@@ -101,6 +98,9 @@ class PDF extends FPDF
                 $y=$y+40;
                 $fila++;
             }
+            $this->Image("../img/fotos/".basename( $rutasFoto[$i] ), 152, $y, 35, 38);
+            $this->Ln();
+            $fill=!$fill;
         }
         $this->Cell(160,0,'','T');
     }  
