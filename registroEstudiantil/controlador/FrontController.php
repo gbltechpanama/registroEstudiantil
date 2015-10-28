@@ -83,7 +83,7 @@ switch ($action){
         $back->ctrlCambiarClaveAdmin($claveAnterior, $claveNueva);
         break;
     case 'imprimirListado':
-        $criterio = $_POST['criterio'];
+        $criterio = $_GET['criterio'];
         if($criterio == NULL)
             $criterio = "";
         $back->ctrlBusquedaListado($criterio);

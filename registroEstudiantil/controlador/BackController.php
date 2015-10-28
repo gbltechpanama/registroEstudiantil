@@ -191,6 +191,7 @@ class BackController {
             $_SESSION['cedulaEstudiantes'] = $this->cedulaEstudiantes;
             $_SESSION['lugarTrabajoEstudiantes'] = $this->lugarTrabajoEstudiantes;
             $_SESSION['cargoTrabajoEstudiantes'] = $this->cargoTrabajoEstudiantes;
+            $_SESSION['criterio'] = $criterio;
             header("Location: ../vista/resultadoBusqueda.php");
         }
         else{

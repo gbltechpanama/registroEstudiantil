@@ -7,7 +7,6 @@
         <script>
             function enviarDatos()
             {
-//                document.criterioBusqueda.innerHTML=document.formularioBuscar.criterio.value;
                 document.forms[0].submit();
             }
             function verTodo(cedula)
@@ -24,11 +23,8 @@
                     }
                 }
             }
-            function buscar(){
-                criterio=document.formularioBuscar.criterio.value;
-            }
             function imprimirListado(){
-                criterio=document.formularioBuscar.criterio.value;
+                criterio=document.getElementById("criterioBusqueda").innerHTML;
                 if(criterio!="Escriba aquí palabra clave de busqueda"){
                     document.location.href = "../controlador/FrontController.php?action=imprimirListado&criterio="+criterio;
                 }
@@ -52,7 +48,6 @@
                     <img src="img/modificarClave.png" width="225" height="27" alt="modificarClave" class="botonModificarClave"/>
                 </a>
                 <img src="img/imprimir.png" width="225" height="27" alt="Imprimir el listado" class="botonImprimir" onclick="imprimirListado();"/>
-                <div class="capaCriterioBusqueda" name="criterioBusqueda" id="criterioBusqueda"></div>
                 <table border="0" class="tabla">
                     <thead>
                         <tr>
@@ -74,6 +69,8 @@
                             $apellidoEstudiantes = $_SESSION['apellidosEstudiantes'];
                             $lugarTrabajoEstudiantes = $_SESSION['lugarTrabajoEstudiantes'];
                             $cargoTrabajoEstudiantes = $_SESSION['cargoTrabajoEstudiantes'];
+                            $criterio = $_SESSION['criterio'];
+                            printf("<div class=\"capaCriterioBusqueda\" name=\"criterioBusqueda\" id=\"criterioBusqueda\">".$criterio."</div>");
                             $n = count($nombreEstudiantes);
                             for($i=0; $i < $n; $i++){
                                 if($i%2 == 0){

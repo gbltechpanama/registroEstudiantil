@@ -1125,4 +1125,9 @@ main{
 }
 .capaCriterioBusqueda{
     display: none;
+    width: 256px;
+    height: 26px;
+    position: absolute;
+    top: 278px;
+    right: 68px;
 }
