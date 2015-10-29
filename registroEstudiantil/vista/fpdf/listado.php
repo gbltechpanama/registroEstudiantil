@@ -9,7 +9,7 @@ class PDF extends FPDF
     //Logo
     $this->Image("../img/logoReporte.png" , 10 ,8, 60 , 30 , "PNG" ,"");
     //Arial bold 15
-    $this->SetFont('Arial','B',14);
+    $this->SetFont('Arial','U',14);
     //Salto de línea
     $this->Ln(25);
     //Movernos a la derecha
@@ -25,8 +25,160 @@ class PDF extends FPDF
     //Arial italic 8
     $this->SetFont('Arial','I',8);
     //Número de página
-    $this->Cell(0,10,'Pagina '.$this->PageNo().'/{nb}',0,0,'C');
+//    $this->Cell(0,10,'Pagina '.$this->PageNo().'/{nb}',0,0,'C');
    }
+   /**Este método es para imprimir texto con alineación vertical.
+    * @param $strText Tipo String, almacena el texto.
+    * @param $w Tipo entero, almacena el ancho.
+    * @param $h Tipo entero, almacena el alto.
+    * @param $align Tipo String, almacena la alineacion horizontal.
+    * @param $valign Tipo String, almacena la alineacion vertical.
+    * @param $border Tipo Booleano, indica si se crea el borde.
+    */
+   function drawTextBox($strText, $w, $h, $align='L', $valign='T', $border=true)
+{
+    $xi=$this->GetX();
+    $yi=$this->GetY();
+    $hrow=$this->FontSize;
+    $textrows=$this->drawRows($w,$hrow,$strText,0,$align,0,0,0);
+    $maxrows=floor($h/$this->FontSize);
+    $rows=min($textrows,$maxrows);
+    $dy=0;
+    if (strtoupper($valign)=='M')
+        $dy=($h-$rows*$this->FontSize)/2;
+    if (strtoupper($valign)=='B')
+        $dy=$h-$rows*$this->FontSize;
+    $this->SetY($yi+$dy);
+    $this->SetX($xi);
+    $this->drawRows($w,$hrow,$strText,0,$align,false,$rows,1);
+    if ($border)
+        $this->Rect($xi,$yi,$w,$h);
+}
+/***/
+function drawRows($w, $h, $txt, $border=0, $align='J', $fill=false, $maxline=0, $prn=0)
+{
+    $cw=&$this->CurrentFont['cw'];
+    if($w==0)
+        $w=$this->w-$this->rMargin-$this->x;
+    $wmax=($w-2*$this->cMargin)*1000/$this->FontSize;
+    $s=str_replace("\r",'',$txt);
+    $nb=strlen($s);
+    if($nb>0 && $s[$nb-1]=="\n")
+        $nb--;
+    $b=0;
+    if($border)
+    {
+        if($border==1)
+        {
+            $border='LTRB';
+            $b='LRT';
+            $b2='LR';
+        }
+        else
+        {
+            $b2='';
+            if(is_int(strpos($border,'L')))
+                $b2.='L';
+            if(is_int(strpos($border,'R')))
+                $b2.='R';
+            $b=is_int(strpos($border,'T')) ? $b2.'T' : $b2;
+        }
+    }
+    $sep=-1;
+    $i=0;
+    $j=0;
+    $l=0;
+    $ns=0;
+    $nl=1;
+    while($i<$nb)
+    {
+        //Get next character
+        $c=$s[$i];
+        if($c=="\n")
+        {
+            //Explicit line break
+            if($this->ws>0)
+            {
+                $this->ws=0;
+                if ($prn==1) $this->_out('0 Tw');
+            }
+            if ($prn==1) {
+                $this->Cell($w,$h,substr($s,$j,$i-$j),$b,2,$align,$fill);
+            }
+            $i++;
+            $sep=-1;
+            $j=$i;
+            $l=0;
+            $ns=0;
+            $nl++;
+            if($border && $nl==2)
+                $b=$b2;
+            if ( $maxline && $nl > $maxline )
+                return substr($s,$i);
+            continue;
+        }
+        if($c==' ')
+        {
+            $sep=$i;
+            $ls=$l;
+            $ns++;
+        }
+        $l+=$cw[$c];
+        if($l>$wmax)
+        {
+            //Automatic line break
+            if($sep==-1)
+            {
+                if($i==$j)
+                    $i++;
+                if($this->ws>0)
+                {
+                    $this->ws=0;
+                    if ($prn==1) $this->_out('0 Tw');
+                }
+                if ($prn==1) {
+                    $this->Cell($w,$h,substr($s,$j,$i-$j),$b,2,$align,$fill);
+                }
+            }
+            else
+            {
+                if($align=='J')
+                {
+                    $this->ws=($ns>1) ? ($wmax-$ls)/1000*$this->FontSize/($ns-1) : 0;
+                    if ($prn==1) $this->_out(sprintf('%.3F Tw',$this->ws*$this->k));
+                }
+                if ($prn==1){
+                    $this->Cell($w,$h,substr($s,$j,$sep-$j),$b,2,$align,$fill);
+                }
+                $i=$sep+1;
+            }
+            $sep=-1;
+            $j=$i;
+            $l=0;
+            $ns=0;
+            $nl++;
+            if($border && $nl==2)
+                $b=$b2;
+            if ( $maxline && $nl > $maxline )
+                return substr($s,$i);
+        }
+        else
+            $i++;
+    }
+    //Last chunk
+    if($this->ws>0)
+    {
+        $this->ws=0;
+        if ($prn==1) $this->_out('0 Tw');
+    }
+    if($border && is_int(strpos($border,'B')))
+        $b.='B';
+    if ($prn==1) {
+        $this->Cell($w,$h,substr($s,$j,$i-$j),$b,2,$align,$fill);
+    }
+    $this->x=$this->lMargin;
+    return $nl;
+}
    //Tabla simple
    function TablaSimple($header)
    {
@@ -85,6 +237,26 @@ class PDF extends FPDF
         $n = count($nombreEstudiantes);
         for($i=0, $y=63, $fila=1; $i<$n; $i++){
             $fill=false;
+//            $this->drawTextBox($nombreEstudiantes[$i], 40, 40, 'C', 'T', 1);
+//            $this->SetX($this->GetX()+40);
+//            $this->SetY($this->GetY()-4);
+//            $this->Cell(40);
+//            $this->drawTextBox($apellidoEstudiantes[$i], 40, 40, 'C', 'T', 1);
+//            $this->SetX($this->GetX()+80);
+//            $this->SetY($this->GetY()-4);
+//            $this->Cell(40);
+//            $this->drawTextBox($cedulaEstudiantes[$i], 30, 40, 'C', 'T', 1);
+//            $this->SetX($this->GetX()+120);
+//            $this->SetY($this->GetY()-4);
+//            $this->Cell(30);
+//            $this->drawTextBox($telefonosEstudiantes[$i], 30, 40, 'C', 'T', 1);
+//            $this->SetX($this->GetX()+150);
+//            $this->SetY($this->GetY()-4);
+//            $this->Cell(30);
+//            $this->drawTextBox("FOTO ".$i, 40, 40, 'C', 'T', 1);
+//            $this->SetX($this->GetX()+190);
+//            $this->SetY($this->GetY()-4);
+//            $this->Cell(40);
             $this->Cell(40,40,$nombreEstudiantes[$i],1,0,'C',$fill);
             $this->Cell(40,40,$apellidoEstudiantes[$i],1,0,'C',$fill);
             $this->Cell(30,40,$cedulaEstudiantes[$i],1,0,'C',$fill);
