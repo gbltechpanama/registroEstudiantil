@@ -41,7 +41,7 @@
         <div class="container">
             <main>
                 <form name="formularioBuscar" action="../controlador/FrontController.php?action=busqueda" method="POST">
-                    <input type="text" name="criterio" value="Escriba aquí palabra clave de busqueda" class="buscar" />
+                    <input type="text" name="criterio" value="" placeholder="Escriba aquí palabra clave de busqueda" class="buscar" />
                     <img src="img/buscar.png" width="25" height="25" alt="buscar" class="botonBuscar" onclick="enviarDatos();"/>
                 </form>
                 <a href="formCambioClave.html">
