@@ -978,8 +978,8 @@ main{
     background-color: #FDFDFD;
     display: none;//es invisible por defecto
     position: absolute;
-    left: 536px;
-    top: 257px;
+    left: 50%;
+    top: 200px;
     z-index: 2;
 }
 /**Para la busqueda*/
