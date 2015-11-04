@@ -101,7 +101,8 @@
                 </table>
             </main>
         </div>
-        <div class="pie"></div>
-        <div class="logo3"></div>
+        <div class="pie">
+            <div class="logo3"></div>
+        </div>
     </body>
 </html>

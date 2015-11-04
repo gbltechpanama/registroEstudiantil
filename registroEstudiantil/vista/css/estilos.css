@@ -117,7 +117,6 @@ main{
     min-width: 1180px;
     max-width: 100%;
     height: 88px;
-    top: 690px;
     bottom: 0px;
     position: absolute;
     background-image: url(../img/pie2.png);
@@ -156,7 +155,7 @@ main{
 .logo3{
     width: 149px;
     height: 81px;
-    top: 697px;
+    top: 7px;
     left: 515px;
     bottom: 0px;
     margin-left: auto;
@@ -954,6 +953,8 @@ main{
     font-family: HelveticaCondensada, "Helvetica LT Std";
     font-size: 14px;
     color: #000000;
+    overflow-x: no-display;
+    overflow-y: no-display;
 }
 /**Para crear el calendario emergente**/
 /**Para el boton del calendario*/
@@ -1056,6 +1057,7 @@ main{
     left: 34px;
     right: 34px;
     width: 1111px;
+    overflow: auto;
 }
 /**Para la barra azul*/
 .barra4{

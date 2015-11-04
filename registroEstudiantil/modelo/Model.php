@@ -175,13 +175,29 @@ class Model {
     {
         $rutaFoto = "../img/fotos/00000.jpg";
         $BD = new BaseDatos();
-        //Asignando valor aleatorio al nombre de la foto.
-        do{
-            $rutaFoto = "../vista/img/fotos/".rand(1, 99999).".jpg";
-            $query = "select rutaFoto from estudiantes where rutaFoto = '"
-                    .$rutaFoto."'";
-            $resultado = $BD->modelQueryDB($query);
-        }while ($resultado->num_rows > 0);
+        switch ($foto['type']){
+            case "image/jpeg":
+            //Asignando valor aleatorio al nombre de la foto en formato jpg.
+                do{
+                    $rutaFoto = "../vista/img/fotos/".rand(1, 99999).".jpg";
+                    $query = "select rutaFoto from estudiantes where rutaFoto = '"
+                            .$rutaFoto."'";
+                    $resultado = $BD->modelQueryDB($query);
+                }while ($resultado->num_rows > 0);
+            break;
+            case "image/png":
+          //Asignando valor aleatorio al nombre de la foto en formato png.
+                do{
+                    $rutaFoto = "../vista/img/fotos/".rand(1, 99999).".png";
+                    $query = "select rutaFoto from estudiantes where rutaFoto = '"
+                            .$rutaFoto."'";
+                    $resultado = $BD->modelQueryDB($query);
+                }while ($resultado->num_rows > 0);  
+            break;
+            default : //Error formato desconocido
+                $resultado = FALSE;
+                return $resultado;
+        }
         //Guarda la foto en la ruta indicada
         if(move_uploaded_file($foto["tmp_name"], $rutaFoto)){
         //Preparando la instrucción
