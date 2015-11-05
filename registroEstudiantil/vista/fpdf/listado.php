@@ -270,7 +270,13 @@ function drawRows($w, $h, $txt, $border=0, $align='J', $fill=false, $maxline=0, 
                 $y=$y+40;
                 $fila++;
             }
-            $this->Image("../img/fotos/".basename( $rutasFoto[$i] ), 152, $y, 35, 38);
+            //Verifica si el archivo es jgp
+            if(strpos($rutasFoto[$i], ".jpg")){
+                $this->Image("../img/fotos/".basename( $rutasFoto[$i] ), 152, $y, 35, 38);
+            }
+            else{//Verifica si el archivo es png
+                $this->Image("../img/fotos/".basename( $rutasFoto[$i] ), 152, $y, 35, 38, "PNG", "");
+            }
             $this->Ln();
             $fill=!$fill;
         }

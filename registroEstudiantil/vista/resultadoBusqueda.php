@@ -40,37 +40,36 @@
         <div class="barra5"></div>
         <div class="container">
             <main>
-                <form name="formularioBuscar" action="../controlador/FrontController.php?action=busqueda" method="POST">
-                    <input type="text" name="criterio" value="" placeholder="Escriba aquí palabra clave de busqueda" class="buscar" />
-                    <img src="img/buscar.png" width="25" height="25" alt="buscar" class="botonBuscar" onclick="enviarDatos();"/>
-                </form>
-                <a href="formCambioClave.html">
-                    <img src="img/modificarClave.png" width="225" height="27" alt="modificarClave" class="botonModificarClave"/>
-                </a>
-                <img src="img/imprimir.png" width="225" height="27" alt="Imprimir el listado" class="botonImprimir" onclick="imprimirListado();"/>
-                <table border="0" class="tabla">
-                    <thead>
-                        <tr>
-                            <th class="titulosTabla">NOMBRE</th>
-                            <th class="titulosTabla">APELLIDO</th>
-                            <th class="titulosTabla">CEDULA</th>
-                            <th class="titulosTabla">L. TRABAJO</th>
-                            <th class="titulosTabla">CARGO</th>
-                            <th class="iconosTabla">VER</th>
-                            <th class="iconosTabla">ELIM</th>
-                        </tr>
-                    </thead>
-                    <tbody>                   
-                        <?php
-                        // crea la tabla con el resultado
-                            session_start();
-                            $cedulaEstudiantes = $_SESSION['cedulaEstudiantes'];
-                            $nombreEstudiantes = $_SESSION['nombresEstudiantes'];
-                            $apellidoEstudiantes = $_SESSION['apellidosEstudiantes'];
-                            $lugarTrabajoEstudiantes = $_SESSION['lugarTrabajoEstudiantes'];
-                            $cargoTrabajoEstudiantes = $_SESSION['cargoTrabajoEstudiantes'];
-                            $criterio = $_SESSION['criterio'];
-                            printf("<div class=\"capaCriterioBusqueda\" name=\"criterioBusqueda\" id=\"criterioBusqueda\">".$criterio."</div>");
+                <?php
+                    // crea la tabla con el resultado
+                    session_start();
+                    $cedulaEstudiantes = $_SESSION['cedulaEstudiantes'];
+                    $nombreEstudiantes = $_SESSION['nombresEstudiantes'];
+                    $apellidoEstudiantes = $_SESSION['apellidosEstudiantes'];
+                    $lugarTrabajoEstudiantes = $_SESSION['lugarTrabajoEstudiantes'];
+                    $cargoTrabajoEstudiantes = $_SESSION['cargoTrabajoEstudiantes'];
+                    $criterio = $_SESSION['criterio'];
+                    printf("<form name=\"formularioBuscar\" action=\"../controlador/FrontController.php?action=busqueda\" method=\"POST\">");
+                        printf("<input type=\"text\" name=\"criterio\" value=\"".$criterio."\" placeholder=\"Escriba aquí palabra clave de busqueda\" class=\"buscar\" />");
+                        printf("<img src=\"img/buscar.png\" width=\"25\" height=\"25\" alt=\"buscar\" class=\"botonBuscar\" onclick=\"enviarDatos();\"/>");
+                    printf("</form>");
+                    printf("<a href=\"formCambioClave.html\">");
+                        printf("<img src=\"img/modificarClave.png\" width=\"225\" height=\"27\" alt=\"modificarClave\" class=\"botonModificarClave\"/>");
+                    printf("</a>");
+                    printf("<img src=\"img/imprimir.png\" width=\"225\" height=\"27\" alt=\"Imprimir el listado\" class=\"botonImprimir\" onclick=\"imprimirListado();\"/>");
+                    printf("<table border=\"0\" class=\"tabla\">");
+                        printf("<thead>");
+                            printf("<tr>");
+                                printf("<th class=\"titulosTabla\">NOMBRE</th>");
+                                printf("<th class=\"titulosTabla\">APELLIDO</th>");
+                                printf("<th class=\"titulosTabla\">CEDULA</th>");
+                                printf("<th class=\"titulosTabla\">L. TRABAJO</th>");
+                                printf("<th class=\"titulosTabla\">CARGO</th>");
+                                printf("<th class=\"iconosTabla\">VER</th>");
+                                printf("<th class=\"iconosTabla\">ELIM</th>");
+                            printf("</tr>");
+                        printf("</thead>");
+                        printf("<tbody>");
                             $n = count($nombreEstudiantes);
                             for($i=0; $i < $n; $i++){
                                 if($i%2 == 0){

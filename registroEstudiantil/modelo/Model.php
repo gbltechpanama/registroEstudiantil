@@ -363,8 +363,10 @@ class Model {
         $resultado = $BD->modelQueryDB($query);
         if($resultado){
             /*ELIMINAR EL ARCHIVO SUBIDO EN EL DIRECTORIO /IMG/FOTOS/*/
-            unlink($rutaFoto);
-            return TRUE;
+            if(unlink($rutaFoto[0]))
+                return TRUE;
+            else
+                return FALSE;
         }
         else{
             return FALSE;
