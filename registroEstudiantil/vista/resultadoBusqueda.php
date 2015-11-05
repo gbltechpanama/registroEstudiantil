@@ -70,6 +70,7 @@
                             printf("</tr>");
                         printf("</thead>");
                         printf("<tbody>");
+                            printf("<div class=\"capaCriterioBusqueda\" name=\"criterioBusqueda\" id=\"criterioBusqueda\">".$criterio."</div>");
                             $n = count($nombreEstudiantes);
                             for($i=0; $i < $n; $i++){
                                 if($i%2 == 0){
