@@ -241,21 +241,17 @@ function drawRows($w, $h, $txt, $border=0, $align='J', $fill=false, $maxline=0, 
             $cantidadLetras = strlen($nombreEstudiantes[$i]);
             $x = $this->GetX();
             $vertical = $this->GetY();
+            $this->Line($x, $vertical, $x + 40, $vertical); //Superior
+            $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
+            $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
+            $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
             if ($cantidadLetras<=15){
-                $this->Line($x, $vertical, $x + 40, $vertical); //Superior
-                $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
-                $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
-                $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
                 $horizontal = $this->GetStringWidth($nombreEstudiantes[$i])/2;
                 $this->Text($x+20-$horizontal, $vertical +6, $nombreEstudiantes[$i]);
             }
             else {//Divide en lineas el string
                 for ($j=15, $k=0; $j < $cantidadLetras; $j+=15) {
                     $linea = substr($nombreEstudiantes[$i], $k, $j);
-                    $this->Line($x, $vertical, $x + 40, $vertical); //Superior
-                    $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
-                    $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
-                    $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
                     $horizontal = $this->GetStringWidth($linea)/2;
                     $this->Text($x+20-$horizontal, $vertical +6, $linea);
                     $vertical = $vertical + 6;
@@ -267,27 +263,22 @@ function drawRows($w, $h, $txt, $border=0, $align='J', $fill=false, $maxline=0, 
             $cantidadLetras = strlen($apellidoEstudiantes[$i]);
             $x = $this->GetX();
             $vertical = $this->GetY();
+            $this->Line($x, $vertical, $x + 40, $vertical); //Superior
+            $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
+            $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
+            $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
             if ($cantidadLetras<=15){
-                $this->Line($x, $vertical, $x + 40, $vertical); //Superior
-                $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
-                $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
-                $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
                 $horizontal = $this->GetStringWidth($apellidoEstudiantes[$i])/2;
                 $this->Text($x+20-$horizontal, $vertical +6, $apellidoEstudiantes[$i]);
             }
             else {//Divide en lineas el string
                 for ($j=15, $k=0; $j < $cantidadLetras; $j+=15) {
                     $linea = substr($apellidoEstudiantes[$i], $k, $j);
-                    $this->Line($x, $vertical, $x + 40, $vertical); //Superior
-                    $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
-                    $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
-                    $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
                     $horizontal = $this->GetStringWidth($linea)/2;
                     $this->Text($x+20-$horizontal, $vertical +6, $linea);
                     $vertical = $vertical + 6;
                 }
                 $y = $y + 40;
-                
             }
             $x = $x + 40;
             $this->SetX($x);
@@ -304,7 +295,6 @@ function drawRows($w, $h, $txt, $border=0, $align='J', $fill=false, $maxline=0, 
             $this->SetX($x);
             //Crea el marco e imprime el número de télefono
             $x = $this->GetX();
-            $vertical = $this->GetY();
             $this->Line($x, $vertical, $x + 30, $vertical); //Superior
             $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
             $this->Line($x + 30, $vertical, $x + 30, $vertical +40); //Derecha
@@ -314,26 +304,31 @@ function drawRows($w, $h, $txt, $border=0, $align='J', $fill=false, $maxline=0, 
             $x = $x + 30;
             $this->SetX($x);
             //Para el marco de la foto
-//            $x = $this->GetX();
-//            $vertical = $this->GetY();
-//            $this->Line($x, $vertical, $x + 40, $vertical); //Superior
-//            $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
-//            $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
-//            $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
-//            $x = $x + 40;
-//            $this->SetX($x);
-//            $y = $y + 40;
-//            $this->SetY($y);
+            $x = $this->GetX();
+            $this->Line($x, $vertical, $x + 40, $vertical); //Superior
+            $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
+            $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
+            $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
+            $horizontal = $this->GetStringWidth("Foto ".$i)/2;
+            $this->Text($x + 20 - $horizontal, $vertical +6, "Foto ".$i);
+            $x = $x + 40;
+            $this->SetX($x);
             /**************************************************************************/
-            $this->Cell(40,40,"FOTO ".$i,1,0,'C',$fill);
-            if($this->PageNo() >= 2 && $fila > 4){
-                $y = 46;
-                $fila=1;
-            }
-            else{
-                $y=$y+40;
-                $fila++;
-            }
+            $this->Cell(40,40,"",0,0,'C',$fill);
+//            if($this->PageNo() == 1 && $fila > 4){
+//                $y = 46;
+//                $fila=1;
+//            }
+//            else {
+                if($this->PageNo() >= 2 && $fila > 4){
+                    $y = 46;
+                    $fila=1;
+                }
+                else{
+                    $y=$y+40;                    
+                    $fila++;
+                }
+//            }
             //Verifica si el archivo es jgp
             if(strpos($rutasFoto[$i], ".jpg")){
                 $this->Image("../img/fotos/".basename( $rutasFoto[$i] ), 152, $y, 35, 38);
@@ -341,6 +336,7 @@ function drawRows($w, $h, $txt, $border=0, $align='J', $fill=false, $maxline=0, 
             else{//Verifica si el archivo es png
                 $this->Image("../img/fotos/".basename( $rutasFoto[$i] ), 152, $y, 35, 38, "PNG", "");
             }
+            $this->SetY($y);
             $this->Ln();
             $fill=!$fill;
         }
