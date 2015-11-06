@@ -237,30 +237,94 @@ function drawRows($w, $h, $txt, $border=0, $align='J', $fill=false, $maxline=0, 
         $n = count($nombreEstudiantes);
         for($i=0, $y=63, $fila=1; $i<$n; $i++){
             $fill=false;
-//            $this->drawTextBox($nombreEstudiantes[$i], 40, 40, 'C', 'T', 1);
-//            $this->SetX($this->GetX()+40);
-//            $this->SetY($this->GetY()-4);
-//            $this->Cell(40);
-//            $this->drawTextBox($apellidoEstudiantes[$i], 40, 40, 'C', 'T', 1);
-//            $this->SetX($this->GetX()+80);
-//            $this->SetY($this->GetY()-4);
-//            $this->Cell(40);
-//            $this->drawTextBox($cedulaEstudiantes[$i], 30, 40, 'C', 'T', 1);
-//            $this->SetX($this->GetX()+120);
-//            $this->SetY($this->GetY()-4);
-//            $this->Cell(30);
-//            $this->drawTextBox($telefonosEstudiantes[$i], 30, 40, 'C', 'T', 1);
-//            $this->SetX($this->GetX()+150);
-//            $this->SetY($this->GetY()-4);
-//            $this->Cell(30);
-//            $this->drawTextBox("FOTO ".$i, 40, 40, 'C', 'T', 1);
-//            $this->SetX($this->GetX()+190);
-//            $this->SetY($this->GetY()-4);
-//            $this->Cell(40);
-            $this->Cell(40,40,$nombreEstudiantes[$i],1,0,'C',$fill);
-            $this->Cell(40,40,$apellidoEstudiantes[$i],1,0,'C',$fill);
-            $this->Cell(30,40,$cedulaEstudiantes[$i],1,0,'C',$fill);
-            $this->Cell(30,40,$telefonosEstudiantes[$i],1,0,'C',$fill);
+            //Crea el marco e imprime el nombre
+            $cantidadLetras = strlen($nombreEstudiantes[$i]);
+            $x = $this->GetX();
+            $vertical = $this->GetY();
+            if ($cantidadLetras<=15){
+                $this->Line($x, $vertical, $x + 40, $vertical); //Superior
+                $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
+                $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
+                $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
+                $horizontal = $this->GetStringWidth($nombreEstudiantes[$i])/2;
+                $this->Text($x+20-$horizontal, $vertical +6, $nombreEstudiantes[$i]);
+            }
+            else {//Divide en lineas el string
+                for ($j=15, $k=0; $j < $cantidadLetras; $j+=15) {
+                    $linea = substr($nombreEstudiantes[$i], $k, $j);
+                    $this->Line($x, $vertical, $x + 40, $vertical); //Superior
+                    $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
+                    $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
+                    $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
+                    $horizontal = $this->GetStringWidth($linea)/2;
+                    $this->Text($x+20-$horizontal, $vertical +6, $linea);
+                    $vertical = $vertical + 6;
+                }
+            }
+            $x = $x + 40;
+            $this->SetX($x);
+            //Crea el marco e imprime el apellido
+            $cantidadLetras = strlen($apellidoEstudiantes[$i]);
+            $x = $this->GetX();
+            $vertical = $this->GetY();
+            if ($cantidadLetras<=15){
+                $this->Line($x, $vertical, $x + 40, $vertical); //Superior
+                $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
+                $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
+                $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
+                $horizontal = $this->GetStringWidth($apellidoEstudiantes[$i])/2;
+                $this->Text($x+20-$horizontal, $vertical +6, $apellidoEstudiantes[$i]);
+            }
+            else {//Divide en lineas el string
+                for ($j=15, $k=0; $j < $cantidadLetras; $j+=15) {
+                    $linea = substr($apellidoEstudiantes[$i], $k, $j);
+                    $this->Line($x, $vertical, $x + 40, $vertical); //Superior
+                    $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
+                    $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
+                    $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
+                    $horizontal = $this->GetStringWidth($linea)/2;
+                    $this->Text($x+20-$horizontal, $vertical +6, $linea);
+                    $vertical = $vertical + 6;
+                }
+                $y = $y + 40;
+                
+            }
+            $x = $x + 40;
+            $this->SetX($x);
+            //Crea el marco e imprime la cedula
+            $x = $this->GetX();
+            $vertical = $this->GetY();
+            $this->Line($x, $vertical, $x + 30, $vertical); //Superior
+            $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
+            $this->Line($x + 30, $vertical, $x + 30, $vertical +40); //Derecha
+            $this->Line($x, $vertical + 40, $x + 30, $vertical + 40); //Inferior
+            $horizontal = $this->GetStringWidth($cedulaEstudiantes[$i])/2;
+            $this->Text($x + 15 - $horizontal, $vertical +6, $cedulaEstudiantes[$i]);
+            $x = $x + 30;
+            $this->SetX($x);
+            //Crea el marco e imprime el número de télefono
+            $x = $this->GetX();
+            $vertical = $this->GetY();
+            $this->Line($x, $vertical, $x + 30, $vertical); //Superior
+            $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
+            $this->Line($x + 30, $vertical, $x + 30, $vertical +40); //Derecha
+            $this->Line($x, $vertical + 40, $x + 30, $vertical + 40); //Inferior
+            $horizontal = $this->GetStringWidth($telefonosEstudiantes[$i])/2;
+            $this->Text($x + 15 - $horizontal, $vertical +6, $telefonosEstudiantes[$i]);
+            $x = $x + 30;
+            $this->SetX($x);
+            //Para el marco de la foto
+//            $x = $this->GetX();
+//            $vertical = $this->GetY();
+//            $this->Line($x, $vertical, $x + 40, $vertical); //Superior
+//            $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
+//            $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
+//            $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
+//            $x = $x + 40;
+//            $this->SetX($x);
+//            $y = $y + 40;
+//            $this->SetY($y);
+            /**************************************************************************/
             $this->Cell(40,40,"FOTO ".$i,1,0,'C',$fill);
             if($this->PageNo() >= 2 && $fila > 4){
                 $y = 46;
