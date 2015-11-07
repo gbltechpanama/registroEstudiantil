@@ -233,18 +233,26 @@ function drawRows($w, $h, $txt, $border=0, $align='J', $fill=false, $maxline=0, 
         $this->SetDrawColor(0,0,0);
         $this->SetLineWidth(.3);
         $this->SetFont('Arial','',11);
-//Datos
+//Tabla de la pagina 1
+        $x = $this->GetX();
+        $vertical = $this->GetY();
+        $this->Line($x, $vertical, $x + 180, $vertical); //Horizontal1
+        $this->Line($x, $vertical+40, $x + 180, $vertical+40); //Horizontal2
+        $this->Line($x, $vertical+80, $x + 180, $vertical+80); //Horizontal3
+        $this->Line($x, $vertical+120, $x + 180, $vertical+120); //Horizontal4
+        $this->Line($x, $vertical+160, $x + 180, $vertical+160); //Horizontal
+        $this->Line($x, $vertical, $x, $vertical + 160); //Vertical1
+        $this->Line($x+40, $vertical, $x+40, $vertical + 160); //Vertical2
+        $this->Line($x+80, $vertical, $x+80, $vertical + 160); //Vertical3
+        $this->Line($x+110, $vertical, $x+110, $vertical + 160); //Vertical4
+        $this->Line($x+140, $vertical, $x+140, $vertical + 160); //Vertical5
+        $this->Line($x+180, $vertical, $x+180, $vertical + 160); //Vertical6
         $n = count($nombreEstudiantes);
-        for($i=0, $y=63, $fila=1; $i<$n; $i++){
-            $fill=false;
+        for($i=0, $y=$vertical + 1, $fila=1; $i<$n; $i++){
             //Crea el marco e imprime el nombre
             $cantidadLetras = strlen($nombreEstudiantes[$i]);
             $x = $this->GetX();
-            $vertical = $this->GetY();
-            $this->Line($x, $vertical, $x + 40, $vertical); //Superior
-            $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
-            $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
-            $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
+            $vertical = $this->GetY();   
             if ($cantidadLetras<=15){
                 $horizontal = $this->GetStringWidth($nombreEstudiantes[$i])/2;
                 $this->Text($x+20-$horizontal, $vertical +6, $nombreEstudiantes[$i]);
@@ -258,15 +266,9 @@ function drawRows($w, $h, $txt, $border=0, $align='J', $fill=false, $maxline=0, 
                 }
             }
             $x = $x + 40;
-            $this->SetX($x);
-            //Crea el marco e imprime el apellido
+            //Imprime el apellido
             $cantidadLetras = strlen($apellidoEstudiantes[$i]);
-            $x = $this->GetX();
             $vertical = $this->GetY();
-            $this->Line($x, $vertical, $x + 40, $vertical); //Superior
-            $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
-            $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
-            $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
             if ($cantidadLetras<=15){
                 $horizontal = $this->GetStringWidth($apellidoEstudiantes[$i])/2;
                 $this->Text($x+20-$horizontal, $vertical +6, $apellidoEstudiantes[$i]);
@@ -281,67 +283,45 @@ function drawRows($w, $h, $txt, $border=0, $align='J', $fill=false, $maxline=0, 
                 $y = $y + 40;
             }
             $x = $x + 40;
-            $this->SetX($x);
-            //Crea el marco e imprime la cedula
-            $x = $this->GetX();
+            //Imprime la cedula
             $vertical = $this->GetY();
-            $this->Line($x, $vertical, $x + 30, $vertical); //Superior
-            $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
-            $this->Line($x + 30, $vertical, $x + 30, $vertical +40); //Derecha
-            $this->Line($x, $vertical + 40, $x + 30, $vertical + 40); //Inferior
             $horizontal = $this->GetStringWidth($cedulaEstudiantes[$i])/2;
             $this->Text($x + 15 - $horizontal, $vertical +6, $cedulaEstudiantes[$i]);
             $x = $x + 30;
-            $this->SetX($x);
-            //Crea el marco e imprime el número de télefono
-            $x = $this->GetX();
-            $this->Line($x, $vertical, $x + 30, $vertical); //Superior
-            $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
-            $this->Line($x + 30, $vertical, $x + 30, $vertical +40); //Derecha
-            $this->Line($x, $vertical + 40, $x + 30, $vertical + 40); //Inferior
+            //Imprime el número de télefono
             $horizontal = $this->GetStringWidth($telefonosEstudiantes[$i])/2;
             $this->Text($x + 15 - $horizontal, $vertical +6, $telefonosEstudiantes[$i]);
             $x = $x + 30;
-            $this->SetX($x);
             //Para el marco de la foto
-            $x = $this->GetX();
-            $this->Line($x, $vertical, $x + 40, $vertical); //Superior
-            $this->Line($x, $vertical, $x, $vertical + 40); //Izquierda
-            $this->Line($x + 40, $vertical, $x + 40, $vertical +40); //Derecha
-            $this->Line($x, $vertical + 40, $x + 40, $vertical + 40); //Inferior
             $horizontal = $this->GetStringWidth("Foto ".$i)/2;
             $this->Text($x + 20 - $horizontal, $vertical +6, "Foto ".$i);
             $x = $x + 40;
-            $this->SetX($x);
-            /**************************************************************************/
-            $this->Cell(40,40,"",0,0,'C',$fill);
-//            if($this->PageNo() == 1 && $fila > 4){
-//                $y = 46;
-//                $fila=1;
-//            }
-//            else {
-                if($this->PageNo() >= 2 && $fila > 4){
-                    $y = 46;
+            //Verifica si el archivo es jgp
+            if(strpos($rutasFoto[$i], ".jpg")){
+                $this->Image($rutasFoto[$i], 152, $y, 35, 38);
+            }
+            else{//Verifica si el archivo es png
+                $this->Image($rutasFoto[$i], 152, $y, 35, 38, "PNG", "");
+            }
+            if($this->PageNo() == 1 && $y == 263){//Agrega la página 2
+                $this->AddPage($this->CurOrientation, $this->CurPageSize);
+                $this->SetY(46);//Cambiar de página
+                $fila=1;
+            }
+            else {
+                if($this->PageNo() >= 2 && $fila > 5){//Agrega otras páginas
+                    $this->AddPage($this->CurOrientation, $this->CurPageSize);
+                    $this->SetY(46);
                     $fila=1;
                 }
                 else{
                     $y=$y+40;                    
                     $fila++;
                 }
-//            }
-            //Verifica si el archivo es jgp
-            if(strpos($rutasFoto[$i], ".jpg")){
-                $this->Image("../img/fotos/".basename( $rutasFoto[$i] ), 152, $y, 35, 38);
-            }
-            else{//Verifica si el archivo es png
-                $this->Image("../img/fotos/".basename( $rutasFoto[$i] ), 152, $y, 35, 38, "PNG", "");
             }
             $this->SetY($y);
-            $this->Ln();
-            $fill=!$fill;
         }
-        $this->Cell(160,0,'','T');
-    }  
+    }
 }
     $pdf=new PDF();
 //Títulos de las columnas
