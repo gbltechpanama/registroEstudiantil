@@ -1,4 +1,9 @@
 <?php
+/**Este archivo genera un listado de estudiantes.
+ * Version: 1.3
+ * Date: 2015-11-09
+ * Author: Ing. Ricardo Presilla
+ */
 require('fpdf.php');
 
 class PDF extends FPDF
@@ -224,7 +229,7 @@ function drawRows($w, $h, $txt, $border=0, $align='J', $fill=false, $maxline=0, 
             $this->Cell(160,10,'',0,1,'L');
         }
         $this->Ln(20);
-//Colores, ancho de lÃ­nea y fuente en negrita
+//Colores, ancho de linea y fuente en negrita
         $this->SetFillColor(0,32,96);
         $this->SetTextColor(255);
         $this->SetDrawColor(0,0,0);
@@ -238,7 +243,7 @@ function drawRows($w, $h, $txt, $border=0, $align='J', $fill=false, $maxline=0, 
                 $this->Cell(40,7,$encabezados[$i],1,0,'C',1);
         }
         $this->Ln();
-//RestauraciÃ³n de colores y fuentes
+//Restauracion de colores y fuentes
         $this->SetFillColor(255,255,255);
         $this->SetTextColor(0);
         $this->SetDrawColor(0,0,0);
@@ -279,7 +284,7 @@ function drawRows($w, $h, $txt, $border=0, $align='J', $fill=false, $maxline=0, 
                 $y=$y+40;
                 $fila++;
             }
-            //Verifica si el archivo es jgp
+            //Verifica si el archivo es jpg
             $extension = substr($rutasFoto[$i], -3, 3);
             if(strcmp($extension, "jpg")==0){
                 $this->Image("../img/fotos/".basename ( $rutasFoto[$i]), 152, $y, 35, 38);
