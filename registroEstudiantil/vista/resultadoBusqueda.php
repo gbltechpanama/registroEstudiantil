@@ -101,10 +101,10 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="pie">
+                    <div class="logo3"></div>
+                </div>
             </main>
-        </div>
-        <div class="pie">
-            <div class="logo3"></div>
-        </div>
+        </div>        
     </body>
 </html>
