@@ -57,48 +57,50 @@
                         printf("<img src=\"img/modificarClave.png\" width=\"225\" height=\"27\" alt=\"modificarClave\" class=\"botonModificarClave\"/>");
                     printf("</a>");
                     printf("<img src=\"img/imprimir.png\" width=\"225\" height=\"27\" alt=\"Imprimir el listado\" class=\"botonImprimir\" onclick=\"imprimirListado();\"/>");
-                    printf("<table border=\"0\" class=\"tabla\">");
-                        printf("<thead>");
-                            printf("<tr>");
-                                printf("<th class=\"titulosTabla\">NOMBRE</th>");
-                                printf("<th class=\"titulosTabla\">APELLIDO</th>");
-                                printf("<th class=\"titulosTabla\">CEDULA</th>");
-                                printf("<th class=\"titulosTabla\">L. TRABAJO</th>");
-                                printf("<th class=\"titulosTabla\">CARGO</th>");
-                                printf("<th class=\"iconosTabla\">VER</th>");
-                                printf("<th class=\"iconosTabla\">ELIM</th>");
-                            printf("</tr>");
-                        printf("</thead>");
-                        printf("<tbody>");
-                            printf("<div class=\"capaCriterioBusqueda\" name=\"criterioBusqueda\" id=\"criterioBusqueda\">".$criterio."</div>");
-                            $n = count($nombreEstudiantes);
-                            for($i=0; $i < $n; $i++){
-                                if($i%2 == 0){
-                                    printf("<tr class=\"lineaPar\">");
-                                        printf("<td>".$nombreEstudiantes[$i]."</td>");
-                                        printf("<td>".$apellidoEstudiantes[$i]."</td>");
-                                        printf("<td>".$cedulaEstudiantes[$i]."</td>");
-                                        printf("<td>".$lugarTrabajoEstudiantes[$i]."</td>");
-                                        printf("<td>".$cargoTrabajoEstudiantes[$i]."</td>");
-                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/ver.png\" onclick=\"verTodo(".$cedulaEstudiantes[$i].");\"></td>");
-                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/eliminar2.png\" onclick=\"eliminar(".$cedulaEstudiantes[$i].");\"/></td>");
-                                    printf("</tr>");
+                    printf("<div class=\"capaTabla\">");
+                        printf("<table border=\"0\">");
+                            printf("<thead>");
+                                printf("<tr>");
+                                    printf("<th class=\"titulosTabla\">NOMBRE</th>");
+                                    printf("<th class=\"titulosTabla\">APELLIDO</th>");
+                                    printf("<th class=\"titulosTabla\">CEDULA</th>");
+                                    printf("<th class=\"titulosTabla\">L. TRABAJO</th>");
+                                    printf("<th class=\"titulosTabla\">CARGO</th>");
+                                    printf("<th class=\"iconosTabla\">VER</th>");
+                                    printf("<th class=\"iconosTabla\">ELIM</th>");
+                                printf("</tr>");
+                            printf("</thead>");
+                            printf("<tbody>");
+                                printf("<div class=\"capaCriterioBusqueda\" name=\"criterioBusqueda\" id=\"criterioBusqueda\">".$criterio."</div>");
+                                $n = count($nombreEstudiantes);
+                                for($i=0; $i < $n; $i++){
+                                    if($i%2 == 0){
+                                        printf("<tr class=\"lineaPar\">");
+                                            printf("<td>".$nombreEstudiantes[$i]."</td>");
+                                            printf("<td>".$apellidoEstudiantes[$i]."</td>");
+                                            printf("<td>".$cedulaEstudiantes[$i]."</td>");
+                                            printf("<td>".$lugarTrabajoEstudiantes[$i]."</td>");
+                                            printf("<td>".$cargoTrabajoEstudiantes[$i]."</td>");
+                                            printf("<td style=\"text-align:center\"><img src=\"../vista/img/ver.png\" onclick=\"verTodo(".$cedulaEstudiantes[$i].");\"></td>");
+                                            printf("<td style=\"text-align:center\"><img src=\"../vista/img/eliminar2.png\" onclick=\"eliminar(".$cedulaEstudiantes[$i].");\"/></td>");
+                                        printf("</tr>");
+                                    }
+                                    else{
+                                        printf("<tr class=\"lineaImpar\">");
+                                            printf("<td>".$nombreEstudiantes[$i]."</td>");
+                                            printf("<td>".$apellidoEstudiantes[$i]."</td>");
+                                            printf("<td>".$cedulaEstudiantes[$i]."</td>");
+                                            printf("<td>".$lugarTrabajoEstudiantes[$i]."</td>");
+                                            printf("<td>".$cargoTrabajoEstudiantes[$i]."</td>");
+                                            printf("<td style=\"text-align:center\"><img src=\"../vista/img/ver.png\" onclick=\"verTodo(".$cedulaEstudiantes[$i].");\"></td>");
+                                            printf("<td style=\"text-align:center\"><img src=\"../vista/img/eliminar2.png\" onclick=\"eliminar(".$cedulaEstudiantes[$i].");\"/></td>");
+                                        printf("</tr>");
+                                    }
                                 }
-                                else{
-                                    printf("<tr class=\"lineaImpar\">");
-                                        printf("<td>".$nombreEstudiantes[$i]."</td>");
-                                        printf("<td>".$apellidoEstudiantes[$i]."</td>");
-                                        printf("<td>".$cedulaEstudiantes[$i]."</td>");
-                                        printf("<td>".$lugarTrabajoEstudiantes[$i]."</td>");
-                                        printf("<td>".$cargoTrabajoEstudiantes[$i]."</td>");
-                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/ver.png\" onclick=\"verTodo(".$cedulaEstudiantes[$i].");\"></td>");
-                                        printf("<td style=\"text-align:center\"><img src=\"../vista/img/eliminar2.png\" onclick=\"eliminar(".$cedulaEstudiantes[$i].");\"/></td>");
-                                    printf("</tr>");
-                                }
-                            }
-                        ?>
-                    </tbody>
-                </table>
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
             </main>
         </div>
         <div class="pie">

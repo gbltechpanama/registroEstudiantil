@@ -117,7 +117,7 @@ main{
     min-width: 1180px;
     max-width: 100%;
     height: 88px;
-    bottom: 0px;
+    top: calc(100% - 88px);
     position: absolute;
     background-image: url(../img/pie2.png);
     background-repeat: repeat-x;
@@ -1050,7 +1050,7 @@ main{
     font-family: HelveticaCondensada, "Helvetica LT Std";
     font-size: 14px;
 }
-/**Para la tabla de resultados*/
+/**Para la tabla de resultados
 .tabla{
     position: absolute;
     top: 338px;
@@ -1058,7 +1058,7 @@ main{
     right: 34px;
     width: 1111px;
     overflow: auto;
-}
+}*/
 /**Para la barra azul*/
 .barra4{
     background-color: #001A55;
@@ -1132,4 +1132,14 @@ main{
     position: absolute;
     top: 278px;
     right: 68px;
+}
+/**Para la tabla de resultados*/
+.capaTabla{
+    position: absolute;
+    top: 338px;
+    left: 34px;
+    right: 34px;
+    width: 1111px;
+    height: 450px;
+    overflow-y: scroll;
 }
